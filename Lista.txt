@@ -1,9 +1,5 @@
 <<<<<<< HEAD
 1
-2 Juan
-=======
-1 Ricardo
 2
->>>>>>> d5dc40fe8a4d8ed93894bdc7bd98dc3add17f2df
 3
-4 Hector
+4

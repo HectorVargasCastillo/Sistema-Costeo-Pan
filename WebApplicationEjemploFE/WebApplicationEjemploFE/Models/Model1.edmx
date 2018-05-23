@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Database1Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Database1ModelStoreContainer">
+    <EntitySet Name="lineas" EntityType="Database1Model.Store.lineas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="unidad_medida" EntityType="Database1Model.Store.unidad_medida" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="familias" EntityType="Database1Model.Store.familias" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="lineafamilia" Association="Database1Model.Store.lineafamilia">
+      <End Role="linea" EntitySet="lineas" />
+      <End Role="familia" EntitySet="familias" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="lineas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nchar" Nullable="true" MaxLength="30" />
+    <Property Name="creado_el" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="unidad_medida">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="codigo" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="descripcion" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="creado_el" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="familias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="creado_el" Type="datetime" Nullable="false" />
+    <Property Name="linea_id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="lineafamilia">
+    <End Role="linea" Type="Database1Model.Store.lineas" Multiplicity="1" />
+    <End Role="familia" Type="Database1Model.Store.familias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="linea">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="familia">
+        <PropertyRef Name="linea_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="linea">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="creado_el" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="familias" Relationship="Database1Model.lineafamilia" FromRole="linea" ToRole="familia" />
+        </EntityType>
+        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="lineas" EntityType="Self.linea" />
+          <EntitySet Name="unidad_medida" EntityType="Database1Model.unidad_medida" />
+          <EntitySet Name="familias" EntityType="Database1Model.familia" />
+          <AssociationSet Name="lineafamilia" Association="Database1Model.lineafamilia">
+            <End Role="linea" EntitySet="lineas" />
+            <End Role="familia" EntitySet="familias" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="unidad_medida">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="codigo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="creado_el" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="familia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" />
+          <Property Name="creado_el" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="linea" Relationship="Database1Model.lineafamilia" FromRole="familia" ToRole="linea" />
+          <Property Name="linea_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="lineafamilia">
+          <End Type="Database1Model.linea" Role="linea" Multiplicity="1" />
+          <End Type="Database1Model.familia" Role="familia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="linea">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="familia">
+              <PropertyRef Name="linea_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+    <EntitySetMapping Name="lineas">
+      <EntityTypeMapping TypeName="IsTypeOf(Database1Model.linea)">
+        <MappingFragment StoreEntitySet="lineas">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="creado_el" ColumnName="creado_el" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="unidad_medida">
+      <EntityTypeMapping TypeName="IsTypeOf(Database1Model.unidad_medida)">
+        <MappingFragment StoreEntitySet="unidad_medida">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="creado_el" ColumnName="creado_el" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="familias">
+      <EntityTypeMapping TypeName="IsTypeOf(Database1Model.familia)">
+        <MappingFragment StoreEntitySet="familias">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="creado_el" ColumnName="creado_el" />
+          <ScalarProperty Name="linea_id" ColumnName="linea_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

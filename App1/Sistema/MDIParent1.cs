@@ -117,5 +117,13 @@ namespace Sistema
         {
 
         }
+
+        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formNuevoLinea childForm = new formNuevoLinea();
+            childForm.MdiParent = this;
+            childForm.Text = "Ventana " + childFormNumber++;
+            childForm.Show();
+        }
     }
 }

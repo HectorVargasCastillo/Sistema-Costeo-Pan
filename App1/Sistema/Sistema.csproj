@@ -58,6 +58,12 @@
     <Compile Include="familia.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="formNuevoLinea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevoLinea.Designer.cs">
+      <DependentUpon>formNuevoLinea.cs</DependentUpon>
+    </Compile>
     <Compile Include="formulario1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     <Compile Include="unidad_medida.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="formNuevoLinea.resx">
+      <DependentUpon>formNuevoLinea.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formulario1.resx">
       <DependentUpon>formulario1.cs</DependentUpon>
     </EmbeddedResource>

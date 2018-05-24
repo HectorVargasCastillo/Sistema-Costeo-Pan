@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="costeoModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="costeoModelStoreContainer">
+    <EntitySet Name="familia" EntityType="costeoModel.Store.familia" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="linea" EntityType="costeoModel.Store.linea" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="unidad_medidaSet" EntityType="costeoModel.Store.unidad_medidaSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_linea_familia" Association="costeoModel.Store.FK_linea_familia">
+      <End Role="familia" EntitySet="familia" />
+      <End Role="linea" EntitySet="linea" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="familia">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="nchar" Nullable="true" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="linea">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="nombre" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="familia_id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="unidad_medidaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_linea_familia">
+    <End Role="familia" Type="costeoModel.Store.familia" Multiplicity="0..1" />
+    <End Role="linea" Type="costeoModel.Store.linea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="familia">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="linea">
+        <PropertyRef Name="familia_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="costeoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="familia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="linea" Relationship="Self.FK_linea_familia" FromRole="familia" ToRole="linea" />
+        </EntityType>
+        <EntityType Name="linea">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="familia_id" Type="Int32" />
+          <NavigationProperty Name="familia" Relationship="Self.FK_linea_familia" FromRole="linea" ToRole="familia" />
+        </EntityType>
+        <Association Name="FK_linea_familia">
+          <End Role="familia" Type="Self.familia" Multiplicity="0..1" />
+          <End Role="linea" Type="Self.linea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="familia">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="linea">
+              <PropertyRef Name="familia_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="costeoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="familia" EntityType="Self.familia" />
+          <EntitySet Name="linea" EntityType="Self.linea" />
+          <AssociationSet Name="FK_linea_familia" Association="Self.FK_linea_familia">
+            <End Role="familia" EntitySet="familia" />
+            <End Role="linea" EntitySet="linea" />
+          </AssociationSet>
+          <EntitySet Name="unidad_medidaSet" EntityType="costeoModel.unidad_medida" />
+        </EntityContainer>
+        <EntityType Name="unidad_medida">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="costeoModelStoreContainer" CdmEntityContainer="costeoEntities">
+    <EntitySetMapping Name="familia">
+      <EntityTypeMapping TypeName="IsTypeOf(costeoModel.familia)">
+        <MappingFragment StoreEntitySet="familia">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="linea">
+      <EntityTypeMapping TypeName="IsTypeOf(costeoModel.linea)">
+        <MappingFragment StoreEntitySet="linea">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="familia_id" ColumnName="familia_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="unidad_medidaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(costeoModel.unidad_medida)">
+        <MappingFragment StoreEntitySet="unidad_medidaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

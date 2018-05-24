@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="462b052d5fb84216aaf0b222fdb4e161" Name="Diagram1">
+        <EntityTypeShape EntityType="costeoModel.familia" Width="1.5" PointX="1.625" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="costeoModel.linea" Width="1.5" PointX="4.5" PointY="0.625" IsExpanded="true" />
+        <AssociationConnector Association="costeoModel.FK_linea_familia" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="costeoModel.unidad_medida" Width="1.5" PointX="7" PointY="1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

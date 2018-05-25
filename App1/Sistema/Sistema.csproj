@@ -58,6 +58,24 @@
     <Compile Include="familia.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReporteDiario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReporteDiario.Designer.cs">
+      <DependentUpon>FormReporteDiario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReporteKilo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReporteKilo.Designer.cs">
+      <DependentUpon>FormReporteKilo.cs</DependentUpon>
+    </Compile>
     <Compile Include="formNuevoLinea.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,8 +120,17 @@
     <Compile Include="unidad_medida.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReporteDiario.resx">
+      <DependentUpon>FormReporteDiario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formNuevoLinea.resx">
       <DependentUpon>formNuevoLinea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReporteKilo.resx">
+      <DependentUpon>FormReporteKilo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formulario1.resx">
       <DependentUpon>formulario1.cs</DependentUpon>

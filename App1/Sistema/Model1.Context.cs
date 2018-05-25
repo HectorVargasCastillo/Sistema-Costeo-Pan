@@ -28,5 +28,6 @@ namespace Sistema
         public DbSet<familia> familia { get; set; }
         public DbSet<linea> linea { get; set; }
         public DbSet<unidad_medida> unidad_medidaSet { get; set; }
+        public DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

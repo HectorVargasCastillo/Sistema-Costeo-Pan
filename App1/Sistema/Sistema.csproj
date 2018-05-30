@@ -58,6 +58,24 @@
     <Compile Include="familia.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormFamilia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFamilia.Designer.cs">
+      <DependentUpon>FormFamilia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormIngCosto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIngCosto.Designer.cs">
+      <DependentUpon>FormIngCosto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormIngPrecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIngPrecio.Designer.cs">
+      <DependentUpon>FormIngPrecio.cs</DependentUpon>
+    </Compile>
     <Compile Include="formNuevoLinea.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +87,12 @@
     </Compile>
     <Compile Include="formulario1.Designer.cs">
       <DependentUpon>formulario1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUniMed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUniMed.Designer.cs">
+      <DependentUpon>FormUniMed.cs</DependentUpon>
     </Compile>
     <Compile Include="linea.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -99,11 +123,23 @@
     <Compile Include="unidad_medida.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormFamilia.resx">
+      <DependentUpon>FormFamilia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIngCosto.resx">
+      <DependentUpon>FormIngCosto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIngPrecio.resx">
+      <DependentUpon>FormIngPrecio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formNuevoLinea.resx">
       <DependentUpon>formNuevoLinea.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formulario1.resx">
       <DependentUpon>formulario1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUniMed.resx">
+      <DependentUpon>FormUniMed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIParent1.resx">
       <DependentUpon>MDIParent1.cs</DependentUpon>

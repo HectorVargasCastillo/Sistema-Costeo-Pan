@@ -9,6 +9,7 @@
         <EntityTypeShape EntityType="costeoModel.linea" Width="1.5" PointX="4.5" PointY="0.625" IsExpanded="true" />
         <AssociationConnector Association="costeoModel.FK_linea_familia" ManuallyRouted="false" />
         <EntityTypeShape EntityType="costeoModel.unidad_medida" Width="1.5" PointX="7" PointY="1" />
+        <EntityTypeShape EntityType="costeoModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

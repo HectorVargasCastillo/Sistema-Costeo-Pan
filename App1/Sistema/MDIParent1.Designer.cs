@@ -72,7 +72,9 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuEjemploToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formulario1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.formulario2ListarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lineaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -85,9 +87,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.mantenedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lineaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -438,8 +437,7 @@
             // menuEjemploToolStripMenuItem
             // 
             this.menuEjemploToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.formulario1ToolStripMenuItem,
-            this.formulario2ListarToolStripMenuItem});
+            this.formulario1ToolStripMenuItem});
             this.menuEjemploToolStripMenuItem.Name = "menuEjemploToolStripMenuItem";
             this.menuEjemploToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
             this.menuEjemploToolStripMenuItem.Text = "Menu Ejemplo";
@@ -447,16 +445,32 @@
             // formulario1ToolStripMenuItem
             // 
             this.formulario1ToolStripMenuItem.Name = "formulario1ToolStripMenuItem";
-            this.formulario1ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.formulario1ToolStripMenuItem.Text = "Formulario 1 Insertar";
+            this.formulario1ToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.formulario1ToolStripMenuItem.Text = "Formulario 1 Ejemplo";
             this.formulario1ToolStripMenuItem.Click += new System.EventHandler(this.formulario1ToolStripMenuItem_Click);
             // 
-            // formulario2ListarToolStripMenuItem
+            // mantenedoresToolStripMenuItem
             // 
-            this.formulario2ListarToolStripMenuItem.Name = "formulario2ListarToolStripMenuItem";
-            this.formulario2ListarToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.formulario2ListarToolStripMenuItem.Text = "Formulario 2 Listar";
-            this.formulario2ListarToolStripMenuItem.Click += new System.EventHandler(this.formulario2ListarToolStripMenuItem_Click);
+            this.mantenedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lineaToolStripMenuItem});
+            this.mantenedoresToolStripMenuItem.Name = "mantenedoresToolStripMenuItem";
+            this.mantenedoresToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.mantenedoresToolStripMenuItem.Text = "Mantenedores";
+            // 
+            // lineaToolStripMenuItem
+            // 
+            this.lineaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoToolStripMenuItem});
+            this.lineaToolStripMenuItem.Name = "lineaToolStripMenuItem";
+            this.lineaToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.lineaToolStripMenuItem.Text = "Linea";
+            // 
+            // nuevoToolStripMenuItem
+            // 
+            this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.nuevoToolStripMenuItem.Text = "Nuevo";
+            this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // toolStrip
             // 
@@ -557,29 +571,6 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // mantenedoresToolStripMenuItem
-            // 
-            this.mantenedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lineaToolStripMenuItem});
-            this.mantenedoresToolStripMenuItem.Name = "mantenedoresToolStripMenuItem";
-            this.mantenedoresToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
-            this.mantenedoresToolStripMenuItem.Text = "Mantenedores";
-            // 
-            // lineaToolStripMenuItem
-            // 
-            this.lineaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevoToolStripMenuItem});
-            this.lineaToolStripMenuItem.Name = "lineaToolStripMenuItem";
-            this.lineaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.lineaToolStripMenuItem.Text = "Linea";
-            // 
-            // nuevoToolStripMenuItem
-            // 
-            this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.nuevoToolStripMenuItem.Text = "Nuevo";
-            this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
-            // 
             // MDIParent1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -659,7 +650,6 @@
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem menuEjemploToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem formulario1ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem formulario2ListarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lineaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;

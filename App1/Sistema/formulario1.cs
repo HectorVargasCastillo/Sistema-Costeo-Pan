@@ -34,6 +34,7 @@ namespace Sistema
 
         }
 
+
         private void bt_cargar_combo_Click(object sender, EventArgs e)
         {
             costeoEntities db = new costeoEntities(); 
@@ -72,7 +73,7 @@ namespace Sistema
             bi.DataSource = db.unidad_medidaSet.ToList();
             gv_todo.DataSource = bi;
             gv_todo.Refresh();
-          
+
         }
     }
 }

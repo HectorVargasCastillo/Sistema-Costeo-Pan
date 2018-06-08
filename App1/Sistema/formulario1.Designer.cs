@@ -31,6 +31,7 @@
             this.bt_guardar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_nombre = new System.Windows.Forms.TextBox();
+
             this.cmb_unidad_medida = new System.Windows.Forms.ComboBox();
             this.bt_cargar_combo = new System.Windows.Forms.Button();
             this.bt_cargar_editar = new System.Windows.Forms.Button();
@@ -40,11 +41,14 @@
             this.gv_todo = new System.Windows.Forms.DataGridView();
             this.bt_cargar_gv = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gv_todo)).BeginInit();
+
             this.SuspendLayout();
             // 
             // bt_guardar
             // 
+
             this.bt_guardar.Location = new System.Drawing.Point(333, 46);
+
             this.bt_guardar.Name = "bt_guardar";
             this.bt_guardar.Size = new System.Drawing.Size(75, 23);
             this.bt_guardar.TabIndex = 0;
@@ -55,19 +59,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 57);
+            this.label1.Location = new System.Drawing.Point(176, 132);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Nombre";
+            this.label1.Text = "Descripcion";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tb_nombre
             // 
-            this.tb_nombre.Location = new System.Drawing.Point(116, 49);
+            this.tb_nombre.Location = new System.Drawing.Point(279, 125);
             this.tb_nombre.Name = "tb_nombre";
-            this.tb_nombre.Size = new System.Drawing.Size(100, 20);
+            this.tb_nombre.Size = new System.Drawing.Size(190, 20);
             this.tb_nombre.TabIndex = 2;
             // 
+
             // cmb_unidad_medida
             // 
             this.cmb_unidad_medida.FormattingEnabled = true;
@@ -138,12 +144,14 @@
             this.bt_cargar_gv.Text = "Cargar GridView";
             this.bt_cargar_gv.UseVisualStyleBackColor = true;
             this.bt_cargar_gv.Click += new System.EventHandler(this.bt_cargar_gv_Click);
+
             // 
             // formulario1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+
             this.Controls.Add(this.bt_cargar_gv);
             this.Controls.Add(this.gv_todo);
             this.Controls.Add(this.tb_edit_id);
@@ -152,12 +160,15 @@
             this.Controls.Add(this.bt_cargar_editar);
             this.Controls.Add(this.bt_cargar_combo);
             this.Controls.Add(this.cmb_unidad_medida);
+
             this.Controls.Add(this.tb_nombre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bt_guardar);
             this.Name = "formulario1";
+
             this.Text = "formulario1";
             ((System.ComponentModel.ISupportInitialize)(this.gv_todo)).EndInit();
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,6 +179,7 @@
         private System.Windows.Forms.Button bt_guardar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_nombre;
+
         private System.Windows.Forms.ComboBox cmb_unidad_medida;
         private System.Windows.Forms.Button bt_cargar_combo;
         private System.Windows.Forms.Button bt_cargar_editar;
@@ -176,5 +188,6 @@
         private System.Windows.Forms.TextBox tb_edit_id;
         private System.Windows.Forms.DataGridView gv_todo;
         private System.Windows.Forms.Button bt_cargar_gv;
+
     }
 }

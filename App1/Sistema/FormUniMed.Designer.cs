@@ -28,31 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lb_codigo = new System.Windows.Forms.Label();
-            this.lb_descripcion = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tb_codigo = new System.Windows.Forms.TextBox();
             this.tb_descripcion = new System.Windows.Forms.TextBox();
             this.bt_guardar = new System.Windows.Forms.Button();
-            this.lb_titulo = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lb_codigo
+            // label1
             // 
-            this.lb_codigo.AutoSize = true;
-            this.lb_codigo.Location = new System.Drawing.Point(206, 112);
-            this.lb_codigo.Name = "lb_codigo";
-            this.lb_codigo.Size = new System.Drawing.Size(40, 13);
-            this.lb_codigo.TabIndex = 0;
-            this.lb_codigo.Text = "Codigo";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(206, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Codigo";
             // 
-            // lb_descripcion
+            // label2
             // 
-            this.lb_descripcion.AutoSize = true;
-            this.lb_descripcion.Location = new System.Drawing.Point(206, 160);
-            this.lb_descripcion.Name = "lb_descripcion";
-            this.lb_descripcion.Size = new System.Drawing.Size(63, 13);
-            this.lb_descripcion.TabIndex = 1;
-            this.lb_descripcion.Text = "Descripcion";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(206, 160);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Descripcion";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // tb_codigo
             // 
@@ -80,27 +81,27 @@
             this.bt_guardar.UseVisualStyleBackColor = true;
             this.bt_guardar.Click += new System.EventHandler(this.bt_guardar_Click);
             // 
-            // lb_titulo
+            // label3
             // 
-            this.lb_titulo.AutoSize = true;
-            this.lb_titulo.Location = new System.Drawing.Point(282, 48);
-            this.lb_titulo.Name = "lb_titulo";
-            this.lb_titulo.Size = new System.Drawing.Size(132, 13);
-            this.lb_titulo.TabIndex = 5;
-            this.lb_titulo.Text = "Ingreso Unidad de Medida";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(282, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(132, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Ingreso Unidad de Medida";
             // 
-            // FormUniMed
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lb_titulo);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.bt_guardar);
             this.Controls.Add(this.tb_descripcion);
             this.Controls.Add(this.tb_codigo);
-            this.Controls.Add(this.lb_descripcion);
-            this.Controls.Add(this.lb_codigo);
-            this.Name = "FormUniMed";
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Name = "Form1";
             this.Text = "Ingreso Unidad de Medida";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -109,11 +110,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lb_codigo;
-        private System.Windows.Forms.Label lb_descripcion;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tb_codigo;
         private System.Windows.Forms.TextBox tb_descripcion;
         private System.Windows.Forms.Button bt_guardar;
-        private System.Windows.Forms.Label lb_titulo;
+        private System.Windows.Forms.Label label3;
     }
 }

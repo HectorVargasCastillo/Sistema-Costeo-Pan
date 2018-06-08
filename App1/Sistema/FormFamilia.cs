@@ -17,25 +17,12 @@ namespace Sistema
             InitializeComponent();
         }
 
-
-        private void cm_linea_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            costeoEntities db = new costeoEntities();
-            var lista = db.linea.ToList();
-            if (lista.Count > 0)
-            {
-                cm_linea.DataSource = lista;
-                cm_linea.DisplayMember = "nombre";
-                cm_linea.ValueMember = "id";
-            }
-        }
-
-        private void tb_descripcion_TextChanged(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void bt_grabar_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

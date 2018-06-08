@@ -16,10 +16,5 @@ namespace Sistema
         {
             InitializeComponent();
         }
-
-        private void tb_codigo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -64,7 +64,6 @@
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Descripcion";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tb_nombre
             // 

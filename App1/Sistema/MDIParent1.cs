@@ -125,5 +125,13 @@ namespace Sistema
             childForm.Text = "Ventana " + childFormNumber++;
             childForm.Show();
         }
+
+        private void FormFamilia_Click(object sender, EventArgs e)
+        {
+            FormFamilia childForm = new FormFamilia();
+            childForm.MdiParent = this;
+            childForm.Show();
+
+        }
     }
 }

@@ -28,80 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lb_codigo = new System.Windows.Forms.Label();
+            this.lb_descripcion = new System.Windows.Forms.Label();
+            this.cm_linea = new System.Windows.Forms.ComboBox();
+            this.lb_titulo = new System.Windows.Forms.Label();
+            this.tb_descripcion = new System.Windows.Forms.TextBox();
+            this.bt_grabar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lb_codigo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(229, 111);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo Linea";
+            this.lb_codigo.AutoSize = true;
+            this.lb_codigo.Location = new System.Drawing.Point(229, 111);
+            this.lb_codigo.Name = "lb_codigo";
+            this.lb_codigo.Size = new System.Drawing.Size(84, 13);
+            this.lb_codigo.TabIndex = 0;
+            this.lb_codigo.Text = "Linea Productos";
             // 
-            // label2
+            // lb_descripcion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(229, 156);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Descripcion Familia";
+            this.lb_descripcion.AutoSize = true;
+            this.lb_descripcion.Location = new System.Drawing.Point(229, 156);
+            this.lb_descripcion.Name = "lb_descripcion";
+            this.lb_descripcion.Size = new System.Drawing.Size(98, 13);
+            this.lb_descripcion.TabIndex = 1;
+            this.lb_descripcion.Text = "Descripcion Familia";
             // 
-            // textBox2
+            // cm_linea
             // 
-            this.textBox2.Location = new System.Drawing.Point(363, 156);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(241, 20);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.cm_linea.FormattingEnabled = true;
+            this.cm_linea.Location = new System.Drawing.Point(363, 108);
+            this.cm_linea.Name = "cm_linea";
+            this.cm_linea.Size = new System.Drawing.Size(121, 21);
+            this.cm_linea.TabIndex = 4;
+            this.cm_linea.SelectedIndexChanged += new System.EventHandler(this.cm_linea_SelectedIndexChanged);
             // 
-            // comboBox1
+            // lb_titulo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(363, 108);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
+            this.lb_titulo.AutoSize = true;
+            this.lb_titulo.Location = new System.Drawing.Point(318, 53);
+            this.lb_titulo.Name = "lb_titulo";
+            this.lb_titulo.Size = new System.Drawing.Size(128, 13);
+            this.lb_titulo.TabIndex = 6;
+            this.lb_titulo.Text = "Ingreso Familia Productos";
             // 
-            // button1
+            // tb_descripcion
             // 
-            this.button1.Location = new System.Drawing.Point(363, 231);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.tb_descripcion.Location = new System.Drawing.Point(363, 156);
+            this.tb_descripcion.Name = "tb_descripcion";
+            this.tb_descripcion.Size = new System.Drawing.Size(221, 20);
+            this.tb_descripcion.TabIndex = 7;
+            this.tb_descripcion.TextChanged += new System.EventHandler(this.tb_descripcion_TextChanged);
             // 
-            // label3
+            // bt_grabar
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(318, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Ingreso Familia Articulo";
+            this.bt_grabar.Location = new System.Drawing.Point(363, 224);
+            this.bt_grabar.Name = "bt_grabar";
+            this.bt_grabar.Size = new System.Drawing.Size(75, 23);
+            this.bt_grabar.TabIndex = 8;
+            this.bt_grabar.Text = "Grabar";
+            this.bt_grabar.UseVisualStyleBackColor = true;
+            this.bt_grabar.Click += new System.EventHandler(this.bt_grabar_Click);
             // 
             // FormFamilia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.bt_grabar);
+            this.Controls.Add(this.tb_descripcion);
+            this.Controls.Add(this.lb_titulo);
+            this.Controls.Add(this.cm_linea);
+            this.Controls.Add(this.lb_descripcion);
+            this.Controls.Add(this.lb_codigo);
             this.Name = "FormFamilia";
-            this.Text = "Ingreso Familia Articulo";
+            this.Text = "Ingreso Familia Productos";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,11 +110,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lb_codigo;
+        private System.Windows.Forms.Label lb_descripcion;
+        private System.Windows.Forms.ComboBox cm_linea;
+        private System.Windows.Forms.Label lb_titulo;
+        private System.Windows.Forms.TextBox tb_descripcion;
+        private System.Windows.Forms.Button bt_grabar;
     }
 }

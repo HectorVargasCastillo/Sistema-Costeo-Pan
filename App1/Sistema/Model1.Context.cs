@@ -25,9 +25,15 @@ namespace Sistema
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<costo> costo { get; set; }
+        public DbSet<detalle_receta> detalle_receta { get; set; }
         public DbSet<familia> familia { get; set; }
         public DbSet<linea> linea { get; set; }
-        public DbSet<unidad_medida> unidad_medidaSet { get; set; }
-        public DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public DbSet<precio_venta> precio_venta { get; set; }
+        public DbSet<produccion_diaria> produccion_diaria { get; set; }
+        public DbSet<producto> producto { get; set; }
+        public DbSet<receta> receta { get; set; }
+        public DbSet<unidad_medida> unidad_medida { get; set; }
+        public DbSet<usuario> usuario { get; set; }
     }
 }

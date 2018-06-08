@@ -14,10 +14,17 @@ namespace Sistema
     
     public partial class linea
     {
-        public string id { get; set; }
-        public string nombre { get; set; }
-        public Nullable<int> familia_id { get; set; }
+        public linea()
+        {
+            this.familia = new HashSet<familia>();
+        }
     
-        public virtual familia familia { get; set; }
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public System.DateTime creado_el { get; set; }
+        public Nullable<System.DateTime> modificado_el { get; set; }
+        public Nullable<System.DateTime> eliminado_el { get; set; }
+    
+        public virtual ICollection<familia> familia { get; set; }
     }
 }

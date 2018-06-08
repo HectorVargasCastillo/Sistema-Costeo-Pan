@@ -12,12 +12,13 @@ namespace Sistema
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class usuario
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public string password { get; set; }
+        public System.DateTime creado_el { get; set; }
+        public Nullable<System.DateTime> modificado_el { get; set; }
+        public Nullable<System.DateTime> eliminado_el { get; set; }
     }
 }

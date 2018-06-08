@@ -16,12 +16,17 @@ namespace Sistema
     {
         public familia()
         {
-            this.linea = new HashSet<linea>();
+            this.producto = new HashSet<producto>();
         }
     
         public int id { get; set; }
         public string nombre { get; set; }
+        public int linea_id { get; set; }
+        public System.DateTime creado_el { get; set; }
+        public Nullable<System.DateTime> modificado_el { get; set; }
+        public Nullable<System.DateTime> eliminado_el { get; set; }
     
-        public virtual ICollection<linea> linea { get; set; }
+        public virtual linea linea { get; set; }
+        public virtual ICollection<producto> producto { get; set; }
     }
 }

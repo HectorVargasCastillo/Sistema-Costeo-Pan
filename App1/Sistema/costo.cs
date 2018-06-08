@@ -12,20 +12,17 @@ namespace Sistema
     using System;
     using System.Collections.Generic;
     
-    public partial class unidad_medida
+    public partial class costo
     {
-        public unidad_medida()
-        {
-            this.producto = new HashSet<producto>();
-        }
-    
         public int id { get; set; }
-        public string codigo { get; set; }
-        public string descripcion { get; set; }
+        public System.DateTime fecha { get; set; }
+        public int valor { get; set; }
+        public int es_actual { get; set; }
+        public int producto_id { get; set; }
         public System.DateTime creado_el { get; set; }
         public Nullable<System.DateTime> modificado_el { get; set; }
         public Nullable<System.DateTime> eliminado_el { get; set; }
     
-        public virtual ICollection<producto> producto { get; set; }
+        public virtual producto producto { get; set; }
     }
 }

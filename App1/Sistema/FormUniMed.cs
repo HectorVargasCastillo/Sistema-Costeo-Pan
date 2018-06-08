@@ -10,12 +10,14 @@ using System.Windows.Forms;
 
 namespace Sistema
 {
-    public partial class Form1 : Form
+    public partial class FormUniMed : Form
     {
-        public Form1()
+        public FormUniMed()
         {
             InitializeComponent();
         }
+
+       
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -34,6 +36,11 @@ namespace Sistema
         }
 
         private void tb_descripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormUniMed_Load(object sender, EventArgs e)
         {
 
         }

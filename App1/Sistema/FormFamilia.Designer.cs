@@ -1,6 +1,6 @@
 ﻿namespace Sistema
 {
-    partial class Form2
+    partial class FormFamilia
     {
         /// <summary>
         /// Required designer variable.
@@ -89,7 +89,7 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Ingreso Familia Articulo";
             // 
-            // Form2
+            // FormFamilia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -100,7 +100,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form2";
+            this.Name = "FormFamilia";
             this.Text = "Ingreso Familia Articulo";
             this.ResumeLayout(false);
             this.PerformLayout();

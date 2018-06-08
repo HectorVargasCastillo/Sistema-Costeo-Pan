@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sistema
 {
-    public partial class Form3 : Form
+    public partial class FormIngCosto : Form
     {
-        public Form3()
+        public FormIngCosto()
         {
             InitializeComponent();
         }

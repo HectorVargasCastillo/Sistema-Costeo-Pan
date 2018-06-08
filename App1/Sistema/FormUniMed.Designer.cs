@@ -1,6 +1,6 @@
 ﻿namespace Sistema
 {
-    partial class Form1
+    partial class FormUniMed
     {
         /// <summary>
         /// Required designer variable.

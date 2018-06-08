@@ -1,6 +1,6 @@
 ﻿namespace Sistema
 {
-    partial class Form3
+    partial class FormIngCosto
     {
         /// <summary>
         /// Required designer variable.
@@ -229,7 +229,7 @@
             this.PrecioCosto.HeaderText = "Precio Costo";
             this.PrecioCosto.Name = "PrecioCosto";
             // 
-            // Form3
+            // FormIngCosto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -254,7 +254,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form3";
+            this.Name = "FormIngCosto";
             this.Text = "Ingreso Costos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

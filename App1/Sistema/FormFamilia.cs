@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sistema
 {
-    public partial class Form2 : Form
+    public partial class FormFamilia : Form
     {
-        public Form2()
+        public FormFamilia()
         {
             InitializeComponent();
         }

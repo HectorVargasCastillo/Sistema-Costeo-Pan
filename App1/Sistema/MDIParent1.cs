@@ -126,6 +126,14 @@ namespace Sistema
             childForm.Show();
         }
 
+
+        private void FormFamilia_Click(object sender, EventArgs e)
+        {
+            FormFamilia childForm = new FormFamilia();
+            childForm.MdiParent = this;
+            childForm.Show();
+
+
         private void menuEjemploToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -137,6 +145,7 @@ namespace Sistema
             childForm.MdiParent = this;
             childForm.Text = "Ventana " + childFormNumber++;
             childForm.Show();
+
         }
     }
 }

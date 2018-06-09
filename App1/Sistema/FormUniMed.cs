@@ -17,19 +17,6 @@ namespace Sistema
             InitializeComponent();
         }
 
-       
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bt_guardar_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void tb_codigo_TextChanged(object sender, EventArgs e)
         {
 
@@ -40,9 +27,12 @@ namespace Sistema
 
         }
 
-        private void FormUniMed_Load(object sender, EventArgs e)
+        private void bt_guardar_Click(object sender, EventArgs e)
         {
 
+
         }
+
+
     }
 }

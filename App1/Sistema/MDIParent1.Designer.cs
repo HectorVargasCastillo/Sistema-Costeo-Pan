@@ -87,6 +87,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.reporteDiarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -437,16 +438,18 @@
             // menuEjemploToolStripMenuItem
             // 
             this.menuEjemploToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.formulario1ToolStripMenuItem});
+            this.formulario1ToolStripMenuItem,
+            this.reporteDiarioToolStripMenuItem});
             this.menuEjemploToolStripMenuItem.Name = "menuEjemploToolStripMenuItem";
-            this.menuEjemploToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
-            this.menuEjemploToolStripMenuItem.Text = "Menu Ejemplo";
+            this.menuEjemploToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.menuEjemploToolStripMenuItem.Text = "Reporte";
+            this.menuEjemploToolStripMenuItem.Click += new System.EventHandler(this.menuEjemploToolStripMenuItem_Click);
             // 
             // formulario1ToolStripMenuItem
             // 
             this.formulario1ToolStripMenuItem.Name = "formulario1ToolStripMenuItem";
-            this.formulario1ToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.formulario1ToolStripMenuItem.Text = "Formulario 1 Ejemplo";
+            this.formulario1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.formulario1ToolStripMenuItem.Text = "Reporte por Kilo";
             this.formulario1ToolStripMenuItem.Click += new System.EventHandler(this.formulario1ToolStripMenuItem_Click);
             // 
             // mantenedoresToolStripMenuItem
@@ -571,6 +574,13 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
+            // reporteDiarioToolStripMenuItem
+            // 
+            this.reporteDiarioToolStripMenuItem.Name = "reporteDiarioToolStripMenuItem";
+            this.reporteDiarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reporteDiarioToolStripMenuItem.Text = "Reporte Diario";
+            this.reporteDiarioToolStripMenuItem.Click += new System.EventHandler(this.reporteDiarioToolStripMenuItem_Click);
+            // 
             // MDIParent1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -653,6 +663,7 @@
         private System.Windows.Forms.ToolStripMenuItem mantenedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lineaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDiarioToolStripMenuItem;
     }
 }
 

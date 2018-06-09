@@ -26,5 +26,10 @@ namespace Sistema
         {
 
         }
+
+        private void bt_mostrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -133,7 +133,7 @@ namespace Sistema
             childForm.MdiParent = this;
             childForm.Show();
 
-
+        }
         private void menuEjemploToolStripMenuItem_Click(object sender, EventArgs e)
         {
 

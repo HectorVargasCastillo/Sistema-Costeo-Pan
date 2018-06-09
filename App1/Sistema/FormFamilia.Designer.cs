@@ -56,6 +56,7 @@
             // 
             // cm_linea
             // 
+            this.cm_linea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cm_linea.FormattingEnabled = true;
             this.cm_linea.Location = new System.Drawing.Point(363, 108);
             this.cm_linea.Name = "cm_linea";

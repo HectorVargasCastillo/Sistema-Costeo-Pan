@@ -15,10 +15,12 @@ namespace Sistema
         public FormFamilia()
         {
             InitializeComponent();
+            listaLineas();
+
         }
 
+        public void listaLineas()
 
-        private void cm_linea_SelectedIndexChanged(object sender, EventArgs e)
         {
             costeoEntities db = new costeoEntities();
             var lista = db.linea.ToList();
@@ -28,6 +30,12 @@ namespace Sistema
                 cm_linea.DisplayMember = "nombre";
                 cm_linea.ValueMember = "id";
             }
+
+        }
+
+        private void cm_linea_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
 
         private void tb_descripcion_TextChanged(object sender, EventArgs e)

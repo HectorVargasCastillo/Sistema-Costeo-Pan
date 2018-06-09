@@ -30,16 +30,16 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_mostrar = new System.Windows.Forms.Button();
+            this.bt_mostrar = new System.Windows.Forms.Button();
             this.tp_inicio = new System.Windows.Forms.DateTimePicker();
             this.tp_fin = new System.Windows.Forms.DateTimePicker();
-            this.dgv_reporte = new System.Windows.Forms.DataGridView();
+            this.dg_reporte = new System.Windows.Forms.DataGridView();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio_costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rentabilidad_porcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rentabilidad_moneda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_reporte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_reporte)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -61,14 +61,15 @@
             this.label2.Text = "Fecha final";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // btn_mostrar
+            // bt_mostrar
             // 
-            this.btn_mostrar.Location = new System.Drawing.Point(297, 154);
-            this.btn_mostrar.Name = "btn_mostrar";
-            this.btn_mostrar.Size = new System.Drawing.Size(100, 23);
-            this.btn_mostrar.TabIndex = 4;
-            this.btn_mostrar.Text = "Mostrar Reporte";
-            this.btn_mostrar.UseVisualStyleBackColor = true;
+            this.bt_mostrar.Location = new System.Drawing.Point(297, 154);
+            this.bt_mostrar.Name = "bt_mostrar";
+            this.bt_mostrar.Size = new System.Drawing.Size(100, 23);
+            this.bt_mostrar.TabIndex = 4;
+            this.bt_mostrar.Text = "Mostrar Reporte";
+            this.bt_mostrar.UseVisualStyleBackColor = true;
+            this.bt_mostrar.Click += new System.EventHandler(this.bt_mostrar_Click);
             // 
             // tp_inicio
             // 
@@ -84,20 +85,20 @@
             this.tp_fin.Size = new System.Drawing.Size(200, 20);
             this.tp_fin.TabIndex = 6;
             // 
-            // dgv_reporte
+            // dg_reporte
             // 
-            this.dgv_reporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_reporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dg_reporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_reporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Fecha,
             this.precio_costo,
             this.precio_venta,
             this.rentabilidad_porcentaje,
             this.rentabilidad_moneda});
-            this.dgv_reporte.Location = new System.Drawing.Point(113, 214);
-            this.dgv_reporte.Name = "dgv_reporte";
-            this.dgv_reporte.Size = new System.Drawing.Size(543, 150);
-            this.dgv_reporte.TabIndex = 7;
-            this.dgv_reporte.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dg_reporte.Location = new System.Drawing.Point(113, 214);
+            this.dg_reporte.Name = "dg_reporte";
+            this.dg_reporte.Size = new System.Drawing.Size(543, 150);
+            this.dg_reporte.TabIndex = 7;
+            this.dg_reporte.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Fecha
             // 
@@ -129,15 +130,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dgv_reporte);
+            this.Controls.Add(this.dg_reporte);
             this.Controls.Add(this.tp_fin);
             this.Controls.Add(this.tp_inicio);
-            this.Controls.Add(this.btn_mostrar);
+            this.Controls.Add(this.bt_mostrar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormReporteDiario";
             this.Text = "Reporte Diario";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_reporte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_reporte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,10 +147,10 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btn_mostrar;
+        private System.Windows.Forms.Button bt_mostrar;
         private System.Windows.Forms.DateTimePicker tp_inicio;
         private System.Windows.Forms.DateTimePicker tp_fin;
-        private System.Windows.Forms.DataGridView dgv_reporte;
+        private System.Windows.Forms.DataGridView dg_reporte;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_costo;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_venta;

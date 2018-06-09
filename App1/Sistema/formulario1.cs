@@ -19,7 +19,7 @@ namespace Sistema
 
         private void bt_guardar_Click(object sender, EventArgs e)
         {
-            if (tb_nombre.Text!= "")
+           if (tb_nombre.Text!= "")
             {
                 unidad_medida um = new unidad_medida();
                 um.descripcion = tb_nombre.Text;
@@ -28,8 +28,8 @@ namespace Sistema
                 db.unidad_medida.Add(um);
                 db.SaveChanges();
                 tb_nombre.Text = "";
-            }
             
+            }
 
 
         }
@@ -37,8 +37,10 @@ namespace Sistema
 
         private void bt_cargar_combo_Click(object sender, EventArgs e)
         {
+
             costeoEntities db = new costeoEntities(); 
             var lista = db.unidad_medida.ToList();
+
 
             if (lista.Count > 0)
             {
@@ -61,9 +63,11 @@ namespace Sistema
         {
             costeoEntities db = new costeoEntities();
             unidad_medida um = new unidad_medida();
+
             um = db.unidad_medida.Find(Convert.ToInt16(tb_edit_id.Text));
             um.descripcion = tb_edit_nombre.Text;
             db.SaveChanges();
+
         }
 
         private void bt_cargar_gv_Click(object sender, EventArgs e)

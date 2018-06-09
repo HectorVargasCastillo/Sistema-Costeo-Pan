@@ -106,8 +106,8 @@ namespace Sistema
 
         private void formulario1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form childForm = new formulario1();
-            childForm = new formulario1();
+            Form childForm = new FormReporteKilo();
+            childForm = new FormReporteKilo();
             childForm.MdiParent = this;
             childForm.Text = "Ventana " + childFormNumber++;
             childForm.Show();
@@ -126,10 +126,24 @@ namespace Sistema
             childForm.Show();
         }
 
+
         private void FormFamilia_Click(object sender, EventArgs e)
         {
             FormFamilia childForm = new FormFamilia();
             childForm.MdiParent = this;
+            childForm.Show();
+
+
+        private void menuEjemploToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reporteDiarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormReporteDiario childForm = new FormReporteDiario();
+            childForm.MdiParent = this;
+            childForm.Text = "Ventana " + childFormNumber++;
             childForm.Show();
 
         }

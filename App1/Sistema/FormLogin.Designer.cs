@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_ingresar = new System.Windows.Forms.Button();
+            this.bt_ingresar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tb_usuario = new System.Windows.Forms.TextBox();
             this.tb_pass = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // btn_ingresar
+            // bt_ingresar
             // 
-            this.btn_ingresar.Location = new System.Drawing.Point(385, 219);
-            this.btn_ingresar.Name = "btn_ingresar";
-            this.btn_ingresar.Size = new System.Drawing.Size(75, 23);
-            this.btn_ingresar.TabIndex = 0;
-            this.btn_ingresar.Text = "Ingresar";
-            this.btn_ingresar.UseVisualStyleBackColor = true;
+            this.bt_ingresar.Location = new System.Drawing.Point(385, 219);
+            this.bt_ingresar.Name = "bt_ingresar";
+            this.bt_ingresar.Size = new System.Drawing.Size(75, 23);
+            this.bt_ingresar.TabIndex = 0;
+            this.bt_ingresar.Text = "Ingresar";
+            this.bt_ingresar.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -85,7 +85,7 @@
             this.Controls.Add(this.tb_usuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_ingresar);
+            this.Controls.Add(this.bt_ingresar);
             this.Name = "FormLogin";
             this.Text = "Login";
             this.ResumeLayout(false);
@@ -95,7 +95,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_ingresar;
+        private System.Windows.Forms.Button bt_ingresar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tb_usuario;

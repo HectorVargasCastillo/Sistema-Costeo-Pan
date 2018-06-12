@@ -16,5 +16,10 @@ namespace Sistema
         {
             InitializeComponent();
         }
+
+        private void cmb_familia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

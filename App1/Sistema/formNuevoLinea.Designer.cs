@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.bt_guardar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.nombre = new System.Windows.Forms.Label();
             this.cmb_familia = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tb_nombre = new System.Windows.Forms.TextBox();
@@ -44,14 +44,14 @@
             this.bt_guardar.Text = "Guardar Familia";
             this.bt_guardar.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // nombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nombre";
+            this.nombre.AutoSize = true;
+            this.nombre.Location = new System.Drawing.Point(42, 38);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(44, 13);
+            this.nombre.TabIndex = 1;
+            this.nombre.Text = "Nombre";
             // 
             // cmb_familia
             // 
@@ -60,6 +60,7 @@
             this.cmb_familia.Name = "cmb_familia";
             this.cmb_familia.Size = new System.Drawing.Size(121, 21);
             this.cmb_familia.TabIndex = 2;
+            this.cmb_familia.SelectedIndexChanged += new System.EventHandler(this.cmb_familia_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -85,7 +86,7 @@
             this.Controls.Add(this.tb_nombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmb_familia);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.nombre);
             this.Controls.Add(this.bt_guardar);
             this.Name = "formNuevoLinea";
             this.Text = "formNuevoLinea";
@@ -97,7 +98,7 @@
         #endregion
 
         private System.Windows.Forms.Button bt_guardar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label nombre;
         private System.Windows.Forms.ComboBox cmb_familia;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tb_nombre;

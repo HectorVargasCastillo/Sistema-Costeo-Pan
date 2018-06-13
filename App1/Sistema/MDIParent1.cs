@@ -161,5 +161,12 @@ namespace Sistema
             childForm.MdiParent = this;
             childForm.Show();
         }
+
+        private void FormIngPrecio_Click(object sender, EventArgs e)
+        {
+            FormIngPrecio childForm = new FormIngPrecio();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
     }
 }

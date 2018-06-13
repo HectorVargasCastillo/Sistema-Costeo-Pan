@@ -48,8 +48,6 @@
             this.bt_buscar = new System.Windows.Forms.Button();
             this.bt_guardar = new System.Windows.Forms.Button();
             this.dg_mostrar = new System.Windows.Forms.DataGridView();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dg_mostrar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,12 +138,13 @@
             this.tb_codigo.Name = "tb_codigo";
             this.tb_codigo.Size = new System.Drawing.Size(100, 20);
             this.tb_codigo.TabIndex = 9;
-            this.tb_codigo.TextChanged += new System.EventHandler(this.tb_codigo_TextChanged);
+            this.tb_codigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_codigo_KeyPress);
             // 
             // tb_nombre
             // 
             this.tb_nombre.Location = new System.Drawing.Point(300, 90);
             this.tb_nombre.Name = "tb_nombre";
+            this.tb_nombre.ReadOnly = true;
             this.tb_nombre.Size = new System.Drawing.Size(266, 20);
             this.tb_nombre.TabIndex = 10;
             // 
@@ -153,6 +152,7 @@
             // 
             this.tb_unidad.Location = new System.Drawing.Point(300, 118);
             this.tb_unidad.Name = "tb_unidad";
+            this.tb_unidad.ReadOnly = true;
             this.tb_unidad.Size = new System.Drawing.Size(48, 20);
             this.tb_unidad.TabIndex = 11;
             // 
@@ -160,6 +160,7 @@
             // 
             this.tb_marca.Location = new System.Drawing.Point(300, 145);
             this.tb_marca.Name = "tb_marca";
+            this.tb_marca.ReadOnly = true;
             this.tb_marca.Size = new System.Drawing.Size(75, 20);
             this.tb_marca.TabIndex = 12;
             // 
@@ -167,6 +168,7 @@
             // 
             this.tb_formato.Location = new System.Drawing.Point(300, 172);
             this.tb_formato.Name = "tb_formato";
+            this.tb_formato.ReadOnly = true;
             this.tb_formato.Size = new System.Drawing.Size(48, 20);
             this.tb_formato.TabIndex = 13;
             // 
@@ -174,6 +176,7 @@
             // 
             this.tb_linea.Location = new System.Drawing.Point(300, 201);
             this.tb_linea.Name = "tb_linea";
+            this.tb_linea.ReadOnly = true;
             this.tb_linea.Size = new System.Drawing.Size(75, 20);
             this.tb_linea.TabIndex = 14;
             // 
@@ -181,6 +184,7 @@
             // 
             this.tb_familia.Location = new System.Drawing.Point(300, 232);
             this.tb_familia.Name = "tb_familia";
+            this.tb_familia.ReadOnly = true;
             this.tb_familia.Size = new System.Drawing.Size(75, 20);
             this.tb_familia.TabIndex = 15;
             // 
@@ -190,6 +194,7 @@
             this.tb_nuevo.Name = "tb_nuevo";
             this.tb_nuevo.Size = new System.Drawing.Size(100, 20);
             this.tb_nuevo.TabIndex = 16;
+            this.tb_nuevo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_nuevo_KeyPress);
             // 
             // bt_buscar
             // 
@@ -199,6 +204,7 @@
             this.bt_buscar.TabIndex = 17;
             this.bt_buscar.Text = "Buscar";
             this.bt_buscar.UseVisualStyleBackColor = true;
+            this.bt_buscar.Click += new System.EventHandler(this.bt_buscar_Click);
             // 
             // bt_guardar
             // 
@@ -208,33 +214,21 @@
             this.bt_guardar.TabIndex = 18;
             this.bt_guardar.Text = "Guardar";
             this.bt_guardar.UseVisualStyleBackColor = true;
+            this.bt_guardar.Click += new System.EventHandler(this.bt_guardar_Click);
             // 
             // dg_mostrar
             // 
             this.dg_mostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_mostrar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Fecha,
-            this.PrecioVenta});
-            this.dg_mostrar.Location = new System.Drawing.Point(300, 314);
+            this.dg_mostrar.Location = new System.Drawing.Point(140, 310);
             this.dg_mostrar.Name = "dg_mostrar";
-            this.dg_mostrar.Size = new System.Drawing.Size(240, 150);
+            this.dg_mostrar.Size = new System.Drawing.Size(472, 150);
             this.dg_mostrar.TabIndex = 19;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            // 
-            // PrecioVenta
-            // 
-            this.PrecioVenta.HeaderText = "Precio Venta";
-            this.PrecioVenta.Name = "PrecioVenta";
             // 
             // FormIngPrecio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 484);
+            this.ClientSize = new System.Drawing.Size(800, 504);
             this.Controls.Add(this.dg_mostrar);
             this.Controls.Add(this.bt_guardar);
             this.Controls.Add(this.bt_buscar);
@@ -285,7 +279,5 @@
         private System.Windows.Forms.Button bt_buscar;
         private System.Windows.Forms.Button bt_guardar;
         private System.Windows.Forms.DataGridView dg_mostrar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
     }
 }

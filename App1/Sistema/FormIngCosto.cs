@@ -37,19 +37,29 @@ namespace Sistema
                     }
                     else
                     {
-                        //MessageBox.Show("Mostrar Datos");
+                        //******MessageBox.Show("PressKey-Codigo-2");
                         costeoEntities db = new costeoEntities();
-                        var codigo_int = Convert.ToInt16(tb_codigo.Text);
-                        var producto = db.producto.FirstOrDefault(codigo => codigo.id == codigo_int);
+                        var codigo_int = Convert.ToInt64(tb_codigo.Text);
+                        var producto = db.producto.FirstOrDefault(codigo => codigo.codigo_barra == codigo_int);
 
                         if (producto != null)
                         {
+                    
+                            costeoEntities dbf = new costeoEntities();
+                            var familia = dbf.familia.FirstOrDefault(codigof => codigof.id == producto.familia_id);
+                            var linea_id = familia.linea_id;
+
+                            costeoEntities dbl = new costeoEntities();
+                            var linea = dbl.linea.FirstOrDefault(codigol => codigol.id == linea_id);
+
                             tb_nombre.Text = producto.nombre;
                             tb_unidad.Text = Convert.ToString(producto.unidad_medida_id);
                             tb_marca.Text = producto.marca;
                             tb_formato.Text = Convert.ToString(producto.fomato);
-                            tb_linea.Text = Convert.ToString(producto.familia_id);
-                            tb_familia.Text = Convert.ToString(producto.familia_id);
+                            //tb_linea.Text = Convert.ToString(producto.familia_id);
+                            //tb_familia.Text = Convert.ToString(producto.familia_id);
+                            tb_linea.Text = linea.nombre;
+                            tb_familia.Text = familia.nombre;
                             tb_nuevo.Focus();
                         }
                         else
@@ -109,17 +119,19 @@ namespace Sistema
             if (string.IsNullOrEmpty(tb_codigo.Text))
             {
                 MessageBox.Show("Debe Ingresar Codigo Barra", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                tb_codigo.Text = "";
                 tb_codigo.Focus();
             }
             else
             {
                 //MessageBox.Show("Mostrar Datos");
                 costeoEntities db = new costeoEntities();
-                var codigo_int = Convert.ToInt16(tb_codigo.Text);
-                var producto = db.producto.FirstOrDefault(codigo => codigo.id == codigo_int);
+                var codigo_int = Convert.ToInt64(tb_codigo.Text);
+                var producto = db.producto.FirstOrDefault(codigo => codigo.codigo_barra == codigo_int);
 
                 if (producto != null)
                 {
+                    
                     costeoEntities dbf = new costeoEntities();
                     var familia = dbf.familia.FirstOrDefault(codigof => codigof.id == producto.familia_id);
                     var linea_id = familia.linea_id;
@@ -159,7 +171,22 @@ namespace Sistema
 
             dg_mostrar.DataSource = bi;
 
-            //customers.dg_mostrar.Columns["id"].Visible = false;
+            dg_mostrar.Columns[0].Visible = false;
+            dg_mostrar.Columns[3].Visible = false;
+            dg_mostrar.Columns[5].Visible = false;
+            dg_mostrar.Columns[6].Visible = false;
+            dg_mostrar.Columns[7].Visible = false;
+            dg_mostrar.Columns[8].Visible = false;
+
+            dg_mostrar.Columns[1].HeaderText = "Fecha";
+            dg_mostrar.Columns[2].HeaderText = "Costo";
+            dg_mostrar.Columns[4].HeaderText = "Producto";
+
+            dg_mostrar.Columns[4].Width = 226;
+
+            dg_mostrar.Columns[2].DisplayIndex = 4;
+            dg_mostrar.Columns[4].DisplayIndex = 2;
+
 
 
             dg_mostrar.Refresh();
@@ -186,12 +213,15 @@ namespace Sistema
             }
             else
             {
-                
+                costeoEntities dbp = new costeoEntities();
+                var codigo_int = Convert.ToInt64(tb_codigo.Text);
+                var producto = dbp.producto.FirstOrDefault(codigo => codigo.codigo_barra == codigo_int);
+
                 costo cos = new costo();
                 cos.fecha = DateTime.Today;                 
                 cos.valor = Convert.ToInt16(tb_nuevo.Text);
                 cos.es_actual = 0; 
-                cos.producto_id = Convert.ToInt16(tb_codigo.Text);
+                cos.producto_id = Convert.ToInt16(producto.id);
                 cos.creado_el = DateTime.Today;
                 cos.modificado_el = null;
                 cos.eliminado_el = null;

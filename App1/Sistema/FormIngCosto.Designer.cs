@@ -38,7 +38,7 @@
             this.lb_titulo = new System.Windows.Forms.Label();
             this.lb_nuevo = new System.Windows.Forms.Label();
             this.bt_buscar = new System.Windows.Forms.Button();
-            this.bt_grabar = new System.Windows.Forms.Button();
+            this.bt_guardar = new System.Windows.Forms.Button();
             this.tb_codigo = new System.Windows.Forms.TextBox();
             this.tb_nombre = new System.Windows.Forms.TextBox();
             this.tb_unidad = new System.Windows.Forms.TextBox();
@@ -48,8 +48,6 @@
             this.tb_familia = new System.Windows.Forms.TextBox();
             this.tb_nuevo = new System.Windows.Forms.TextBox();
             this.dg_mostrar = new System.Windows.Forms.DataGridView();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dg_mostrar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,21 +134,23 @@
             // 
             // bt_buscar
             // 
-            this.bt_buscar.Location = new System.Drawing.Point(509, 53);
+            this.bt_buscar.Location = new System.Drawing.Point(509, 51);
             this.bt_buscar.Name = "bt_buscar";
             this.bt_buscar.Size = new System.Drawing.Size(75, 23);
             this.bt_buscar.TabIndex = 9;
             this.bt_buscar.Text = "Buscar";
             this.bt_buscar.UseVisualStyleBackColor = true;
+            this.bt_buscar.Click += new System.EventHandler(this.bt_buscar_Click);
             // 
-            // bt_grabar
+            // bt_guardar
             // 
-            this.bt_grabar.Location = new System.Drawing.Point(509, 323);
-            this.bt_grabar.Name = "bt_grabar";
-            this.bt_grabar.Size = new System.Drawing.Size(75, 23);
-            this.bt_grabar.TabIndex = 10;
-            this.bt_grabar.Text = "Guardar";
-            this.bt_grabar.UseVisualStyleBackColor = true;
+            this.bt_guardar.Location = new System.Drawing.Point(509, 323);
+            this.bt_guardar.Name = "bt_guardar";
+            this.bt_guardar.Size = new System.Drawing.Size(75, 23);
+            this.bt_guardar.TabIndex = 10;
+            this.bt_guardar.Text = "Guardar";
+            this.bt_guardar.UseVisualStyleBackColor = true;
+            this.bt_guardar.Click += new System.EventHandler(this.bt_guardar_Click);
             // 
             // tb_codigo
             // 
@@ -158,12 +158,13 @@
             this.tb_codigo.Name = "tb_codigo";
             this.tb_codigo.Size = new System.Drawing.Size(100, 20);
             this.tb_codigo.TabIndex = 11;
-            this.tb_codigo.TextChanged += new System.EventHandler(this.tb_codigo_TextChanged);
+            this.tb_codigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_codigo_KeyPress);
             // 
             // tb_nombre
             // 
             this.tb_nombre.Location = new System.Drawing.Point(287, 86);
             this.tb_nombre.Name = "tb_nombre";
+            this.tb_nombre.ReadOnly = true;
             this.tb_nombre.Size = new System.Drawing.Size(297, 20);
             this.tb_nombre.TabIndex = 12;
             // 
@@ -171,6 +172,7 @@
             // 
             this.tb_unidad.Location = new System.Drawing.Point(287, 124);
             this.tb_unidad.Name = "tb_unidad";
+            this.tb_unidad.ReadOnly = true;
             this.tb_unidad.Size = new System.Drawing.Size(86, 20);
             this.tb_unidad.TabIndex = 13;
             // 
@@ -178,6 +180,7 @@
             // 
             this.tb_marca.Location = new System.Drawing.Point(287, 164);
             this.tb_marca.Name = "tb_marca";
+            this.tb_marca.ReadOnly = true;
             this.tb_marca.Size = new System.Drawing.Size(100, 20);
             this.tb_marca.TabIndex = 14;
             // 
@@ -185,6 +188,7 @@
             // 
             this.tb_formato.Location = new System.Drawing.Point(287, 208);
             this.tb_formato.Name = "tb_formato";
+            this.tb_formato.ReadOnly = true;
             this.tb_formato.Size = new System.Drawing.Size(57, 20);
             this.tb_formato.TabIndex = 15;
             // 
@@ -192,6 +196,7 @@
             // 
             this.tb_linea.Location = new System.Drawing.Point(287, 250);
             this.tb_linea.Name = "tb_linea";
+            this.tb_linea.ReadOnly = true;
             this.tb_linea.Size = new System.Drawing.Size(86, 20);
             this.tb_linea.TabIndex = 16;
             // 
@@ -199,6 +204,7 @@
             // 
             this.tb_familia.Location = new System.Drawing.Point(287, 289);
             this.tb_familia.Name = "tb_familia";
+            this.tb_familia.ReadOnly = true;
             this.tb_familia.Size = new System.Drawing.Size(86, 20);
             this.tb_familia.TabIndex = 17;
             // 
@@ -208,33 +214,21 @@
             this.tb_nuevo.Name = "tb_nuevo";
             this.tb_nuevo.Size = new System.Drawing.Size(100, 20);
             this.tb_nuevo.TabIndex = 18;
+            this.tb_nuevo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_nuevo_KeyPress);
             // 
             // dg_mostrar
             // 
             this.dg_mostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_mostrar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Fecha,
-            this.PrecioCosto});
-            this.dg_mostrar.Location = new System.Drawing.Point(287, 382);
+            this.dg_mostrar.Location = new System.Drawing.Point(63, 377);
             this.dg_mostrar.Name = "dg_mostrar";
-            this.dg_mostrar.Size = new System.Drawing.Size(240, 93);
+            this.dg_mostrar.Size = new System.Drawing.Size(665, 103);
             this.dg_mostrar.TabIndex = 19;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            // 
-            // PrecioCosto
-            // 
-            this.PrecioCosto.HeaderText = "Precio Costo";
-            this.PrecioCosto.Name = "PrecioCosto";
             // 
             // FormIngCosto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 512);
+            this.ClientSize = new System.Drawing.Size(800, 529);
             this.Controls.Add(this.dg_mostrar);
             this.Controls.Add(this.tb_nuevo);
             this.Controls.Add(this.tb_familia);
@@ -244,7 +238,7 @@
             this.Controls.Add(this.tb_unidad);
             this.Controls.Add(this.tb_nombre);
             this.Controls.Add(this.tb_codigo);
-            this.Controls.Add(this.bt_grabar);
+            this.Controls.Add(this.bt_guardar);
             this.Controls.Add(this.bt_buscar);
             this.Controls.Add(this.lb_nuevo);
             this.Controls.Add(this.lb_titulo);
@@ -275,7 +269,7 @@
         private System.Windows.Forms.Label lb_titulo;
         private System.Windows.Forms.Label lb_nuevo;
         private System.Windows.Forms.Button bt_buscar;
-        private System.Windows.Forms.Button bt_grabar;
+        private System.Windows.Forms.Button bt_guardar;
         private System.Windows.Forms.TextBox tb_codigo;
         private System.Windows.Forms.TextBox tb_nombre;
         private System.Windows.Forms.TextBox tb_unidad;
@@ -285,7 +279,5 @@
         private System.Windows.Forms.TextBox tb_familia;
         private System.Windows.Forms.TextBox tb_nuevo;
         private System.Windows.Forms.DataGridView dg_mostrar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCosto;
     }
 }

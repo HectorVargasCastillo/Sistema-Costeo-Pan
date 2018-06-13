@@ -72,11 +72,14 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuEjemploToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formulario1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDiarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lineaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.familiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FormFamilia = new System.Windows.Forms.ToolStripMenuItem();
+            this.unidadMedidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FormUniMed = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -89,7 +92,8 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.reporteDiarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ingresoCostosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FormIngCosto = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -450,15 +454,24 @@
             // formulario1ToolStripMenuItem
             // 
             this.formulario1ToolStripMenuItem.Name = "formulario1ToolStripMenuItem";
-            this.formulario1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.formulario1ToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.formulario1ToolStripMenuItem.Text = "Reporte por Kilo";
             this.formulario1ToolStripMenuItem.Click += new System.EventHandler(this.formulario1ToolStripMenuItem_Click);
+            // 
+            // reporteDiarioToolStripMenuItem
+            // 
+            this.reporteDiarioToolStripMenuItem.Name = "reporteDiarioToolStripMenuItem";
+            this.reporteDiarioToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.reporteDiarioToolStripMenuItem.Text = "Reporte Diario";
+            this.reporteDiarioToolStripMenuItem.Click += new System.EventHandler(this.reporteDiarioToolStripMenuItem_Click);
             // 
             // mantenedoresToolStripMenuItem
             // 
             this.mantenedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lineaToolStripMenuItem,
-            this.familiaToolStripMenuItem});
+            this.familiaToolStripMenuItem,
+            this.unidadMedidadToolStripMenuItem,
+            this.ingresoCostosToolStripMenuItem});
             this.mantenedoresToolStripMenuItem.Name = "mantenedoresToolStripMenuItem";
             this.mantenedoresToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.mantenedoresToolStripMenuItem.Text = "Mantenedores";
@@ -474,7 +487,7 @@
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
@@ -489,9 +502,24 @@
             // FormFamilia
             // 
             this.FormFamilia.Name = "FormFamilia";
-            this.FormFamilia.Size = new System.Drawing.Size(180, 22);
+            this.FormFamilia.Size = new System.Drawing.Size(109, 22);
             this.FormFamilia.Text = "Nuevo";
             this.FormFamilia.Click += new System.EventHandler(this.FormFamilia_Click);
+            // 
+            // unidadMedidadToolStripMenuItem
+            // 
+            this.unidadMedidadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FormUniMed});
+            this.unidadMedidadToolStripMenuItem.Name = "unidadMedidadToolStripMenuItem";
+            this.unidadMedidadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.unidadMedidadToolStripMenuItem.Text = "Unidad Medidad";
+            // 
+            // FormUniMed
+            // 
+            this.FormUniMed.Name = "FormUniMed";
+            this.FormUniMed.Size = new System.Drawing.Size(180, 22);
+            this.FormUniMed.Text = "Nuevo";
+            this.FormUniMed.Click += new System.EventHandler(this.FormUniMed_Click);
             // 
             // toolStrip
             // 
@@ -592,12 +620,20 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // reporteDiarioToolStripMenuItem
+            // ingresoCostosToolStripMenuItem
             // 
-            this.reporteDiarioToolStripMenuItem.Name = "reporteDiarioToolStripMenuItem";
-            this.reporteDiarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.reporteDiarioToolStripMenuItem.Text = "Reporte Diario";
-            this.reporteDiarioToolStripMenuItem.Click += new System.EventHandler(this.reporteDiarioToolStripMenuItem_Click);
+            this.ingresoCostosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FormIngCosto});
+            this.ingresoCostosToolStripMenuItem.Name = "ingresoCostosToolStripMenuItem";
+            this.ingresoCostosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ingresoCostosToolStripMenuItem.Text = "Ingreso Costos";
+            // 
+            // FormIngCosto
+            // 
+            this.FormIngCosto.Name = "FormIngCosto";
+            this.FormIngCosto.Size = new System.Drawing.Size(180, 22);
+            this.FormIngCosto.Text = "Nuevo";
+            this.FormIngCosto.Click += new System.EventHandler(this.FormIngCosto_Click);
             // 
             // MDIParent1
             // 
@@ -684,7 +720,10 @@
         private System.Windows.Forms.ToolStripMenuItem familiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FormFamilia;
         private System.Windows.Forms.ToolStripMenuItem reporteDiarioToolStripMenuItem;
-
+        private System.Windows.Forms.ToolStripMenuItem unidadMedidadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FormUniMed;
+        private System.Windows.Forms.ToolStripMenuItem ingresoCostosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FormIngCosto;
     }
 }
 

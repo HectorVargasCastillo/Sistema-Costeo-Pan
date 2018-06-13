@@ -147,5 +147,19 @@ namespace Sistema
             childForm.Show();
 
         }
+
+        private void FormUniMed_Click(object sender, EventArgs e)
+        {
+            FormUniMed childForm = new FormUniMed();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void FormIngCosto_Click(object sender, EventArgs e)
+        {
+            FormIngCosto childForm = new FormIngCosto();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace Sistema
             tb_codigo.MaxLength = 13;
             tb_nuevo.MaxLength = 10;
             tb_codigo.Select();
-            mostrar_datagridview();
+            mostrar3_datagridview();
         }
 
    
@@ -259,12 +259,37 @@ namespace Sistema
                 tb_familia.Text = "";
                 tb_nuevo.Text = "";
                 tb_codigo.Focus();
-                mostrar_datagridview();
+                mostrar3_datagridview();
 
 
 
             }
         }
+
+
+        private void mostrar3_datagridview()
+        {
+            costeoEntities dbcosto = new costeoEntities();
+            DataTable tabla = new DataTable();
+            tabla.Columns.Add("Fecha");
+            tabla.Columns.Add("Producto");
+            tabla.Columns.Add("Costo");
+            foreach (var dato in dbcosto.costo.ToList())
+            {
+                DataRow row = tabla.NewRow();
+                row["Fecha"] = Convert.ToString(dato.fecha);
+                costeoEntities db = new costeoEntities();
+                var producto = db.producto.FirstOrDefault(codigo => codigo.id == dato.producto_id);
+                row["Producto"] = producto.nombre;
+                row["Costo"] = Convert.ToString(dato.valor);
+                tabla.Rows.Add(row);
+
+            }
+            dg_mostrar.DataSource = tabla;
+            dg_mostrar.Columns["Producto"].Width = 226;
+            dg_mostrar.Refresh();
+        }
+
 
     }
 }

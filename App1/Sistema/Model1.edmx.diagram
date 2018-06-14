@@ -24,6 +24,7 @@
         <AssociationConnector Association="costeoModel.FK_produccion_diaria_producto" />
         <AssociationConnector Association="costeoModel.FK_producto_unidad_medida" />
         <AssociationConnector Association="costeoModel.FK_receta_producto" />
+        <EntityTypeShape EntityType="costeoModel.sysdiagrams" Width="1.5" PointX="9.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

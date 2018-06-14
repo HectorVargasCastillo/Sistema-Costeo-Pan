@@ -31,7 +31,6 @@
             this.bt_guardar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_nombre = new System.Windows.Forms.TextBox();
-
             this.cmb_unidad_medida = new System.Windows.Forms.ComboBox();
             this.bt_cargar_combo = new System.Windows.Forms.Button();
             this.bt_cargar_editar = new System.Windows.Forms.Button();
@@ -41,14 +40,11 @@
             this.gv_todo = new System.Windows.Forms.DataGridView();
             this.bt_cargar_gv = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gv_todo)).BeginInit();
-
             this.SuspendLayout();
             // 
             // bt_guardar
             // 
-
             this.bt_guardar.Location = new System.Drawing.Point(333, 46);
-
             this.bt_guardar.Name = "bt_guardar";
             this.bt_guardar.Size = new System.Drawing.Size(75, 23);
             this.bt_guardar.TabIndex = 0;
@@ -72,7 +68,6 @@
             this.tb_nombre.Size = new System.Drawing.Size(190, 20);
             this.tb_nombre.TabIndex = 2;
             // 
-
             // cmb_unidad_medida
             // 
             this.cmb_unidad_medida.FormattingEnabled = true;
@@ -133,6 +128,7 @@
             this.gv_todo.Name = "gv_todo";
             this.gv_todo.Size = new System.Drawing.Size(240, 150);
             this.gv_todo.TabIndex = 9;
+            this.gv_todo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gv_todo_CellContentClick);
             // 
             // bt_cargar_gv
             // 
@@ -143,14 +139,12 @@
             this.bt_cargar_gv.Text = "Cargar GridView";
             this.bt_cargar_gv.UseVisualStyleBackColor = true;
             this.bt_cargar_gv.Click += new System.EventHandler(this.bt_cargar_gv_Click);
-
             // 
             // formulario1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-
             this.Controls.Add(this.bt_cargar_gv);
             this.Controls.Add(this.gv_todo);
             this.Controls.Add(this.tb_edit_id);
@@ -159,15 +153,12 @@
             this.Controls.Add(this.bt_cargar_editar);
             this.Controls.Add(this.bt_cargar_combo);
             this.Controls.Add(this.cmb_unidad_medida);
-
             this.Controls.Add(this.tb_nombre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bt_guardar);
             this.Name = "formulario1";
-
             this.Text = "formulario1";
             ((System.ComponentModel.ISupportInitialize)(this.gv_todo)).EndInit();
-
             this.ResumeLayout(false);
             this.PerformLayout();
 

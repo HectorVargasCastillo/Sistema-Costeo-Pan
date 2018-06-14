@@ -79,5 +79,10 @@ namespace Sistema
             gv_todo.Refresh();
 
         }
+
+        private void gv_todo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

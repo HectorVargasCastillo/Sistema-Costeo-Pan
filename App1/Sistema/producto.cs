@@ -32,6 +32,7 @@ namespace Sistema
         public System.DateTime creado_el { get; set; }
         public Nullable<System.DateTime> modificado_el { get; set; }
         public Nullable<System.DateTime> eliminado_el { get; set; }
+        public Nullable<long> codigo_barra { get; set; }
     
         public virtual ICollection<costo> costo { get; set; }
         public virtual ICollection<detalle_receta> detalle_receta { get; set; }

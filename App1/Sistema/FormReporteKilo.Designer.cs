@@ -52,6 +52,7 @@
             this.bt_mostrar.TabIndex = 0;
             this.bt_mostrar.Text = "Mostar Reporte";
             this.bt_mostrar.UseVisualStyleBackColor = true;
+            this.bt_mostrar.Click += new System.EventHandler(this.bt_mostrar_Click);
             // 
             // label1
             // 

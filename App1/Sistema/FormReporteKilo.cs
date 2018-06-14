@@ -29,7 +29,7 @@ namespace Sistema
         }
         public void llenarCompoTipoPan() {
             costeoEntities db = new costeoEntities();
-            var lista = db.producto.ToList();
+            var lista = db.familia.ToList();
 
             if (lista.Count > 0)
             {
@@ -43,6 +43,15 @@ namespace Sistema
         {
             
 
+        }
+
+        private void bt_mostrar_Click(object sender, EventArgs e)
+        {
+            costeoEntities db = new costeoEntities();
+            BindingSource bi = new BindingSource();
+            bi.DataSource = db.unidad_medida.ToList();
+            dg_reporte.DataSource = bi;
+            dg_reporte.Refresh();
         }
     }
 }

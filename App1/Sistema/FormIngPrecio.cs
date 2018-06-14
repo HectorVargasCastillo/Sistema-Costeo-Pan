@@ -8,10 +8,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
+
+
 namespace Sistema
 {
-    public partial class FormIngPrecio : Form
+    
+
+
+
+
+        public partial class FormIngPrecio : Form
     {
+
+
+        public class Datos
+        {
+
+            public DateTime fecha;
+            public string producto;
+            public int valor;
+
+        }
+
+
+
+
         public FormIngPrecio()
         {
             InitializeComponent();
@@ -21,8 +44,9 @@ namespace Sistema
             mostrar_datagridview();
         }
 
+       
 
-        private void tb_codigo_KeyPress(object sender, KeyPressEventArgs e)
+    private void tb_codigo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
@@ -208,9 +232,8 @@ namespace Sistema
             costeoEntities dbprecio_venta = new costeoEntities();
             BindingSource bi = new BindingSource();
             bi.DataSource = dbprecio_venta.precio_venta.ToList();
-
             dg_mostrar.DataSource = bi;
-
+            
             dg_mostrar.Columns[0].Visible = false;
             dg_mostrar.Columns[3].Visible = false;
             dg_mostrar.Columns[5].Visible = false;
@@ -218,11 +241,11 @@ namespace Sistema
             dg_mostrar.Columns[7].Visible = false;
             dg_mostrar.Columns[8].Visible = false;
 
-            dg_mostrar.Columns[1].HeaderText = "Fecha";
+            dg_mostrar.Columns[0].HeaderText = "Fecha";
+            dg_mostrar.Columns[1].HeaderText = "Producto";
             dg_mostrar.Columns[2].HeaderText = "Precio Venta";
-            dg_mostrar.Columns[4].HeaderText = "Producto";
-
-            dg_mostrar.Columns[4].Width = 226;
+           
+            dg_mostrar.Columns[1].Width = 226;
 
             dg_mostrar.Columns[2].DisplayIndex = 4;
             dg_mostrar.Columns[4].DisplayIndex = 2;
@@ -230,6 +253,24 @@ namespace Sistema
             dg_mostrar.Refresh();
         }
 
-      
+        private void mostrar2_datagridview()
+        {
+            costeoEntities dbprecio_venta = new costeoEntities();
+            List<Datos> miLista = new List<Datos>();
+            foreach (var dato in dbprecio_venta.precio_venta.ToList())
+            {
+                Datos misDatos = new Datos();
+                misDatos.fecha = dato.fecha;
+                costeoEntities db = new costeoEntities();
+                var producto = db.producto.FirstOrDefault(codigo => codigo.id == dato.producto_id);
+                misDatos.producto = producto.nombre;
+                misDatos.valor = dato.valor;
+                miLista.Add(misDatos);
+            }
+            dg_mostrar.DataSource = miLista;
+            dg_mostrar.Refresh();
+        }
+
+
     }
 }

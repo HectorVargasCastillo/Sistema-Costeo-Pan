@@ -33,7 +33,7 @@
             this.cm_linea = new System.Windows.Forms.ComboBox();
             this.lb_titulo = new System.Windows.Forms.Label();
             this.tb_descripcion = new System.Windows.Forms.TextBox();
-            this.bt_grabar = new System.Windows.Forms.Button();
+            this.bt_guardar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lb_codigo
@@ -62,7 +62,6 @@
             this.cm_linea.Name = "cm_linea";
             this.cm_linea.Size = new System.Drawing.Size(121, 21);
             this.cm_linea.TabIndex = 4;
-            this.cm_linea.SelectedIndexChanged += new System.EventHandler(this.cm_linea_SelectedIndexChanged);
             // 
             // lb_titulo
             // 
@@ -79,24 +78,24 @@
             this.tb_descripcion.Name = "tb_descripcion";
             this.tb_descripcion.Size = new System.Drawing.Size(221, 20);
             this.tb_descripcion.TabIndex = 7;
-            this.tb_descripcion.TextChanged += new System.EventHandler(this.tb_descripcion_TextChanged);
+            this.tb_descripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_descripcion_KeyPress);
             // 
-            // bt_grabar
+            // bt_guardar
             // 
-            this.bt_grabar.Location = new System.Drawing.Point(363, 224);
-            this.bt_grabar.Name = "bt_grabar";
-            this.bt_grabar.Size = new System.Drawing.Size(75, 23);
-            this.bt_grabar.TabIndex = 8;
-            this.bt_grabar.Text = "Grabar";
-            this.bt_grabar.UseVisualStyleBackColor = true;
-            this.bt_grabar.Click += new System.EventHandler(this.bt_grabar_Click);
+            this.bt_guardar.Location = new System.Drawing.Point(363, 224);
+            this.bt_guardar.Name = "bt_guardar";
+            this.bt_guardar.Size = new System.Drawing.Size(75, 23);
+            this.bt_guardar.TabIndex = 8;
+            this.bt_guardar.Text = "Guardar";
+            this.bt_guardar.UseVisualStyleBackColor = true;
+            this.bt_guardar.Click += new System.EventHandler(this.bt_guardar_Click_1);
             // 
             // FormFamilia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.bt_grabar);
+            this.Controls.Add(this.bt_guardar);
             this.Controls.Add(this.tb_descripcion);
             this.Controls.Add(this.lb_titulo);
             this.Controls.Add(this.cm_linea);
@@ -116,6 +115,6 @@
         private System.Windows.Forms.ComboBox cm_linea;
         private System.Windows.Forms.Label lb_titulo;
         private System.Windows.Forms.TextBox tb_descripcion;
-        private System.Windows.Forms.Button bt_grabar;
+        private System.Windows.Forms.Button bt_guardar;
     }
 }

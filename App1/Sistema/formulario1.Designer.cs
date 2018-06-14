@@ -39,6 +39,7 @@
             this.tb_edit_id = new System.Windows.Forms.TextBox();
             this.gv_todo = new System.Windows.Forms.DataGridView();
             this.bt_cargar_gv = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.gv_todo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,18 +56,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(176, 132);
+            this.label1.Location = new System.Drawing.Point(59, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Descripcion";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tb_nombre
             // 
-            this.tb_nombre.Location = new System.Drawing.Point(279, 125);
+            this.tb_nombre.Location = new System.Drawing.Point(128, 43);
             this.tb_nombre.Name = "tb_nombre";
             this.tb_nombre.Size = new System.Drawing.Size(190, 20);
             this.tb_nombre.TabIndex = 2;
+            this.tb_nombre.TextChanged += new System.EventHandler(this.tb_nombre_TextChanged);
             // 
             // cmb_unidad_medida
             // 
@@ -75,6 +78,7 @@
             this.cmb_unidad_medida.Name = "cmb_unidad_medida";
             this.cmb_unidad_medida.Size = new System.Drawing.Size(121, 21);
             this.cmb_unidad_medida.TabIndex = 3;
+            this.cmb_unidad_medida.SelectedIndexChanged += new System.EventHandler(this.cmb_unidad_medida_SelectedIndexChanged);
             // 
             // bt_cargar_combo
             // 
@@ -140,11 +144,19 @@
             this.bt_cargar_gv.UseVisualStyleBackColor = true;
             this.bt_cargar_gv.Click += new System.EventHandler(this.bt_cargar_gv_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(349, 203);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 11;
+            // 
             // formulario1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.bt_cargar_gv);
             this.Controls.Add(this.gv_todo);
             this.Controls.Add(this.tb_edit_id);
@@ -178,6 +190,6 @@
         private System.Windows.Forms.TextBox tb_edit_id;
         private System.Windows.Forms.DataGridView gv_todo;
         private System.Windows.Forms.Button bt_cargar_gv;
-
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

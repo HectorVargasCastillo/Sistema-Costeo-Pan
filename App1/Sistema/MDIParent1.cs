@@ -120,7 +120,7 @@ namespace Sistema
 
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formNuevoLinea childForm = new formNuevoLinea();
+            FormIngresoLineaProducto childForm = new FormIngresoLineaProducto();
             childForm.MdiParent = this;
             childForm.Text = "Ventana " + childFormNumber++;
             childForm.Show();
@@ -146,6 +146,27 @@ namespace Sistema
             childForm.Text = "Ventana " + childFormNumber++;
             childForm.Show();
 
+        }
+
+        private void FormUniMed_Click(object sender, EventArgs e)
+        {
+            FormUniMed childForm = new FormUniMed();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void FormIngCosto_Click(object sender, EventArgs e)
+        {
+            FormIngCosto childForm = new FormIngCosto();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void FormIngPrecio_Click(object sender, EventArgs e)
+        {
+            FormIngPrecio childForm = new FormIngPrecio();
+            childForm.MdiParent = this;
+            childForm.Show();
         }
     }
 }

@@ -82,11 +82,11 @@
     <Compile Include="FormIngPrecio.Designer.cs">
       <DependentUpon>FormIngPrecio.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormIngresoArticulos.cs">
+    <Compile Include="FormIngresoLineaProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormIngresoArticulos.Designer.cs">
-      <DependentUpon>FormIngresoArticulos.cs</DependentUpon>
+    <Compile Include="FormIngresoLineaProducto.Designer.cs">
+      <DependentUpon>FormIngresoLineaProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -94,11 +94,23 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRegistroArticulo.cs">
+    <Compile Include="FormProDiariaPan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRegistroArticulo.Designer.cs">
-      <DependentUpon>FormRegistroArticulo.cs</DependentUpon>
+    <Compile Include="FormProDiariaPan.Designer.cs">
+      <DependentUpon>FormProDiariaPan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRecetaDePan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRecetaDePan.Designer.cs">
+      <DependentUpon>FormRecetaDePan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistroProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistroProducto.Designer.cs">
+      <DependentUpon>FormRegistroProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="FormReporteDiario.cs">
       <SubType>Form</SubType>
@@ -111,12 +123,6 @@
     </Compile>
     <Compile Include="FormReporteKilo.Designer.cs">
       <DependentUpon>FormReporteKilo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formNuevoLinea.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formNuevoLinea.Designer.cs">
-      <DependentUpon>formNuevoLinea.cs</DependentUpon>
     </Compile>
     <Compile Include="formulario1.cs">
       <SubType>Form</SubType>
@@ -186,20 +192,23 @@
     <EmbeddedResource Include="FormIngPrecio.resx">
       <DependentUpon>FormIngPrecio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormIngresoArticulos.resx">
-      <DependentUpon>FormIngresoArticulos.cs</DependentUpon>
+    <EmbeddedResource Include="FormIngresoLineaProducto.resx">
+      <DependentUpon>FormIngresoLineaProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRegistroArticulo.resx">
-      <DependentUpon>FormRegistroArticulo.cs</DependentUpon>
+    <EmbeddedResource Include="FormProDiariaPan.resx">
+      <DependentUpon>FormProDiariaPan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRecetaDePan.resx">
+      <DependentUpon>FormRecetaDePan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistroProducto.resx">
+      <DependentUpon>FormRegistroProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReporteDiario.resx">
       <DependentUpon>FormReporteDiario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formNuevoLinea.resx">
-      <DependentUpon>formNuevoLinea.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReporteKilo.resx">
       <DependentUpon>FormReporteKilo.cs</DependentUpon>

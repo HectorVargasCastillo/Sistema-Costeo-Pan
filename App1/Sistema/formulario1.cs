@@ -84,5 +84,20 @@ namespace Sistema
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_nombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_unidad_medida_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

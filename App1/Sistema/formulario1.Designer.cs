@@ -56,18 +56,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(176, 132);
+            this.label1.Location = new System.Drawing.Point(59, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Descripcion";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tb_nombre
             // 
-            this.tb_nombre.Location = new System.Drawing.Point(279, 125);
+            this.tb_nombre.Location = new System.Drawing.Point(128, 43);
             this.tb_nombre.Name = "tb_nombre";
             this.tb_nombre.Size = new System.Drawing.Size(190, 20);
             this.tb_nombre.TabIndex = 2;
+            this.tb_nombre.TextChanged += new System.EventHandler(this.tb_nombre_TextChanged);
             // 
             // cmb_unidad_medida
             // 
@@ -76,6 +78,7 @@
             this.cmb_unidad_medida.Name = "cmb_unidad_medida";
             this.cmb_unidad_medida.Size = new System.Drawing.Size(121, 21);
             this.cmb_unidad_medida.TabIndex = 3;
+            this.cmb_unidad_medida.SelectedIndexChanged += new System.EventHandler(this.cmb_unidad_medida_SelectedIndexChanged);
             // 
             // bt_cargar_combo
             // 
@@ -143,7 +146,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(413, 200);
+            this.dateTimePicker1.Location = new System.Drawing.Point(349, 203);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 11;

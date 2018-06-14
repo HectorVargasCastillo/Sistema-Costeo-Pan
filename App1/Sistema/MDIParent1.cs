@@ -120,7 +120,7 @@ namespace Sistema
 
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formNuevoLinea childForm = new formNuevoLinea();
+            FormIngresoLineaProducto childForm = new FormIngresoLineaProducto();
             childForm.MdiParent = this;
             childForm.Text = "Ventana " + childFormNumber++;
             childForm.Show();

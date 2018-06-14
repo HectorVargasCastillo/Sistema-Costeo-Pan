@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.bt_guardar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lb_prodfinal = new System.Windows.Forms.Label();
+            this.lb_unimedida = new System.Windows.Forms.Label();
+            this.lb_produccion = new System.Windows.Forms.Label();
             this.cm_prodfinal = new System.Windows.Forms.ComboBox();
             this.tb_unidadmedida = new System.Windows.Forms.TextBox();
             this.tb_produccion = new System.Windows.Forms.TextBox();
@@ -55,33 +55,33 @@
             this.bt_guardar.UseVisualStyleBackColor = true;
             this.bt_guardar.Click += new System.EventHandler(this.bt_guardar_Click);
             // 
-            // label1
+            // lb_prodfinal
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(56, 65);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Producto final";
+            this.lb_prodfinal.AutoSize = true;
+            this.lb_prodfinal.Location = new System.Drawing.Point(56, 65);
+            this.lb_prodfinal.Name = "lb_prodfinal";
+            this.lb_prodfinal.Size = new System.Drawing.Size(72, 13);
+            this.lb_prodfinal.TabIndex = 1;
+            this.lb_prodfinal.Text = "Producto final";
             // 
-            // label2
+            // lb_unimedida
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(226, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Unidad de medida";
+            this.lb_unimedida.AutoSize = true;
+            this.lb_unimedida.Location = new System.Drawing.Point(226, 65);
+            this.lb_unimedida.Name = "lb_unimedida";
+            this.lb_unimedida.Size = new System.Drawing.Size(93, 13);
+            this.lb_unimedida.TabIndex = 2;
+            this.lb_unimedida.Text = "Unidad de medida";
             // 
-            // label3
+            // lb_produccion
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(355, 65);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Produccion";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lb_produccion.AutoSize = true;
+            this.lb_produccion.Location = new System.Drawing.Point(355, 65);
+            this.lb_produccion.Name = "lb_produccion";
+            this.lb_produccion.Size = new System.Drawing.Size(61, 13);
+            this.lb_produccion.TabIndex = 3;
+            this.lb_produccion.Text = "Produccion";
+            this.lb_produccion.Click += new System.EventHandler(this.label3_Click);
             // 
             // cm_prodfinal
             // 
@@ -90,6 +90,7 @@
             this.cm_prodfinal.Name = "cm_prodfinal";
             this.cm_prodfinal.Size = new System.Drawing.Size(95, 21);
             this.cm_prodfinal.TabIndex = 4;
+            this.cm_prodfinal.SelectedIndexChanged += new System.EventHandler(this.cm_prodfinal_SelectedIndexChanged);
             // 
             // tb_unidadmedida
             // 
@@ -160,9 +161,9 @@
             this.Controls.Add(this.tb_produccion);
             this.Controls.Add(this.tb_unidadmedida);
             this.Controls.Add(this.cm_prodfinal);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lb_produccion);
+            this.Controls.Add(this.lb_unimedida);
+            this.Controls.Add(this.lb_prodfinal);
             this.Controls.Add(this.bt_guardar);
             this.Name = "FormProDiariaPan";
             this.Text = "FormProDiariaPan";
@@ -176,9 +177,9 @@
         #endregion
 
         private System.Windows.Forms.Button bt_guardar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lb_prodfinal;
+        private System.Windows.Forms.Label lb_unimedida;
+        private System.Windows.Forms.Label lb_produccion;
         private System.Windows.Forms.ComboBox cm_prodfinal;
         private System.Windows.Forms.TextBox tb_unidadmedida;
         private System.Windows.Forms.TextBox tb_produccion;

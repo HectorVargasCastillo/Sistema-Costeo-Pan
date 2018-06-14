@@ -37,6 +37,9 @@ namespace Sistema
            
             }
 
-           
+        private void cm_prodfinal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -219,9 +219,9 @@
             // dg_mostrar
             // 
             this.dg_mostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_mostrar.Location = new System.Drawing.Point(63, 377);
+            this.dg_mostrar.Location = new System.Drawing.Point(160, 373);
             this.dg_mostrar.Name = "dg_mostrar";
-            this.dg_mostrar.Size = new System.Drawing.Size(665, 103);
+            this.dg_mostrar.Size = new System.Drawing.Size(469, 103);
             this.dg_mostrar.TabIndex = 19;
             // 
             // FormIngCosto

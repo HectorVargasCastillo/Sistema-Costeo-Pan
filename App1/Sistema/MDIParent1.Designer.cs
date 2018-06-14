@@ -80,6 +80,10 @@
             this.FormFamilia = new System.Windows.Forms.ToolStripMenuItem();
             this.unidadMedidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FormUniMed = new System.Windows.Forms.ToolStripMenuItem();
+            this.ingresoCostosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FormIngCosto = new System.Windows.Forms.ToolStripMenuItem();
+            this.ingresoPreciosVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FormIngPrecio = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -92,8 +96,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.ingresoCostosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FormIngCosto = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -471,7 +473,8 @@
             this.lineaToolStripMenuItem,
             this.familiaToolStripMenuItem,
             this.unidadMedidadToolStripMenuItem,
-            this.ingresoCostosToolStripMenuItem});
+            this.ingresoCostosToolStripMenuItem,
+            this.ingresoPreciosVentaToolStripMenuItem});
             this.mantenedoresToolStripMenuItem.Name = "mantenedoresToolStripMenuItem";
             this.mantenedoresToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.mantenedoresToolStripMenuItem.Text = "Mantenedores";
@@ -481,7 +484,7 @@
             this.lineaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoToolStripMenuItem});
             this.lineaToolStripMenuItem.Name = "lineaToolStripMenuItem";
-            this.lineaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lineaToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.lineaToolStripMenuItem.Text = "Linea";
             // 
             // nuevoToolStripMenuItem
@@ -496,7 +499,7 @@
             this.familiaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FormFamilia});
             this.familiaToolStripMenuItem.Name = "familiaToolStripMenuItem";
-            this.familiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.familiaToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.familiaToolStripMenuItem.Text = "Familia";
             // 
             // FormFamilia
@@ -511,15 +514,45 @@
             this.unidadMedidadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FormUniMed});
             this.unidadMedidadToolStripMenuItem.Name = "unidadMedidadToolStripMenuItem";
-            this.unidadMedidadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.unidadMedidadToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.unidadMedidadToolStripMenuItem.Text = "Unidad Medidad";
             // 
             // FormUniMed
             // 
             this.FormUniMed.Name = "FormUniMed";
-            this.FormUniMed.Size = new System.Drawing.Size(180, 22);
+            this.FormUniMed.Size = new System.Drawing.Size(109, 22);
             this.FormUniMed.Text = "Nuevo";
             this.FormUniMed.Click += new System.EventHandler(this.FormUniMed_Click);
+            // 
+            // ingresoCostosToolStripMenuItem
+            // 
+            this.ingresoCostosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FormIngCosto});
+            this.ingresoCostosToolStripMenuItem.Name = "ingresoCostosToolStripMenuItem";
+            this.ingresoCostosToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.ingresoCostosToolStripMenuItem.Text = "Ingreso Costos";
+            // 
+            // FormIngCosto
+            // 
+            this.FormIngCosto.Name = "FormIngCosto";
+            this.FormIngCosto.Size = new System.Drawing.Size(109, 22);
+            this.FormIngCosto.Text = "Nuevo";
+            this.FormIngCosto.Click += new System.EventHandler(this.FormIngCosto_Click);
+            // 
+            // ingresoPreciosVentaToolStripMenuItem
+            // 
+            this.ingresoPreciosVentaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FormIngPrecio});
+            this.ingresoPreciosVentaToolStripMenuItem.Name = "ingresoPreciosVentaToolStripMenuItem";
+            this.ingresoPreciosVentaToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.ingresoPreciosVentaToolStripMenuItem.Text = "Ingreso Precios Venta";
+            // 
+            // FormIngPrecio
+            // 
+            this.FormIngPrecio.Name = "FormIngPrecio";
+            this.FormIngPrecio.Size = new System.Drawing.Size(180, 22);
+            this.FormIngPrecio.Text = "Nuevo";
+            this.FormIngPrecio.Click += new System.EventHandler(this.FormIngPrecio_Click);
             // 
             // toolStrip
             // 
@@ -620,21 +653,6 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // ingresoCostosToolStripMenuItem
-            // 
-            this.ingresoCostosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FormIngCosto});
-            this.ingresoCostosToolStripMenuItem.Name = "ingresoCostosToolStripMenuItem";
-            this.ingresoCostosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ingresoCostosToolStripMenuItem.Text = "Ingreso Costos";
-            // 
-            // FormIngCosto
-            // 
-            this.FormIngCosto.Name = "FormIngCosto";
-            this.FormIngCosto.Size = new System.Drawing.Size(180, 22);
-            this.FormIngCosto.Text = "Nuevo";
-            this.FormIngCosto.Click += new System.EventHandler(this.FormIngCosto_Click);
-            // 
             // MDIParent1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -724,6 +742,8 @@
         private System.Windows.Forms.ToolStripMenuItem FormUniMed;
         private System.Windows.Forms.ToolStripMenuItem ingresoCostosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FormIngCosto;
+        private System.Windows.Forms.ToolStripMenuItem ingresoPreciosVentaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FormIngPrecio;
     }
 }
 

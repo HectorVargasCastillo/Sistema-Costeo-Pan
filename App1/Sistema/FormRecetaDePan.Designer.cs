@@ -102,6 +102,7 @@
             this.cm_prodfinal.Name = "cm_prodfinal";
             this.cm_prodfinal.Size = new System.Drawing.Size(121, 21);
             this.cm_prodfinal.TabIndex = 5;
+            this.cm_prodfinal.SelectedIndexChanged += new System.EventHandler(this.cm_prodfinal_SelectedIndexChanged);
             // 
             // cm_inginsumos
             // 
@@ -110,6 +111,7 @@
             this.cm_inginsumos.Name = "cm_inginsumos";
             this.cm_inginsumos.Size = new System.Drawing.Size(121, 21);
             this.cm_inginsumos.TabIndex = 6;
+            this.cm_inginsumos.SelectedIndexChanged += new System.EventHandler(this.cm_inginsumos_SelectedIndexChanged);
             // 
             // tb_estado
             // 

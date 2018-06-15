@@ -67,7 +67,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(226, 65);
+            this.label2.Location = new System.Drawing.Point(208, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 13);
             this.label2.TabIndex = 2;
@@ -90,6 +90,7 @@
             this.cm_prodfinal.Name = "cm_prodfinal";
             this.cm_prodfinal.Size = new System.Drawing.Size(95, 21);
             this.cm_prodfinal.TabIndex = 4;
+            this.cm_prodfinal.SelectedIndexChanged += new System.EventHandler(this.cm_prodfinal_SelectedIndexChanged);
             // 
             // tb_unidadmedida
             // 

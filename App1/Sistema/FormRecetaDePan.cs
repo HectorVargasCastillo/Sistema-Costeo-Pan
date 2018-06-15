@@ -41,5 +41,39 @@ namespace Sistema
         {
 
         }
+
+        private void cm_prodfinal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            costeoEntities db = new costeoEntities();
+            var lista = db.produccion_diaria.ToList();
+
+
+            if (lista.Count > 0)
+            {
+
+                cm_prodfinal.DataSource = lista;
+                cm_prodfinal.DisplayMember = "nombre";
+                cm_prodfinal.ValueMember = "id";
+            }
+
+        }
+
+        private void cm_inginsumos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            costeoEntities db = new costeoEntities();
+            var lista = db.producto.ToList();
+
+
+            if (lista.Count > 0)
+            {
+
+                cm_inginsumos.DataSource = lista;
+                cm_inginsumos.DisplayMember = "nombre";
+                cm_inginsumos.ValueMember = "id";
+            }
+
+        }
+    }
+    }
     }
 }

@@ -126,6 +126,7 @@
             this.cm_unidadmedida.Name = "cm_unidadmedida";
             this.cm_unidadmedida.Size = new System.Drawing.Size(121, 21);
             this.cm_unidadmedida.TabIndex = 8;
+            this.cm_unidadmedida.SelectedIndexChanged += new System.EventHandler(this.cm_unidadmedida_SelectedIndexChanged);
             // 
             // cm_linea
             // 
@@ -134,6 +135,7 @@
             this.cm_linea.Name = "cm_linea";
             this.cm_linea.Size = new System.Drawing.Size(121, 21);
             this.cm_linea.TabIndex = 9;
+            this.cm_linea.SelectedIndexChanged += new System.EventHandler(this.cm_linea_SelectedIndexChanged);
             // 
             // cm_familia
             // 
@@ -195,6 +197,7 @@
             this.Controls.Add(this.lb_codigobarra);
             this.Name = "FormRegistroProducto";
             this.Text = "FormRegistroArticulo";
+            this.Load += new System.EventHandler(this.FormRegistroProducto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

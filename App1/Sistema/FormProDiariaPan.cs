@@ -34,9 +34,23 @@ namespace Sistema
 
         private void bt_guardar_Click(object sender, EventArgs e)
         {
-           
+            
+        }
+
+        private void cm_prodfinal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            costeoEntities db = new costeoEntities();
+            var lista = db.produccion_diaria.ToList();
+
+
+            if (lista.Count > 0)
+            {
+
+                cm_prodfinal.DataSource = lista;
+                cm_prodfinal.DisplayMember = "nombre";
+                cm_prodfinal.ValueMember = "id";
             }
 
-           
+        }
     }
 }

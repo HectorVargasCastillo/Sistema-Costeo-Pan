@@ -34,7 +34,55 @@ namespace Sistema
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
+            costeoEntities db = new costeoEntities();
+            var lista = db.familia.ToList();
 
+
+            if (lista.Count > 0)
+            {
+
+                cm_unidadmedida.DataSource = lista;
+                cm_unidadmedida.DisplayMember = "nombre";
+                cm_unidadmedida.ValueMember = "id";
+            }
+
+        }
+
+        private void FormRegistroProducto_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cm_unidadmedida_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            costeoEntities db = new costeoEntities();
+            var lista = db.unidad_medida.ToList();
+
+
+            if (lista.Count > 0)
+            {
+
+                cm_unidadmedida.DataSource = lista;
+                cm_unidadmedida.DisplayMember = "nombre";
+                cm_unidadmedida.ValueMember = "id";
+            }
+
+        }
+
+        private void cm_linea_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            costeoEntities db = new costeoEntities();
+            var lista = db.linea.ToList();
+
+
+            if (lista.Count > 0)
+            {
+
+                cm_unidadmedida.DataSource = lista;
+                cm_unidadmedida.DisplayMember = "nombre";
+                cm_unidadmedida.ValueMember = "id";
+            }
         }
     }
 }

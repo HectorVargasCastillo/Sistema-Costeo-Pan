@@ -85,7 +85,7 @@ namespace Sistema
 
         private void tb_nuevo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back)) 
             {
 
                 if (e.KeyChar == '\r')

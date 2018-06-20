@@ -193,7 +193,7 @@ namespace Sistema
             if (tb_descripcion.Text == "") 
             {
                 MessageBox.Show("Para Eliminar, Debe Pinchar Celda de Grilla", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                cm:linea.Focus();
+                cm_linea.Focus();
             }
             else
             {

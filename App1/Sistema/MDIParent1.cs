@@ -131,6 +131,7 @@ namespace Sistema
         {
             FormFamilia childForm = new FormFamilia();
             childForm.MdiParent = this;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
 
         }

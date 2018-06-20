@@ -48,6 +48,9 @@
             this.tb_familia = new System.Windows.Forms.TextBox();
             this.tb_nuevo = new System.Windows.Forms.TextBox();
             this.dg_mostrar = new System.Windows.Forms.DataGridView();
+            this.bt_editar = new System.Windows.Forms.Button();
+            this.bt_eliminar = new System.Windows.Forms.Button();
+            this.tb_id = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dg_mostrar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,12 +147,13 @@
             // 
             // bt_guardar
             // 
-            this.bt_guardar.Location = new System.Drawing.Point(509, 323);
+            this.bt_guardar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.bt_guardar.Location = new System.Drawing.Point(223, 491);
             this.bt_guardar.Name = "bt_guardar";
             this.bt_guardar.Size = new System.Drawing.Size(75, 23);
             this.bt_guardar.TabIndex = 10;
             this.bt_guardar.Text = "Guardar";
-            this.bt_guardar.UseVisualStyleBackColor = true;
+            this.bt_guardar.UseVisualStyleBackColor = false;
             this.bt_guardar.Click += new System.EventHandler(this.bt_guardar_Click);
             // 
             // tb_codigo
@@ -219,16 +223,47 @@
             // dg_mostrar
             // 
             this.dg_mostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_mostrar.Location = new System.Drawing.Point(160, 373);
+            this.dg_mostrar.Location = new System.Drawing.Point(162, 365);
             this.dg_mostrar.Name = "dg_mostrar";
             this.dg_mostrar.Size = new System.Drawing.Size(469, 103);
             this.dg_mostrar.TabIndex = 19;
+            // 
+            // bt_editar
+            // 
+            this.bt_editar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.bt_editar.Location = new System.Drawing.Point(363, 491);
+            this.bt_editar.Name = "bt_editar";
+            this.bt_editar.Size = new System.Drawing.Size(75, 23);
+            this.bt_editar.TabIndex = 20;
+            this.bt_editar.Text = "Editar";
+            this.bt_editar.UseVisualStyleBackColor = false;
+            // 
+            // bt_eliminar
+            // 
+            this.bt_eliminar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.bt_eliminar.Location = new System.Drawing.Point(495, 491);
+            this.bt_eliminar.Name = "bt_eliminar";
+            this.bt_eliminar.Size = new System.Drawing.Size(75, 23);
+            this.bt_eliminar.TabIndex = 21;
+            this.bt_eliminar.Text = "Eliminar";
+            this.bt_eliminar.UseVisualStyleBackColor = false;
+            // 
+            // tb_id
+            // 
+            this.tb_id.Location = new System.Drawing.Point(22, 497);
+            this.tb_id.Name = "tb_id";
+            this.tb_id.Size = new System.Drawing.Size(100, 20);
+            this.tb_id.TabIndex = 22;
+            this.tb_id.Visible = false;
             // 
             // FormIngCosto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 529);
+            this.Controls.Add(this.tb_id);
+            this.Controls.Add(this.bt_eliminar);
+            this.Controls.Add(this.bt_editar);
             this.Controls.Add(this.dg_mostrar);
             this.Controls.Add(this.tb_nuevo);
             this.Controls.Add(this.tb_familia);
@@ -279,5 +314,8 @@
         private System.Windows.Forms.TextBox tb_familia;
         private System.Windows.Forms.TextBox tb_nuevo;
         private System.Windows.Forms.DataGridView dg_mostrar;
+        private System.Windows.Forms.Button bt_editar;
+        private System.Windows.Forms.Button bt_eliminar;
+        private System.Windows.Forms.TextBox tb_id;
     }
 }

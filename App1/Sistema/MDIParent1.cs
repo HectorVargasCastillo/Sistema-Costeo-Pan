@@ -161,6 +161,7 @@ namespace Sistema
         {
             FormIngCosto childForm = new FormIngCosto();
             childForm.MdiParent = this;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
         }
 
@@ -168,6 +169,7 @@ namespace Sistema
         {
             FormIngPrecio childForm = new FormIngPrecio();
             childForm.MdiParent = this;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
         }
     }

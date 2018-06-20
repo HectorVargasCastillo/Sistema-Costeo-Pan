@@ -17,6 +17,8 @@ namespace Sistema
             InitializeComponent();
             tb_descripcion.MaxLength = 45;
             listaLineas();
+            mostrar_datagridview();
+            tb_id.Visible = false;
 
         }
 
@@ -75,27 +77,192 @@ namespace Sistema
             }
             else
             {
-                familia fam = new familia();
-                var codigo_lin = Convert.ToInt16(cm_linea.SelectedValue);
-                costeoEntities db = new costeoEntities();
-                var linea = db.linea.FirstOrDefault(codigol => codigol.id == codigo_lin);
-               
-                fam.nombre = tb_descripcion.Text;
-                //var linea_id_txt = cm_linea.SelectedValue.ToString();
-                //fam.linea.id = Convert.ToInt16(linea_id_txt);
-                //fam.linea.id = Convert.ToInt16(cm_linea.SelectedValue);
-                fam.linea = linea;
-                fam.creado_el = DateTime.Today;
-                fam.modificado_el = null;
-                fam.eliminado_el = null;
+                if (tb_id.Text == "")
+                {
+                    costeoEntities db = new costeoEntities();
+                    String nomb = "N";
+                    foreach (var dato in db.familia.ToList())
+                    {
+                        if (dato.nombre == tb_descripcion.Text)
+                        {
+                            nomb = "S";
+                        }
+                    }
+                    if (nomb == "S")
+                    {
+                        MessageBox.Show("Descripcion Ya Existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        tb_descripcion.Text = "";
+                        tb_id.Text = "";
+                        mostrar_datagridview();
+                        cm_linea.Focus();
+                    }
+                    else
+                    {
+                        familia fam = new familia();
+                        var codigo_lin = Convert.ToInt16(cm_linea.SelectedValue);
+                        //costeoEntities db = new costeoEntities();
+                        var linea = db.linea.FirstOrDefault(codigol => codigol.id == codigo_lin);
+                        fam.nombre = tb_descripcion.Text;
+                        //var linea_id_txt = cm_linea.SelectedValue.ToString();
+                        //fam.linea.id = Convert.ToInt16(linea_id_txt);
+                        //fam.linea.id = Convert.ToInt16(cm_linea.SelectedValue);
+                        fam.linea = linea;
+                        fam.creado_el = DateTime.Today;
+                        fam.modificado_el = null;
+                        fam.eliminado_el = null;
+                        db.familia.Add(fam);
+                        db.SaveChanges();
+                        MessageBox.Show("Registro Guardado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        tb_descripcion.Text = "";
+                        tb_id.Text = "";
+                        mostrar_datagridview();
+                        cm_linea.Focus();
 
-               
-                db.familia.Add(fam);
-                db.SaveChanges();
-                tb_descripcion.Text = "";
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Registro Ya Existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    tb_descripcion.Text = "";
+                    tb_id.Text = "";
+                    mostrar_datagridview();
+                    cm_linea.Focus();
+                }
+            }
+            
+        }
+
+        private void bt_editar_Click(object sender, EventArgs e)
+        {
+
+            if (tb_descripcion.Text == "")
+            {
+                MessageBox.Show("Para Editar, Debe Pinchar Celda de Grilla", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                cm_linea.Focus();
+            }
+            else
+            {
+                if (tb_id.Text == "")
+                {
+                    MessageBox.Show("ERROR : No Permite Modificar Datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    cm_linea.Focus();
+                }
+                else
+                {
+                    costeoEntities db = new costeoEntities();
+                    familia fam = new familia();
+                    fam = db.familia.Find(Convert.ToInt16(tb_id.Text));
+
+                    if (fam == null)
+                    {
+                        MessageBox.Show("ERROR : No Permite Modificar Registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    else
+                    {
+                        if (fam.nombre != tb_descripcion.Text)
+                        {
+                            fam.nombre = tb_descripcion.Text;
+                            var codigo_lin = Convert.ToInt16(cm_linea.SelectedValue);
+                            var linea = db.linea.FirstOrDefault(codigol => codigol.id == codigo_lin);
+                            fam.linea = linea;
+                            fam.modificado_el = DateTime.Today;
+                            db.SaveChanges();
+                            MessageBox.Show("Registro Modificado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            tb_descripcion.Text = "";
+                            tb_id.Text = "";
+                            mostrar_datagridview();
+                            cm_linea.Focus();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No Modificó Datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            tb_descripcion.Text = "";
+                            tb_id.Text = "";
+                            mostrar_datagridview();
+                            cm_linea.Focus();
+                        }
+                    }
+                }
+
             }
         }
 
-       
+        private void bt_eliminar_Click(object sender, EventArgs e)
+        {
+            if (tb_descripcion.Text == "") 
+            {
+                MessageBox.Show("Para Eliminar, Debe Pinchar Celda de Grilla", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                cm:linea.Focus();
+            }
+            else
+            {
+                if (tb_id.Text == "")
+                {
+                    MessageBox.Show("ERROR : No Permite Eliminar Datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    cm_linea.Focus();
+                }
+                else
+                {
+                    costeoEntities db = new costeoEntities();
+                    familia fam = new familia();
+                    fam = db.familia.Find(Convert.ToInt16(tb_id.Text));
+
+                    if (fam == null)
+                    {
+                        MessageBox.Show("ERROR : No Permite Eliminar Registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    else
+                    {
+                        fam.eliminado_el = DateTime.Today;
+                        db.SaveChanges();
+                        MessageBox.Show("Registro Eliminado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        tb_descripcion.Text = "";
+                        tb_id.Text = "";
+                        mostrar_datagridview();
+                        cm_linea.Focus();
+
+                    }
+                }
+
+            }
+        }
+
+        private void mostrar_datagridview()
+        {
+            costeoEntities dbfamilia = new costeoEntities();
+            DataTable tabla = new DataTable();
+            tabla.Columns.Add("Id");
+            tabla.Columns.Add("Descripcion");
+            tabla.Columns.Add("Linea");
+            foreach (var dato in dbfamilia.familia.ToList())
+            {
+                if (dato.eliminado_el == null)
+                {
+                    DataRow row = tabla.NewRow();
+                    row["Id"] = Convert.ToString(dato.id);
+                    row["Descripcion"] = Convert.ToString(dato.nombre);
+                    costeoEntities dblinea = new costeoEntities();
+                    var linea = dblinea.linea.FirstOrDefault(codigo => codigo.id == dato.linea_id);
+                    row["Linea"] = linea.nombre;
+                    tabla.Rows.Add(row);
+                }
+
+            }
+            tabla.DefaultView.Sort = "[Id] DESC";
+            dg_mostrar.DataSource = tabla;
+            dg_mostrar.Columns["Id"].ReadOnly = true;
+            dg_mostrar.Columns["Descripcion"].ReadOnly = true;
+            dg_mostrar.Columns["Linea"].ReadOnly = true;
+            dg_mostrar.Refresh();
+        }
+
+        private void dg_mostrar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tb_id.Text = dg_mostrar.CurrentRow.Cells["Id"].Value.ToString();
+            tb_descripcion.Text = dg_mostrar.CurrentRow.Cells["Descripcion"].Value.ToString();
+            //tb_abreviacion.Text = dg_mostrar.CurrentRow.Cells["Codigo"].Value.ToString();
+        }
     }
 }

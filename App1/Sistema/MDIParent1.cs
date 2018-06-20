@@ -152,6 +152,7 @@ namespace Sistema
         {
             FormUniMed childForm = new FormUniMed();
             childForm.MdiParent = this;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
         }
 

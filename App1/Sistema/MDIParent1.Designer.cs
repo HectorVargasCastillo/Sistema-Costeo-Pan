@@ -550,7 +550,7 @@
             // FormIngPrecio
             // 
             this.FormIngPrecio.Name = "FormIngPrecio";
-            this.FormIngPrecio.Size = new System.Drawing.Size(180, 22);
+            this.FormIngPrecio.Size = new System.Drawing.Size(109, 22);
             this.FormIngPrecio.Text = "Nuevo";
             this.FormIngPrecio.Click += new System.EventHandler(this.FormIngPrecio_Click);
             // 
@@ -665,6 +665,7 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MDIParent1";
             this.Text = "MDIParent1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);

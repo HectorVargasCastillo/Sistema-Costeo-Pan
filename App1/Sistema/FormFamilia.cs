@@ -17,7 +17,7 @@ namespace Sistema
             InitializeComponent();
             tb_descripcion.MaxLength = 45;
             listaLineas();
-            mostrar_datagridview();
+           // mostrar_datagridview();
             tb_id.Visible = false;
 
         }
@@ -231,6 +231,7 @@ namespace Sistema
 
         private void mostrar_datagridview()
         {
+            var codigo_lin = Convert.ToInt16(cm_linea.SelectedValue);
             costeoEntities dbfamilia = new costeoEntities();
             DataTable tabla = new DataTable();
             tabla.Columns.Add("Id");
@@ -238,17 +239,19 @@ namespace Sistema
             tabla.Columns.Add("Linea");
             foreach (var dato in dbfamilia.familia.ToList())
             {
-                if (dato.eliminado_el == null)
+                if (dato.linea_id == codigo_lin)
                 {
-                    DataRow row = tabla.NewRow();
-                    row["Id"] = Convert.ToString(dato.id);
-                    row["Descripcion"] = Convert.ToString(dato.nombre);
-                    costeoEntities dblinea = new costeoEntities();
-                    var linea = dblinea.linea.FirstOrDefault(codigo => codigo.id == dato.linea_id);
-                    row["Linea"] = linea.nombre;
-                    tabla.Rows.Add(row);
+                    if (dato.eliminado_el == null)
+                    {
+                        DataRow row = tabla.NewRow();
+                        row["Id"] = Convert.ToString(dato.id);
+                        row["Descripcion"] = Convert.ToString(dato.nombre);
+                        costeoEntities dblinea = new costeoEntities();
+                        var linea = dblinea.linea.FirstOrDefault(codigo => codigo.id == dato.linea_id);
+                        row["Linea"] = linea.nombre;
+                        tabla.Rows.Add(row);
+                    }
                 }
-
             }
             tabla.DefaultView.Sort = "[Id] DESC";
             dg_mostrar.DataSource = tabla;
@@ -263,6 +266,12 @@ namespace Sistema
             tb_id.Text = dg_mostrar.CurrentRow.Cells["Id"].Value.ToString();
             tb_descripcion.Text = dg_mostrar.CurrentRow.Cells["Descripcion"].Value.ToString();
             //tb_abreviacion.Text = dg_mostrar.CurrentRow.Cells["Codigo"].Value.ToString();
+        }
+
+        private void cm_linea_SelectionChangeCommited(object sender, EventArgs e)
+        {
+            mostrar_datagridview();
+            tb_descripcion.Focus();
         }
     }
 }

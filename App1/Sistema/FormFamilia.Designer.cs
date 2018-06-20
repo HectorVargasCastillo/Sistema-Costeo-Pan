@@ -67,6 +67,7 @@
             this.cm_linea.Name = "cm_linea";
             this.cm_linea.Size = new System.Drawing.Size(121, 21);
             this.cm_linea.TabIndex = 4;
+            this.cm_linea.SelectionChangeCommitted += new System.EventHandler(this.cm_linea_SelectionChangeCommited);
             // 
             // lb_titulo
             // 
@@ -99,9 +100,9 @@
             // dg_mostrar
             // 
             this.dg_mostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_mostrar.Location = new System.Drawing.Point(261, 196);
+            this.dg_mostrar.Location = new System.Drawing.Point(241, 200);
             this.dg_mostrar.Name = "dg_mostrar";
-            this.dg_mostrar.Size = new System.Drawing.Size(303, 150);
+            this.dg_mostrar.Size = new System.Drawing.Size(343, 150);
             this.dg_mostrar.TabIndex = 9;
             this.dg_mostrar.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_mostrar_CellDoubleClick);
             // 

@@ -137,12 +137,13 @@
             // 
             // bt_buscar
             // 
+            this.bt_buscar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.bt_buscar.Location = new System.Drawing.Point(509, 51);
             this.bt_buscar.Name = "bt_buscar";
             this.bt_buscar.Size = new System.Drawing.Size(75, 23);
             this.bt_buscar.TabIndex = 9;
             this.bt_buscar.Text = "Buscar";
-            this.bt_buscar.UseVisualStyleBackColor = true;
+            this.bt_buscar.UseVisualStyleBackColor = false;
             this.bt_buscar.Click += new System.EventHandler(this.bt_buscar_Click);
             // 
             // bt_guardar

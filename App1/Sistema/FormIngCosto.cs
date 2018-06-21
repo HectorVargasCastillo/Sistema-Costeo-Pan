@@ -480,5 +480,10 @@ namespace Sistema
 
 
         }
+
+        private void dg_mostrar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

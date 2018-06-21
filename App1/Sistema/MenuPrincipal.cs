@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Sistema
 {
-    public partial class MDIParent1 : Form
+    public partial class MenuPrincipal : Form
     {
         private int childFormNumber = 0;
 
-        public MDIParent1()
+        public MenuPrincipal()
         {
             InitializeComponent();
         }
@@ -68,12 +68,12 @@ namespace Sistema
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
+        //    toolStrip.Visible = toolBarToolStripMenuItem.Checked;
         }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
+        //    statusStrip.Visible = statusBarToolStripMenuItem.Checked;
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -129,10 +129,7 @@ namespace Sistema
 
         private void FormFamilia_Click(object sender, EventArgs e)
         {
-            FormFamilia childForm = new FormFamilia();
-            childForm.MdiParent = this;
-            childForm.StartPosition = FormStartPosition.CenterScreen;
-            childForm.Show();
+            
 
         }
         private void menuEjemploToolStripMenuItem_Click(object sender, EventArgs e)
@@ -159,18 +156,87 @@ namespace Sistema
 
         private void FormIngCosto_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void FormIngPrecio_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void fileMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lineaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormFamilia childForm = new FormFamilia();
+            childForm.MdiParent = this;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
+            childForm.Show();
+        }
+
+        private void familiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FormFamilia childForm = new FormFamilia();
+            childForm.MdiParent = this;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
+            childForm.Show();
+        }
+
+        private void unidadMedidadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUniMed childForm = new FormUniMed();
+            childForm.MdiParent = this;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
+            childForm.Show();
+        }
+
+        private void ingresoCostosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUniMed childForm = new FormUniMed();
+            childForm.MdiParent = this;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
+            childForm.Show();
+        }
+
+        private void ingresoPreciosVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUniMed childForm = new FormUniMed();
+            childForm.MdiParent = this;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
+            childForm.Show();
+        }
+
+        private void ingresoCostoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             FormIngCosto childForm = new FormIngCosto();
             childForm.MdiParent = this;
             childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
         }
 
-        private void FormIngPrecio_Click(object sender, EventArgs e)
+        private void ingresoPreciosVentaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FormIngPrecio childForm = new FormIngPrecio();
             childForm.MdiParent = this;
             childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
+        }
+
+        private void produccionDiariaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormIngPrecio childForm = new FormIngPrecio();
+            childForm.MdiParent = this;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
+            childForm.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

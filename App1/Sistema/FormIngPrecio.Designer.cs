@@ -211,8 +211,8 @@
             // 
             // bt_guardar
             // 
-            this.bt_guardar.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.bt_guardar.Location = new System.Drawing.Point(197, 469);
+            this.bt_guardar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.bt_guardar.Location = new System.Drawing.Point(197, 467);
             this.bt_guardar.Name = "bt_guardar";
             this.bt_guardar.Size = new System.Drawing.Size(75, 23);
             this.bt_guardar.TabIndex = 18;
@@ -223,30 +223,33 @@
             // dg_mostrar
             // 
             this.dg_mostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_mostrar.Location = new System.Drawing.Point(140, 301);
+            this.dg_mostrar.Location = new System.Drawing.Point(140, 312);
             this.dg_mostrar.Name = "dg_mostrar";
-            this.dg_mostrar.Size = new System.Drawing.Size(472, 150);
+            this.dg_mostrar.Size = new System.Drawing.Size(472, 139);
             this.dg_mostrar.TabIndex = 19;
+            this.dg_mostrar.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_mostrar_CellDoubleClick);
             // 
             // bt_editar
             // 
-            this.bt_editar.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.bt_editar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.bt_editar.Location = new System.Drawing.Point(348, 467);
             this.bt_editar.Name = "bt_editar";
             this.bt_editar.Size = new System.Drawing.Size(75, 23);
             this.bt_editar.TabIndex = 20;
             this.bt_editar.Text = "Editar";
             this.bt_editar.UseVisualStyleBackColor = false;
+            this.bt_editar.Click += new System.EventHandler(this.bt_editar_Click);
             // 
             // bt_eliminar
             // 
-            this.bt_eliminar.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.bt_eliminar.Location = new System.Drawing.Point(491, 466);
+            this.bt_eliminar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.bt_eliminar.Location = new System.Drawing.Point(491, 467);
             this.bt_eliminar.Name = "bt_eliminar";
             this.bt_eliminar.Size = new System.Drawing.Size(75, 23);
             this.bt_eliminar.TabIndex = 21;
             this.bt_eliminar.Text = "Eliminar";
             this.bt_eliminar.UseVisualStyleBackColor = false;
+            this.bt_eliminar.Click += new System.EventHandler(this.bt_eliminar_Click);
             // 
             // tb_id
             // 

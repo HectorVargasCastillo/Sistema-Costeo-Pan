@@ -17,7 +17,7 @@ namespace Sistema
             InitializeComponent();
             tb_descripcion.MaxLength = 45;
             listaLineas();
-           // mostrar_datagridview();
+            cargar_columnas_datagridview();
             tb_id.Visible = false;
 
         }
@@ -204,17 +204,21 @@ namespace Sistema
                 }
                 else
                 {
-                    costeoEntities db = new costeoEntities();
-                    familia fam = new familia();
-                    fam = db.familia.Find(Convert.ToInt16(tb_id.Text));
 
-                    if (fam == null)
+                    if (MessageBox.Show("Estas seguro de eliminar este registro ?", "Eliminar registro", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        MessageBox.Show("ERROR : No Permite Eliminar Registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        return;
-                    }
-                    else
-                    {
+
+                                costeoEntities db = new costeoEntities();
+                        familia fam = new familia();
+                        fam = db.familia.Find(Convert.ToInt16(tb_id.Text));
+
+                        if (fam == null)
+                        {
+                            MessageBox.Show("ERROR : No Permite Eliminar Registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return;
+                        }   
+                        else
+                        {
                         fam.eliminado_el = DateTime.Today;
                         db.SaveChanges();
                         MessageBox.Show("Registro Eliminado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -222,7 +226,14 @@ namespace Sistema
                         tb_id.Text = "";
                         mostrar_datagridview();
                         cm_linea.Focus();
-
+                        }
+                    }
+                    else
+                    {
+                        tb_descripcion.Text = "";
+                        tb_id.Text = "";
+                        mostrar_datagridview();
+                        cm_linea.Focus();
                     }
                 }
 
@@ -260,7 +271,21 @@ namespace Sistema
             dg_mostrar.Columns["Linea"].ReadOnly = true;
             dg_mostrar.Refresh();
         }
-
+        private void cargar_columnas_datagridview()
+        {
+            var codigo_lin = Convert.ToInt16(cm_linea.SelectedValue);
+            costeoEntities dbfamilia = new costeoEntities();
+            DataTable tabla = new DataTable();
+            tabla.Columns.Add("Id");
+            tabla.Columns.Add("Descripcion");
+            tabla.Columns.Add("Linea");
+            
+            dg_mostrar.DataSource = tabla;
+            dg_mostrar.Columns["Id"].ReadOnly = true;
+            dg_mostrar.Columns["Descripcion"].ReadOnly = true;
+            dg_mostrar.Columns["Linea"].ReadOnly = true;
+            dg_mostrar.Refresh();
+        }
         private void dg_mostrar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             tb_id.Text = dg_mostrar.CurrentRow.Cells["Id"].Value.ToString();

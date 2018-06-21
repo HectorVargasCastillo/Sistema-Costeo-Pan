@@ -286,27 +286,40 @@ namespace Sistema
                 }
                 else
                 {
-                    costeoEntities db = new costeoEntities();
-                    unidad_medida um = new unidad_medida();
-                    um = db.unidad_medida.Find(Convert.ToInt16(tb_id.Text));
 
-                    if (um == null)
+                    if (MessageBox.Show("Estas seguro de eliminar este registro ?", "Eliminar registro", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        MessageBox.Show("ERROR : No Permite Eliminar Registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        return;
+                        costeoEntities db = new costeoEntities();
+                        unidad_medida um = new unidad_medida();
+                        um = db.unidad_medida.Find(Convert.ToInt16(tb_id.Text));
+
+                        if (um == null)
+                        {
+                            MessageBox.Show("ERROR : No Permite Eliminar Registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return;
+                        }
+                        else
+                        {
+                            um.eliminado_el = DateTime.Today;
+                            db.SaveChanges();
+                            MessageBox.Show("Registro Eliminado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            tb_nombre.Text = "";
+                            tb_abreviacion.Text = "";
+                            tb_id.Text = "";
+                            mostrar_datagridview();
+                            tb_nombre.Focus();
+                        }
                     }
                     else
                     {
-                        um.eliminado_el = DateTime.Today;
-                        db.SaveChanges();
-                        MessageBox.Show("Registro Eliminado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         tb_nombre.Text = "";
                         tb_abreviacion.Text = "";
                         tb_id.Text = "";
                         mostrar_datagridview();
                         tb_nombre.Focus();
-
                     }
+
+                        
                 }
 
             }

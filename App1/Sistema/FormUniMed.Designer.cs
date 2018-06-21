@@ -78,7 +78,7 @@
             // bt_guardar
             // 
             this.bt_guardar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.bt_guardar.Location = new System.Drawing.Point(227, 375);
+            this.bt_guardar.Location = new System.Drawing.Point(235, 375);
             this.bt_guardar.Name = "bt_guardar";
             this.bt_guardar.Size = new System.Drawing.Size(75, 23);
             this.bt_guardar.TabIndex = 4;
@@ -118,7 +118,7 @@
             // bt_eliminar
             // 
             this.bt_eliminar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.bt_eliminar.Location = new System.Drawing.Point(495, 375);
+            this.bt_eliminar.Location = new System.Drawing.Point(490, 375);
             this.bt_eliminar.Name = "bt_eliminar";
             this.bt_eliminar.Size = new System.Drawing.Size(75, 23);
             this.bt_eliminar.TabIndex = 8;

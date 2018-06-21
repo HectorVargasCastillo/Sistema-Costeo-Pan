@@ -227,6 +227,7 @@
             this.dg_mostrar.Name = "dg_mostrar";
             this.dg_mostrar.Size = new System.Drawing.Size(469, 103);
             this.dg_mostrar.TabIndex = 19;
+            this.dg_mostrar.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_mostrar_CellDoubleClick);
             // 
             // bt_editar
             // 
@@ -237,6 +238,7 @@
             this.bt_editar.TabIndex = 20;
             this.bt_editar.Text = "Editar";
             this.bt_editar.UseVisualStyleBackColor = false;
+            this.bt_editar.Click += new System.EventHandler(this.bt_editar_Click);
             // 
             // bt_eliminar
             // 
@@ -247,6 +249,7 @@
             this.bt_eliminar.TabIndex = 21;
             this.bt_eliminar.Text = "Eliminar";
             this.bt_eliminar.UseVisualStyleBackColor = false;
+            this.bt_eliminar.Click += new System.EventHandler(this.bt_eliminar_Click);
             // 
             // tb_id
             // 

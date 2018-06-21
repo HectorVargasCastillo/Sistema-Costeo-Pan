@@ -238,5 +238,10 @@ namespace Sistema
         {
             this.Close();
         }
+
+        private void pb_logo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

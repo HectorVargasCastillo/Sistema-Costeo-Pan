@@ -36,6 +36,7 @@
             this.unidadMedidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresoCostosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresoPreciosVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresoCostoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresoPreciosVentaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -75,6 +76,7 @@
             this.unidadMedidadToolStripMenuItem,
             this.ingresoCostosToolStripMenuItem,
             this.ingresoPreciosVentaToolStripMenuItem,
+            this.toolStripSeparator3,
             this.salirToolStripMenuItem});
             this.mantenedoresToolStripMenuItem.Name = "mantenedoresToolStripMenuItem";
             this.mantenedoresToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
@@ -114,6 +116,13 @@
             this.ingresoPreciosVentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ingresoPreciosVentaToolStripMenuItem.Text = "Receta";
             this.ingresoPreciosVentaToolStripMenuItem.Click += new System.EventHandler(this.ingresoPreciosVentaToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // movimientosToolStripMenuItem
             // 
@@ -207,12 +216,10 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // salirToolStripMenuItem
+            // toolStripSeparator3
             // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // MenuPrincipal
             // 
@@ -261,6 +268,7 @@
         private System.Windows.Forms.ToolStripMenuItem ingresoPreciosVentaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem produccionDiariaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }
 

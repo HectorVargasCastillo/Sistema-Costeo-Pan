@@ -126,6 +126,8 @@ namespace Sistema
             {
                 //MessageBox.Show("Mostrar Datos");
                 costeoEntities db = new costeoEntities();
+                usuario user = new usuario();
+
                 var codigo_int = Convert.ToInt64(tb_codigo.Text);
                 var producto = db.producto.FirstOrDefault(codigo => codigo.codigo_barra == codigo_int);
 

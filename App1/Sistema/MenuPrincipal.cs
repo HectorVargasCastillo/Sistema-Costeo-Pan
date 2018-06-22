@@ -104,12 +104,12 @@ namespace Sistema
             }
         }
 
-        private void formulario1ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ReporteKiloToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form childForm = new FormReporteKilo();
             childForm = new FormReporteKilo();
             childForm.MdiParent = this;
-            childForm.Text = "Ventana " + childFormNumber++;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
         }
 
@@ -141,7 +141,7 @@ namespace Sistema
         {
             FormReporteDiario childForm = new FormReporteDiario();
             childForm.MdiParent = this;
-            childForm.Text = "Ventana " + childFormNumber++;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
 
         }
@@ -240,6 +240,11 @@ namespace Sistema
         }
 
         private void pb_logo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
         {
 
         }

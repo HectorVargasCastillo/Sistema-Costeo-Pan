@@ -53,5 +53,10 @@ namespace Sistema
             dg_reporte.DataSource = bi;
             dg_reporte.Refresh();
         }
+
+        private void FormReporteKilo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

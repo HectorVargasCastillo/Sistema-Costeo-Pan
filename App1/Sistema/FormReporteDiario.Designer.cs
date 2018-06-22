@@ -94,7 +94,7 @@
             this.precio_venta,
             this.rentabilidad_porcentaje,
             this.rentabilidad_moneda});
-            this.dg_reporte.Location = new System.Drawing.Point(113, 214);
+            this.dg_reporte.Location = new System.Drawing.Point(81, 214);
             this.dg_reporte.Name = "dg_reporte";
             this.dg_reporte.Size = new System.Drawing.Size(543, 150);
             this.dg_reporte.TabIndex = 7;
@@ -129,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(707, 450);
             this.Controls.Add(this.dg_reporte);
             this.Controls.Add(this.tp_fin);
             this.Controls.Add(this.tp_inicio);
@@ -137,6 +137,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormReporteDiario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte Diario";
             ((System.ComponentModel.ISupportInitialize)(this.dg_reporte)).EndInit();
             this.ResumeLayout(false);

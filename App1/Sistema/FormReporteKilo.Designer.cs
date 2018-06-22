@@ -46,7 +46,7 @@
             // 
             // bt_mostrar
             // 
-            this.bt_mostrar.Location = new System.Drawing.Point(350, 224);
+            this.bt_mostrar.Location = new System.Drawing.Point(275, 222);
             this.bt_mostrar.Name = "bt_mostrar";
             this.bt_mostrar.Size = new System.Drawing.Size(97, 23);
             this.bt_mostrar.TabIndex = 0;
@@ -96,7 +96,7 @@
             this.precio_venta,
             this.Rentabilidad_porcentaje,
             this.rentabilidad_moneda});
-            this.dg_reporte.Location = new System.Drawing.Point(119, 290);
+            this.dg_reporte.Location = new System.Drawing.Point(65, 290);
             this.dg_reporte.Name = "dg_reporte";
             this.dg_reporte.Size = new System.Drawing.Size(543, 150);
             this.dg_reporte.TabIndex = 5;
@@ -150,7 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(707, 473);
             this.Controls.Add(this.cb_tipopan);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dg_reporte);
@@ -160,7 +160,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bt_mostrar);
             this.Name = "FormReporteKilo";
+            this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte por kilo";
+            this.Load += new System.EventHandler(this.FormReporteKilo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_reporte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -16,7 +16,25 @@ namespace Sistema
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+
+            FormLogin login = new FormLogin();
+
+            // Show testDialog as a modal dialog and determine if DialogResult = OK.
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new MenuPrincipal());
+            }
+
+            login.Dispose();
+
+
+            
+
+
+           
+
+
+
         }
     }
 }

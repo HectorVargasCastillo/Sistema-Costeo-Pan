@@ -24,20 +24,19 @@ namespace Sistema
 
         private void bt_ingresar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+           
             // Application.Run(new MenuPrincipal());
-           /* costeoEntities db = new costeoEntities();
+            costeoEntities db = new costeoEntities();
             bool salir = false;
             var userLog="";
             foreach (var user in db.usuario) {   
                 if (Convert.ToString(tb_usuario.Text) == user.nombre && Convert.ToString(tb_pass.Text) == user.password)
                 {
                     //Form MenuPrincipal = new MenuPrincipal();
-                   
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                     //MenuPrincipal.Show();
                     // Form FormLogin = new FormLogin();
-                    Close();
                     salir = true;
                     userLog = user.nombre;
                     break;                                   
@@ -50,7 +49,7 @@ namespace Sistema
             else {
                 MessageBox.Show("Usuario o Contrasena incorrectas, favor intentar nuevamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
-            */
+            
 
         }
     }

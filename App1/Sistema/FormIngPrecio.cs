@@ -299,6 +299,9 @@ namespace Sistema
             dg_mostrar.DataSource = tabla;
             dg_mostrar.Columns["Producto"].Width = 229;
             dg_mostrar.Columns["Id"].Visible = false;
+            dg_mostrar.Columns["Fecha"].ReadOnly = true;
+            dg_mostrar.Columns["Producto"].ReadOnly = true;
+            dg_mostrar.Columns["Precio"].ReadOnly = true;
             dg_mostrar.Columns["Fecha"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dg_mostrar.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dg_mostrar.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;

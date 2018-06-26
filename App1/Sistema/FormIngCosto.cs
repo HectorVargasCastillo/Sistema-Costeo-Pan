@@ -316,6 +316,9 @@ namespace Sistema
             dg_mostrar.DataSource = tabla;
             dg_mostrar.Columns["Producto"].Width = 226;
             dg_mostrar.Columns["Id"].Visible = false;
+            dg_mostrar.Columns["Fecha"].ReadOnly = true;
+            dg_mostrar.Columns["Producto"].ReadOnly = true;
+            dg_mostrar.Columns["Costo"].ReadOnly = true;
             dg_mostrar.Columns["Fecha"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dg_mostrar.Columns["Costo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dg_mostrar.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;

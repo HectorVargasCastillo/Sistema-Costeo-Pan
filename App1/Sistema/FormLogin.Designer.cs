@@ -43,7 +43,7 @@
             this.bt_ingresar.AutoSize = true;
             this.bt_ingresar.Location = new System.Drawing.Point(170, 258);
             this.bt_ingresar.Name = "bt_ingresar";
-            this.bt_ingresar.Size = new System.Drawing.Size(75, 23);
+            this.bt_ingresar.Size = new System.Drawing.Size(93, 23);
             this.bt_ingresar.TabIndex = 0;
             this.bt_ingresar.Text = "Ingresar";
             this.bt_ingresar.UseVisualStyleBackColor = true;

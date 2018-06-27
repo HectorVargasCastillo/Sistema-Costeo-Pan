@@ -75,6 +75,7 @@ namespace Sistema
                 else {
                     if (int.Parse(cb_tipopan.SelectedValue.ToString()) == pd.producto_id && (tp_inicio.Value < pd.fecha) && (tp_fin.Value > pd.fecha))
                     {
+
                         DataRow row = tabla.NewRow();
                         row["Fecha"] = Convert.ToString(pd.fecha);
                         var costo = db.costo.FirstOrDefault(codigo => codigo.producto_id == pd.producto_id);
@@ -84,7 +85,7 @@ namespace Sistema
                         row["Rentabilidad $"] = (venta.valor - costo.valor);
                         Decimal rentabilidad = (((Convert.ToDecimal(venta.valor) / costo.valor) - 1) * 100);
                         row["Rentabilidad %"] = rentabilidad.ToString("###,###.##");
-                        tabla.Rows.Add(row);
+                        tabla.Rows.Add(row);                        
                     }
                     else {
                         MessageBox.Show("No se encuentan registros en el rango de fechas indicado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

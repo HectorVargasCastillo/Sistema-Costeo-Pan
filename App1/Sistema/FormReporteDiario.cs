@@ -73,5 +73,10 @@ namespace Sistema
             dg_reporte.DataSource = tabla;
             dg_reporte.Refresh();
         }
+
+        private void FormReporteDiario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -73,7 +73,7 @@ namespace Sistema
                     break;
                 }
                 else {
-                    if (int.Parse(cb_tipopan.SelectedValue.ToString()) == pd.producto_id && (tp_inicio.Value < pd.fecha) && (tp_fin.Value > pd.fecha))
+                    if ((int.Parse(cb_tipopan.SelectedValue.ToString()) == pd.producto_id) && (tp_inicio.Value < pd.fecha) && (tp_fin.Value > pd.fecha))
                     {
                         DataRow row = tabla.NewRow();
                         row["Fecha"] = Convert.ToString(pd.fecha);

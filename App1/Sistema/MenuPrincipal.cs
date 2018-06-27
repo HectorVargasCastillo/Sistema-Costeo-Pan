@@ -171,7 +171,7 @@ namespace Sistema
 
         private void lineaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormFamilia childForm = new FormFamilia();
+            FormIngresoLineaProducto childForm = new FormIngresoLineaProducto();
             childForm.MdiParent = this;
             childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();

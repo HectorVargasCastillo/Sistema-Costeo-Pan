@@ -81,6 +81,7 @@
             this.bt_editar.TabIndex = 17;
             this.bt_editar.Text = "Editar";
             this.bt_editar.UseVisualStyleBackColor = false;
+            this.bt_editar.Click += new System.EventHandler(this.bt_editar_Click_1);
             // 
             // bt_guardar
             // 
@@ -91,6 +92,7 @@
             this.bt_guardar.TabIndex = 16;
             this.bt_guardar.Text = "Guardar";
             this.bt_guardar.UseVisualStyleBackColor = false;
+            this.bt_guardar.Click += new System.EventHandler(this.bt_guardar_Click_1);
             // 
             // tb_id
             // 

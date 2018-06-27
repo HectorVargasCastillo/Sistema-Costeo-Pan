@@ -12,6 +12,7 @@ namespace Sistema
 {
     public partial class FormLogin : Form
     {
+
         public FormLogin()
         {
             InitializeComponent();
@@ -19,7 +20,7 @@ namespace Sistema
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-  
+            bt_ingresar.Focus();
         }
 
         private void bt_ingresar_Click(object sender, EventArgs e)
@@ -28,17 +29,15 @@ namespace Sistema
             // Application.Run(new MenuPrincipal());
             costeoEntities db = new costeoEntities();
             bool salir = false;
-            var userLog="";
+            var userLog = "";
+            
             foreach (var user in db.usuario) {   
                 if (Convert.ToString(tb_usuario.Text) == user.nombre && Convert.ToString(tb_pass.Text) == user.password)
                 {
-                    //Form MenuPrincipal = new MenuPrincipal();
                     this.DialogResult = DialogResult.OK;
-                    this.Close();
-                    //MenuPrincipal.Show();
-                    // Form FormLogin = new FormLogin();
-                    salir = true;
                     userLog = user.nombre;
+                    this.Close();
+                    salir = true;
                     break;                                   
                 }
             }

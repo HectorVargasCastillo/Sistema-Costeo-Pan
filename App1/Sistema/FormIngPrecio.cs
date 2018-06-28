@@ -285,11 +285,11 @@ namespace Sistema
                 if (dato.eliminado_el == null)
                 {
                     DataRow row = tabla.NewRow();
-                    row["Fecha"] = Convert.ToString(dato.fecha);
+                    row["Fecha"] = dato.fecha.ToShortDateString(); //Convert.ToString(dato.fecha);
                     costeoEntities db = new costeoEntities();
                     var producto = db.producto.FirstOrDefault(codigo => codigo.id == dato.producto_id);
                     row["Producto"] = producto.nombre;
-                    row["Precio"] = Convert.ToString(dato.valor);
+                    row["Precio"] = dato.valor.ToString("###,###.##");
                     row["Id"] = Convert.ToString(dato.id);
                     tabla.Rows.Add(row);
                 }
@@ -297,8 +297,14 @@ namespace Sistema
             }
             tabla.DefaultView.Sort = "[Fecha] DESC";
             dg_mostrar.DataSource = tabla;
-            dg_mostrar.Columns["Producto"].Width = 226;
+            dg_mostrar.Columns["Producto"].Width = 229;
             dg_mostrar.Columns["Id"].Visible = false;
+            dg_mostrar.Columns["Fecha"].ReadOnly = true;
+            dg_mostrar.Columns["Producto"].ReadOnly = true;
+            dg_mostrar.Columns["Precio"].ReadOnly = true;
+            dg_mostrar.Columns["Fecha"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dg_mostrar.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dg_mostrar.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dg_mostrar.Refresh();
         }
 

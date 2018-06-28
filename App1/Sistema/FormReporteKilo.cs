@@ -81,6 +81,7 @@ namespace Sistema
                     if ((int.Parse(cb_tipopan.SelectedValue.ToString()) == pd.producto_id) && (f_inicio<= pd.fecha) && (f_fin >= pd.fecha))
                     {
                         se_encontro = true;
+
                         DataRow row = tabla.NewRow();
                         row["Fecha"] = Convert.ToString(pd.fecha);
                         var costo = db.costo.FirstOrDefault(codigo => codigo.producto_id == pd.producto_id);
@@ -90,7 +91,7 @@ namespace Sistema
                         row["Rentabilidad $"] = (venta.valor - costo.valor);
                         Decimal rentabilidad = (((Convert.ToDecimal(venta.valor) / costo.valor) - 1) * 100);
                         row["Rentabilidad %"] = rentabilidad.ToString("###,###.##");
-                        tabla.Rows.Add(row);
+                        tabla.Rows.Add(row);                        
                     }
                 }
             }

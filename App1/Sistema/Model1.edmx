@@ -207,6 +207,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_producto_familia">
+          <End Role="familia" Type="Self.familia" Multiplicity="1" />
+          <End Role="producto" Type="Self.producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="familia">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="producto">
+              <PropertyRef Name="familia_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_producto_unidad_medida">
+          <End Role="unidad_medida" Type="Self.unidad_medida" Multiplicity="1" />
+          <End Role="producto" Type="Self.producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="unidad_medida">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="producto">
+              <PropertyRef Name="unidad_medida_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_receta_producto">
           <End Role="producto" Type="Self.producto" Multiplicity="1" />
           <End Role="receta" Type="Self.receta" Multiplicity="*" />
@@ -255,6 +279,14 @@
             <End Role="producto" EntitySet="producto" />
             <End Role="produccion_diaria" EntitySet="produccion_diaria" />
           </AssociationSet>
+          <AssociationSet Name="FK_producto_familia" Association="Self.FK_producto_familia">
+            <End Role="familia" EntitySet="familia" />
+            <End Role="producto" EntitySet="producto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_producto_unidad_medida" Association="Self.FK_producto_unidad_medida">
+            <End Role="unidad_medida" EntitySet="unidad_medida" />
+            <End Role="producto" EntitySet="producto" />
+          </AssociationSet>
           <AssociationSet Name="FK_receta_producto" Association="Self.FK_receta_producto">
             <End Role="producto" EntitySet="producto" />
             <End Role="receta" EntitySet="receta" />
@@ -273,6 +305,7 @@
           <EntitySet Name="produccion_diaria" EntityType="costeoModel.produccion_diaria" />
           <EntitySet Name="producto" EntityType="costeoModel.producto" />
           <EntitySet Name="receta" EntityType="costeoModel.receta" />
+          <EntitySet Name="sysdiagrams" EntityType="costeoModel.sysdiagrams" />
           <EntitySet Name="unidad_medida" EntityType="costeoModel.unidad_medida" />
           <EntitySet Name="usuario" EntityType="costeoModel.usuario" />
           <AssociationSet Name="FK_costo_producto" Association="costeoModel.FK_costo_producto">
@@ -311,7 +344,6 @@
             <End Role="producto" EntitySet="producto" />
             <End Role="receta" EntitySet="receta" />
           </AssociationSet>
-          <EntitySet Name="sysdiagrams" EntityType="costeoModel.sysdiagrams" />
         </EntityContainer>
         <EntityType Name="costo">
           <Key>
@@ -427,6 +459,16 @@
           <Property Name="eliminado_el" Type="DateTime" Precision="3" />
           <NavigationProperty Name="detalle_receta" Relationship="costeoModel.FK_detalle_receta_receta" FromRole="receta" ToRole="detalle_receta" />
           <NavigationProperty Name="producto" Relationship="costeoModel.FK_receta_producto" FromRole="receta" ToRole="producto" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="unidad_medida">
           <Key>
@@ -559,17 +601,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -681,6 +713,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="costeoModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="unidad_medida">
             <EntityTypeMapping TypeName="costeoModel.unidad_medida">
               <MappingFragment StoreEntitySet="unidad_medida">
@@ -702,17 +745,6 @@
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="costeoModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

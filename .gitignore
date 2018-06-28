@@ -260,3 +260,5 @@ paket-files/
 __pycache__/
 *.pyc
 App1/Sistema/App.config
+App1/Sistema/FormIngPrecio.cs
+App1/Sistema/FormIngPrecio.cs

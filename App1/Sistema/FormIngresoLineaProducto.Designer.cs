@@ -61,6 +61,7 @@
             this.dg_mostrar.Name = "dg_mostrar";
             this.dg_mostrar.Size = new System.Drawing.Size(343, 150);
             this.dg_mostrar.TabIndex = 15;
+            this.dg_mostrar.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_mostrar_CellDoubleClick);
             // 
             // bt_eliminar
             // 
@@ -71,6 +72,7 @@
             this.bt_eliminar.TabIndex = 18;
             this.bt_eliminar.Text = "Eliminar";
             this.bt_eliminar.UseVisualStyleBackColor = false;
+            this.bt_eliminar.Click += new System.EventHandler(this.bt_eliminar_Click_1);
             // 
             // bt_editar
             // 
@@ -101,6 +103,7 @@
             this.tb_id.Size = new System.Drawing.Size(100, 20);
             this.tb_id.TabIndex = 19;
             this.tb_id.Visible = false;
+            this.tb_id.TextChanged += new System.EventHandler(this.tb_id_TextChanged);
             // 
             // FormIngresoLineaProducto
             // 
@@ -116,6 +119,7 @@
             this.Controls.Add(this.lb_descripcionlinea);
             this.Name = "FormIngresoLineaProducto";
             this.Text = "FormIngresoLineaProducto";
+            this.Click += new System.EventHandler(this.bt_editar_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dg_mostrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

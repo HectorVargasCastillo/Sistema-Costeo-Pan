@@ -194,9 +194,9 @@ namespace Sistema
             childForm.Show();
         }
 
-        private void ingresoCostosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void registroproductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormUniMed childForm = new FormUniMed();
+            FormRegistroProducto childForm = new FormRegistroProducto();
             childForm.MdiParent = this;
             childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
@@ -228,7 +228,7 @@ namespace Sistema
 
         private void produccionDiariaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormIngPrecio childForm = new FormIngPrecio();
+            FormProDiariaPan childForm = new FormProDiariaPan();
             childForm.MdiParent = this;
             childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
@@ -247,6 +247,22 @@ namespace Sistema
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
            
+        }
+
+        private void ingresoProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRegistroProducto childForm = new FormRegistroProducto();
+            childForm.MdiParent = this;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
+            childForm.Show();
+        }
+
+        private void nuevaRecetaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRecetaDePan childForm = new FormRecetaDePan();
+            childForm.MdiParent = this;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
+            childForm.Show();
         }
     }
 }

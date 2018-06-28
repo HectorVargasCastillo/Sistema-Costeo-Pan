@@ -37,13 +37,15 @@
             this.cm_inginsumos = new System.Windows.Forms.ComboBox();
             this.tb_estado = new System.Windows.Forms.TextBox();
             this.tb_cantidad = new System.Windows.Forms.TextBox();
-            this.tb_unimedida = new System.Windows.Forms.TextBox();
             this.dg_reporte = new System.Windows.Forms.DataGridView();
             this.dg_insumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dg_unidadmedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dg_cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bt_grabar = new System.Windows.Forms.Button();
-            this.bt_guardar = new System.Windows.Forms.Button();
+            this.bt_eliminar = new System.Windows.Forms.Button();
+            this.bt_editar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tb_id = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dg_reporte)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,14 +129,6 @@
             this.tb_cantidad.Size = new System.Drawing.Size(100, 20);
             this.tb_cantidad.TabIndex = 8;
             // 
-            // tb_unimedida
-            // 
-            this.tb_unimedida.Location = new System.Drawing.Point(262, 187);
-            this.tb_unimedida.Name = "tb_unimedida";
-            this.tb_unimedida.Size = new System.Drawing.Size(100, 20);
-            this.tb_unimedida.TabIndex = 9;
-            this.tb_unimedida.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
             // dg_reporte
             // 
             this.dg_reporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -144,7 +138,7 @@
             this.dg_cantidad});
             this.dg_reporte.Location = new System.Drawing.Point(67, 237);
             this.dg_reporte.Name = "dg_reporte";
-            this.dg_reporte.Size = new System.Drawing.Size(543, 150);
+            this.dg_reporte.Size = new System.Drawing.Size(343, 59);
             this.dg_reporte.TabIndex = 10;
             this.dg_reporte.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_reporte_CellContentClick);
             // 
@@ -163,33 +157,64 @@
             this.dg_cantidad.HeaderText = "Cantidad";
             this.dg_cantidad.Name = "dg_cantidad";
             // 
-            // bt_grabar
+            // bt_eliminar
             // 
-            this.bt_grabar.Location = new System.Drawing.Point(566, 183);
-            this.bt_grabar.Name = "bt_grabar";
-            this.bt_grabar.Size = new System.Drawing.Size(75, 23);
-            this.bt_grabar.TabIndex = 11;
-            this.bt_grabar.Text = "Grabar";
-            this.bt_grabar.UseVisualStyleBackColor = true;
+            this.bt_eliminar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.bt_eliminar.Location = new System.Drawing.Point(285, 406);
+            this.bt_eliminar.Name = "bt_eliminar";
+            this.bt_eliminar.Size = new System.Drawing.Size(75, 23);
+            this.bt_eliminar.TabIndex = 21;
+            this.bt_eliminar.Text = "Eliminar";
+            this.bt_eliminar.UseVisualStyleBackColor = false;
             // 
-            // bt_guardar
+            // bt_editar
             // 
-            this.bt_guardar.Location = new System.Drawing.Point(535, 406);
-            this.bt_guardar.Name = "bt_guardar";
-            this.bt_guardar.Size = new System.Drawing.Size(75, 23);
-            this.bt_guardar.TabIndex = 12;
-            this.bt_guardar.Text = "Guardar";
-            this.bt_guardar.UseVisualStyleBackColor = true;
+            this.bt_editar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.bt_editar.Location = new System.Drawing.Point(177, 406);
+            this.bt_editar.Name = "bt_editar";
+            this.bt_editar.Size = new System.Drawing.Size(75, 23);
+            this.bt_editar.TabIndex = 20;
+            this.bt_editar.Text = "Editar";
+            this.bt_editar.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button1.Location = new System.Drawing.Point(67, 406);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Guardar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tb_id
+            // 
+            this.tb_id.Location = new System.Drawing.Point(394, 409);
+            this.tb_id.Name = "tb_id";
+            this.tb_id.Size = new System.Drawing.Size(100, 20);
+            this.tb_id.TabIndex = 22;
+            this.tb_id.Visible = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(243, 187);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(117, 21);
+            this.comboBox1.TabIndex = 23;
             // 
             // FormRecetaDePan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.bt_guardar);
-            this.Controls.Add(this.bt_grabar);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.tb_id);
+            this.Controls.Add(this.bt_eliminar);
+            this.Controls.Add(this.bt_editar);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dg_reporte);
-            this.Controls.Add(this.tb_unimedida);
             this.Controls.Add(this.tb_cantidad);
             this.Controls.Add(this.tb_estado);
             this.Controls.Add(this.cm_inginsumos);
@@ -201,6 +226,7 @@
             this.Controls.Add(this.lb_prodfinal);
             this.Name = "FormRecetaDePan";
             this.Text = "FormRecetaDePan";
+            this.Load += new System.EventHandler(this.FormRecetaDePan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_reporte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -218,12 +244,14 @@
         private System.Windows.Forms.ComboBox cm_inginsumos;
         private System.Windows.Forms.TextBox tb_estado;
         private System.Windows.Forms.TextBox tb_cantidad;
-        private System.Windows.Forms.TextBox tb_unimedida;
         private System.Windows.Forms.DataGridView dg_reporte;
+        private System.Windows.Forms.Button bt_eliminar;
+        private System.Windows.Forms.Button bt_editar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tb_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn dg_insumos;
         private System.Windows.Forms.DataGridViewTextBoxColumn dg_unidadmedida;
         private System.Windows.Forms.DataGridViewTextBoxColumn dg_cantidad;
-        private System.Windows.Forms.Button bt_grabar;
-        private System.Windows.Forms.Button bt_guardar;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

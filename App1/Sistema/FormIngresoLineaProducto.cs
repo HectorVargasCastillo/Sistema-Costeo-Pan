@@ -18,7 +18,8 @@ namespace Sistema
             tb_descripcionlinea.MaxLength = 45;
            // MessageBox.Show("Debe Ingresar Descripcion linea");
             tb_descripcionlinea.Focus();
-            cargar_columnas_datagridview();
+            // cargar_columnas_datagridview();
+            mostrar_datagridview();
             tb_id.Visible = false;
         }
         private void tb_descripcionlinea_KeyPress(object sender, KeyPressEventArgs e)
@@ -110,62 +111,6 @@ namespace Sistema
                             //cm_linea.Focus();
                             tb_descripcionlinea.Focus();
                         }
-                    }
-                }
-
-            }
-        }
-
-        private void bt_eliminar_Click(object sender, EventArgs e)
-        {
-            if (tb_descripcionlinea.Text == "")
-            {
-                MessageBox.Show("Para Eliminar, Debe Pinchar Celda de Grilla", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                //cm_linea.Focus();
-                tb_descripcionlinea.Focus();
-            }
-            else
-            {
-                if (tb_id.Text == "")
-                {
-                    MessageBox.Show("ERROR : No Permite Eliminar Datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    //cm_linea.Focus();
-                    tb_descripcionlinea.Focus();
-                }
-                else
-                {
-
-                    if (MessageBox.Show("Estas seguro de eliminar este registro ?", "Eliminar registro", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-
-                        costeoEntities db = new costeoEntities();
-                        linea lin = new linea();
-                        lin = db.linea.Find(Convert.ToInt16(tb_id.Text));
-
-                        if (lin == null)
-                        {
-                            MessageBox.Show("ERROR : No Permite Eliminar Registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            return;
-                        }
-                        else
-                        {
-                            lin.eliminado_el = DateTime.Today;
-                            db.SaveChanges();
-                            MessageBox.Show("Registro Eliminado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            tb_descripcionlinea.Text = "";
-                            tb_id.Text = "";
-                            mostrar_datagridview();
-                            // cm_linea.Focus();
-                            tb_descripcionlinea.Focus();
-                        }
-                    }
-                    else
-                    {
-                        tb_descripcionlinea.Text = "";
-                        tb_id.Text = "";
-                        mostrar_datagridview();
-                        //cm_linea.Focus();
-                        tb_descripcionlinea.Focus();
                     }
                 }
 
@@ -397,8 +342,8 @@ namespace Sistema
                         if (lin.nombre != tb_descripcionlinea.Text)
                         {
                             lin.nombre = tb_descripcionlinea.Text;
-                            var codigo_lin = Convert.ToInt16(tb_descripcionlinea.Text);
-                            var linea = db.linea.FirstOrDefault(codigol => codigol.id == codigo_lin);
+                         //   var codigo_lin = Convert.ToInt16(tb_descripcionlinea.Text);
+                           // var linea = db.linea.FirstOrDefault(codigol => codigol.id == codigo_lin);
                             //lin.linea = linea;
                             lin.modificado_el = DateTime.Today;
                             db.SaveChanges();
@@ -422,6 +367,70 @@ namespace Sistema
                 }
 
             }
+        }
+
+        private void tb_id_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_eliminar_Click_1(object sender, EventArgs e)
+        {
+
+                if (tb_descripcionlinea.Text == "")
+                {
+                    MessageBox.Show("Para Eliminar, Debe Pinchar Celda de Grilla", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    //cm_linea.Focus();
+                    tb_descripcionlinea.Focus();
+                }
+                else
+                {
+                    if (tb_id.Text == "")
+                    {
+                        MessageBox.Show("ERROR : No Permite Eliminar Datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //cm_linea.Focus();
+                        tb_descripcionlinea.Focus();
+                    }
+                    else
+                    {
+
+                        if (MessageBox.Show("Estas seguro de eliminar este registro ?", "Eliminar registro", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+
+                            costeoEntities db = new costeoEntities();
+                            linea lin = new linea();
+                            lin = db.linea.Find(Convert.ToInt16(tb_id.Text));
+
+                            if (lin == null)
+                            {
+                                MessageBox.Show("ERROR : No Permite Eliminar Registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                return;
+                            }
+                            else
+                            {
+                                lin.eliminado_el = DateTime.Today;
+                                db.SaveChanges();
+                                MessageBox.Show("Registro Eliminado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                tb_descripcionlinea.Text = "";
+                                tb_id.Text = "";
+                                mostrar_datagridview();
+                                // cm_linea.Focus();
+                                tb_descripcionlinea.Focus();
+                            }
+                        }
+                        else
+                        {
+                            tb_descripcionlinea.Text = "";
+                            tb_id.Text = "";
+                            mostrar_datagridview();
+                            //cm_linea.Focus();
+                            tb_descripcionlinea.Focus();
+                        }
+                    }
+
+                }
+            
+
         }
     }
 }

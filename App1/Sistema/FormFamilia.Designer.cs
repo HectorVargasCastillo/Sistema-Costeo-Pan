@@ -130,7 +130,7 @@
             // 
             // tb_id
             // 
-            this.tb_id.Location = new System.Drawing.Point(271, 418);
+            this.tb_id.Location = new System.Drawing.Point(535, 409);
             this.tb_id.Name = "tb_id";
             this.tb_id.Size = new System.Drawing.Size(100, 20);
             this.tb_id.TabIndex = 12;

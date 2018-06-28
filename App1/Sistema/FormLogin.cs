@@ -36,6 +36,7 @@ namespace Sistema
                 {
                     this.DialogResult = DialogResult.OK;
                     userLog = user.nombre;
+                    MenuPrincipal.usuario_logeado = user;
                     this.Close();
                     salir = true;
                     break;                                   
@@ -43,7 +44,7 @@ namespace Sistema
             }
             if (salir)
             {
-                MessageBox.Show("Bienvenido "+userLog, "Login correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Bienvenido "+userLog, "Login correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else {
                 MessageBox.Show("Usuario o Contrasena incorrectas, favor intentar nuevamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Stop);

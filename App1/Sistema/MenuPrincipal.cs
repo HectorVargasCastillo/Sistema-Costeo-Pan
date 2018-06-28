@@ -12,11 +12,15 @@ namespace Sistema
 {
     public partial class MenuPrincipal : Form
     {
+
+        public static usuario usuario_logeado;
+
         private int childFormNumber = 0;
 
         public MenuPrincipal()
         {
             InitializeComponent();
+            toolStripStatusLabel.Text = usuario_logeado.nombre;
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -257,6 +261,11 @@ namespace Sistema
         private void label1_Click(object sender, EventArgs e)
         {
      
+        }
+
+        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

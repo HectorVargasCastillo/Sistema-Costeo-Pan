@@ -64,17 +64,23 @@ namespace Sistema
             tabla.Columns.Add("Rentabilidad $");
             tabla.Columns.Add("Rentabilidad %");
 
-            //MessageBox.Show("Esto trae el combobox: "+ tp_inicio.Value, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            Boolean se_encontro=false;
+            DateTime f_inicio = tp_inicio.Value.Date;
+            DateTime f_fin = tp_fin.Value.Date;
 
-            foreach (var pd in db.produccion_diaria.ToList())
+
+            if (f_inicio > f_fin)
             {
-                if (tp_inicio.Value > tp_fin.Value) {
-                    MessageBox.Show("La fecha de inicio no puede ser mayor a la fecha de termino ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    break;
-                }
-                else {
-                    if (int.Parse(cb_tipopan.SelectedValue.ToString()) == pd.producto_id && (tp_inicio.Value < pd.fecha) && (tp_fin.Value > pd.fecha))
+                MessageBox.Show("La fecha de inicio no puede ser mayor a la fecha de termino ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                foreach (var pd in db.produccion_diaria.ToList())
+            {
+                
+                    if ((int.Parse(cb_tipopan.SelectedValue.ToString()) == pd.producto_id) && (f_inicio<= pd.fecha) && (f_fin >= pd.fecha))
                     {
+                        se_encontro = true;
 
                         DataRow row = tabla.NewRow();
                         row["Fecha"] = Convert.ToString(pd.fecha);
@@ -87,11 +93,10 @@ namespace Sistema
                         row["Rentabilidad %"] = rentabilidad.ToString("###,###.##");
                         tabla.Rows.Add(row);                        
                     }
-                    else {
-                        MessageBox.Show("No se encuentan registros en el rango de fechas indicado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        break;
-                    }
                 }
+            }
+            if (se_encontro == false) {
+                MessageBox.Show("No se encontraron registros ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             dg_reporte.DataSource = tabla;
             dg_reporte.Refresh();

@@ -305,15 +305,18 @@ namespace Sistema
                                 }
                                 else
                                 {
-                                    if (pro.codigo_barra != Convert.ToInt16(tb_codigobarra.Text))
+                                    if (pro.codigo_barra != Convert.ToInt32(tb_codigobarra.Text))
                                     {
                                         pro.codigo_barra = Convert.ToInt16(tb_codigobarra.Text);
-                                        //pro.nombre = Convert.ToInt16(tb_nombre.Text);
-                                        //pro.marca = Convert.ToInt16(tb_marca.Text);
-                                        //pro.fomato = Convert.toInt16(tb_formato.Text);
-                                        
+                                        //pro.unidad_medida_id = Convert.ToInt32(cm_unidadmedida.SelectedValue);
+                                        pro.nombre = tb_nombre.Text;
+                                        pro.marca = tb_marca.Text;
 
-                                        var codigo_fam = Convert.ToInt16(cm_familia.SelectedValue);
+                                            pro.fomato = Convert.ToInt32(tb_formato.Text);
+                                            pro.familia_id = Convert.ToInt32(cm_familia.SelectedValue);
+
+
+                                            var codigo_fam = Convert.ToInt16(cm_familia.SelectedValue);
                                         var familia = db.familia.FirstOrDefault(codigol => codigol.id == codigo_fam);
                                         pro.familia = familia;
                                             var codigo_udm = Convert.ToInt16(cm_unidadmedida.SelectedValue);

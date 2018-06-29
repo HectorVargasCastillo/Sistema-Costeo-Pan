@@ -117,7 +117,7 @@
             this.cm_unidadmedida.FormattingEnabled = true;
             this.cm_unidadmedida.Location = new System.Drawing.Point(255, 86);
             this.cm_unidadmedida.Name = "cm_unidadmedida";
-            this.cm_unidadmedida.Size = new System.Drawing.Size(171, 21);
+            this.cm_unidadmedida.Size = new System.Drawing.Size(100, 21);
             this.cm_unidadmedida.TabIndex = 8;
             this.cm_unidadmedida.SelectedIndexChanged += new System.EventHandler(this.cm_unidadmedida_SelectedIndexChanged);
             // 
@@ -126,7 +126,7 @@
             this.cm_familia.FormattingEnabled = true;
             this.cm_familia.Location = new System.Drawing.Point(253, 211);
             this.cm_familia.Name = "cm_familia";
-            this.cm_familia.Size = new System.Drawing.Size(121, 21);
+            this.cm_familia.Size = new System.Drawing.Size(145, 21);
             this.cm_familia.TabIndex = 10;
             this.cm_familia.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
@@ -151,6 +151,7 @@
             this.tb_marca.Name = "tb_marca";
             this.tb_marca.Size = new System.Drawing.Size(143, 20);
             this.tb_marca.TabIndex = 13;
+            this.tb_marca.TextChanged += new System.EventHandler(this.tb_marca_TextChanged);
             // 
             // tb_formato
             // 
@@ -163,10 +164,11 @@
             // dg_producto
             // 
             this.dg_producto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_producto.Location = new System.Drawing.Point(162, 238);
+            this.dg_producto.Location = new System.Drawing.Point(138, 238);
             this.dg_producto.Name = "dg_producto";
-            this.dg_producto.Size = new System.Drawing.Size(373, 150);
+            this.dg_producto.Size = new System.Drawing.Size(360, 150);
             this.dg_producto.TabIndex = 15;
+            this.dg_producto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_producto_CellContentClick);
             this.dg_producto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_producto_CellDoubleClick);
             // 
             // tb_id
@@ -197,6 +199,7 @@
             this.bt_editar.TabIndex = 20;
             this.bt_editar.Text = "Editar";
             this.bt_editar.UseVisualStyleBackColor = false;
+            this.bt_editar.Click += new System.EventHandler(this.bt_editar_Click);
             // 
             // FormRegistroProducto
             // 

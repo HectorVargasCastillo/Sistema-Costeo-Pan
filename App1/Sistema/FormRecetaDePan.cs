@@ -22,6 +22,37 @@ namespace Sistema
                 cm_prodfinal.DataSource = lista;
                 cm_prodfinal.DisplayMember = "nombre";
                 cm_prodfinal.ValueMember = "id";
+                cm_inginsumos.DataSource = lista;
+                cm_inginsumos.DisplayMember = "nombre";
+                cm_inginsumos.ValueMember = "id";
+            }
+
+        }
+        public void nombre_producto1()
+
+        {
+            costeoEntities db = new costeoEntities();
+            var lista = db.producto.ToList();
+            if (lista.Count > 0)
+            {
+               
+                cm_inginsumos.DataSource = lista;
+                cm_inginsumos.DisplayMember = "nombre";
+                cm_inginsumos.ValueMember = "id";
+            }
+
+        }
+         public void uni_medida()
+
+        {
+            costeoEntities db = new costeoEntities();
+            var lista = db.unidad_medida.ToList();
+            if (lista.Count > 0)
+            {
+
+                comboBox1.DataSource = lista;
+                comboBox1.DisplayMember = "descripcion";
+                comboBox1.ValueMember = "id";
             }
 
         }
@@ -29,6 +60,8 @@ namespace Sistema
         {
             InitializeComponent();
             nombre_producto();
+            nombre_producto1();
+            uni_medida();
         }
 
         private void label4_Click(object sender, EventArgs e)

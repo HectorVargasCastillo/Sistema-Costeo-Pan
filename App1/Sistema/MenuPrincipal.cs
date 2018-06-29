@@ -264,7 +264,7 @@ namespace Sistema
 
         private void nuevaRecetaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormRecetaDePan childForm = new FormRecetaDePan();
+            FormIngReceta childForm = new FormIngReceta();
             childForm.MdiParent = this;
             childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();

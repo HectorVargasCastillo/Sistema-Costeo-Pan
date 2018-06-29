@@ -17,7 +17,6 @@ namespace Sistema
         public producto()
         {
             this.costo = new HashSet<costo>();
-            this.detalle_receta = new HashSet<detalle_receta>();
             this.precio_venta = new HashSet<precio_venta>();
             this.produccion_diaria = new HashSet<produccion_diaria>();
             this.receta = new HashSet<receta>();
@@ -35,7 +34,6 @@ namespace Sistema
         public long codigo_barra { get; set; }
     
         public virtual ICollection<costo> costo { get; set; }
-        public virtual ICollection<detalle_receta> detalle_receta { get; set; }
         public virtual familia familia { get; set; }
         public virtual ICollection<precio_venta> precio_venta { get; set; }
         public virtual ICollection<produccion_diaria> produccion_diaria { get; set; }

@@ -58,12 +58,13 @@
             // 
             // bt_mostrar
             // 
+            this.bt_mostrar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.bt_mostrar.Location = new System.Drawing.Point(297, 154);
             this.bt_mostrar.Name = "bt_mostrar";
             this.bt_mostrar.Size = new System.Drawing.Size(100, 23);
             this.bt_mostrar.TabIndex = 4;
             this.bt_mostrar.Text = "Mostrar Reporte";
-            this.bt_mostrar.UseVisualStyleBackColor = true;
+            this.bt_mostrar.UseVisualStyleBackColor = false;
             this.bt_mostrar.Click += new System.EventHandler(this.bt_mostrar_Click);
             // 
             // tp_inicio
@@ -93,6 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(707, 450);
             this.Controls.Add(this.dg_reporte);
             this.Controls.Add(this.tp_fin);

@@ -20,7 +20,7 @@ namespace Sistema
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            bt_ingresar.Focus();
+
         }
 
         private void bt_ingresar_Click(object sender, EventArgs e)

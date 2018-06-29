@@ -208,7 +208,7 @@ namespace Sistema
 
         private void ingresoPreciosVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormUniMed childForm = new FormUniMed();
+            FormIngReceta childForm = new FormIngReceta();
             childForm.MdiParent = this;
             childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
@@ -232,7 +232,9 @@ namespace Sistema
 
         private void produccionDiariaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormProDiariaPan childForm = new FormProDiariaPan();
+
+            FormProdPan childForm = new FormProdPan();
+
             childForm.MdiParent = this;
             childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();

@@ -147,7 +147,32 @@ namespace Sistema
             dg_producto.Columns["Unidad de medida"].ReadOnly = true;
             dg_producto.Refresh();
         }
-               private void label6_Click(object sender, EventArgs e)
+
+        private void cargar_columnas_datagridview()
+        {
+            //var codigo_lin = Convert.ToInt16(tb_descripcionlinea.Text);
+            costeoEntities dbproducto = new costeoEntities();
+            DataTable tabla = new DataTable();
+            tabla.Columns.Add("Id");
+            tabla.Columns.Add("Nombre");
+            tabla.Columns.Add("Marca");
+            tabla.Columns.Add("Formato");
+            tabla.Columns.Add("Familia");
+            tabla.Columns.Add("Unidad de medida");
+
+            dg_producto.DataSource = tabla;
+            dg_producto.Columns["Id"].ReadOnly = true;
+            dg_producto.Columns["Nombre"].ReadOnly = true; ;
+            dg_producto.Columns["Marca"].ReadOnly = true; ;
+            dg_producto.Columns["Formato"].ReadOnly = true; ;
+            dg_producto.Columns["Familia"].ReadOnly = true; ;
+            dg_producto.Columns["Unidad de medida"].ReadOnly = true; ;
+
+            dg_producto.Refresh();
+        }
+
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

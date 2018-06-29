@@ -112,12 +112,6 @@
     <Compile Include="FormProDiariaPan.Designer.cs">
       <DependentUpon>FormProDiariaPan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRecetaDePan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormRecetaDePan.Designer.cs">
-      <DependentUpon>FormRecetaDePan.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormRegistroProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,9 +212,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProDiariaPan.resx">
       <DependentUpon>FormProDiariaPan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormRecetaDePan.resx">
-      <DependentUpon>FormRecetaDePan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistroProducto.resx">
       <DependentUpon>FormRegistroProducto.cs</DependentUpon>

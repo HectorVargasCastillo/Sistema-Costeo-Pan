@@ -41,12 +41,13 @@
             // bt_ingresar
             // 
             this.bt_ingresar.AutoSize = true;
+            this.bt_ingresar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.bt_ingresar.Location = new System.Drawing.Point(170, 258);
             this.bt_ingresar.Name = "bt_ingresar";
-            this.bt_ingresar.Size = new System.Drawing.Size(75, 23);
+            this.bt_ingresar.Size = new System.Drawing.Size(93, 23);
             this.bt_ingresar.TabIndex = 0;
             this.bt_ingresar.Text = "Ingresar";
-            this.bt_ingresar.UseVisualStyleBackColor = true;
+            this.bt_ingresar.UseVisualStyleBackColor = false;
             this.bt_ingresar.Click += new System.EventHandler(this.bt_ingresar_Click);
             // 
             // label1

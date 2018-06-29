@@ -12,11 +12,15 @@ namespace Sistema
 {
     public partial class MenuPrincipal : Form
     {
+
+        public static usuario usuario_logeado;
+
         private int childFormNumber = 0;
 
         public MenuPrincipal()
         {
             InitializeComponent();
+            toolStripStatusLabel.Text = usuario_logeado.nombre;
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -171,7 +175,7 @@ namespace Sistema
 
         private void lineaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormFamilia childForm = new FormFamilia();
+            FormIngresoLineaProducto childForm = new FormIngresoLineaProducto();
             childForm.MdiParent = this;
             childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
@@ -194,9 +198,9 @@ namespace Sistema
             childForm.Show();
         }
 
-        private void ingresoCostosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void registroproductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormUniMed childForm = new FormUniMed();
+            FormRegistroProducto childForm = new FormRegistroProducto();
             childForm.MdiParent = this;
             childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
@@ -228,7 +232,9 @@ namespace Sistema
 
         private void produccionDiariaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             FormProdPan childForm = new FormProdPan();
+
             childForm.MdiParent = this;
             childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
@@ -247,6 +253,24 @@ namespace Sistema
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
            
+        }
+
+
+        private void ingresoProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRegistroProducto childForm = new FormRegistroProducto();
+            childForm.MdiParent = this;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
+            childForm.Show();
+        }
+
+        private void nuevaRecetaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRecetaDePan childForm = new FormRecetaDePan();
+            childForm.MdiParent = this;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
+            childForm.Show();
+
         }
     }
 }

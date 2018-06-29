@@ -22,7 +22,6 @@ namespace Sistema
         public Nullable<System.DateTime> modificado_el { get; set; }
         public Nullable<System.DateTime> eliminado_el { get; set; }
     
-        public virtual producto producto { get; set; }
         public virtual receta receta { get; set; }
     }
 }

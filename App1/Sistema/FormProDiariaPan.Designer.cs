@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.bt_guardar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,24 +35,12 @@
             this.tb_unidadmedida = new System.Windows.Forms.TextBox();
             this.tb_produccion = new System.Windows.Forms.TextBox();
             this.dg_reporte = new System.Windows.Forms.DataGridView();
-            this.dg_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dg_unimedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dg_produccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dg_fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dg_modificar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dg_eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_eliminar = new System.Windows.Forms.Button();
+            this.bt_editar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tb_id = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dg_reporte)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bt_guardar
-            // 
-            this.bt_guardar.Location = new System.Drawing.Point(474, 89);
-            this.bt_guardar.Name = "bt_guardar";
-            this.bt_guardar.Size = new System.Drawing.Size(75, 23);
-            this.bt_guardar.TabIndex = 0;
-            this.bt_guardar.Text = "Guardar";
-            this.bt_guardar.UseVisualStyleBackColor = true;
-            this.bt_guardar.Click += new System.EventHandler(this.bt_guardar_Click);
             // 
             // label1
             // 
@@ -109,54 +96,64 @@
             // dg_reporte
             // 
             this.dg_reporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_reporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dg_producto,
-            this.dg_unimedida,
-            this.dg_produccion,
-            this.dg_fecha,
-            this.dg_modificar,
-            this.dg_eliminar});
-            this.dg_reporte.Location = new System.Drawing.Point(59, 174);
+            this.dg_reporte.Location = new System.Drawing.Point(59, 177);
             this.dg_reporte.Name = "dg_reporte";
-            this.dg_reporte.Size = new System.Drawing.Size(644, 96);
+            this.dg_reporte.Size = new System.Drawing.Size(567, 96);
             this.dg_reporte.TabIndex = 11;
             this.dg_reporte.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_reporte_CellContentClick);
+            this.dg_reporte.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_reporte_CellContentDoubleClick);
             // 
-            // dg_producto
+            // bt_eliminar
             // 
-            this.dg_producto.HeaderText = "Producto";
-            this.dg_producto.Name = "dg_producto";
+            this.bt_eliminar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.bt_eliminar.Location = new System.Drawing.Point(407, 294);
+            this.bt_eliminar.Name = "bt_eliminar";
+            this.bt_eliminar.Size = new System.Drawing.Size(75, 23);
+            this.bt_eliminar.TabIndex = 24;
+            this.bt_eliminar.Text = "Eliminar";
+            this.bt_eliminar.UseVisualStyleBackColor = false;
+            this.bt_eliminar.Click += new System.EventHandler(this.bt_eliminar_Click);
             // 
-            // dg_unimedida
+            // bt_editar
             // 
-            this.dg_unimedida.HeaderText = "Unidad de medida";
-            this.dg_unimedida.Name = "dg_unimedida";
+            this.bt_editar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.bt_editar.Location = new System.Drawing.Point(299, 294);
+            this.bt_editar.Name = "bt_editar";
+            this.bt_editar.Size = new System.Drawing.Size(75, 23);
+            this.bt_editar.TabIndex = 23;
+            this.bt_editar.Text = "Editar";
+            this.bt_editar.UseVisualStyleBackColor = false;
+            this.bt_editar.Click += new System.EventHandler(this.bt_editar_Click);
             // 
-            // dg_produccion
+            // button1
             // 
-            this.dg_produccion.HeaderText = "Produccion";
-            this.dg_produccion.Name = "dg_produccion";
+            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button1.Location = new System.Drawing.Point(189, 294);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Guardar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dg_fecha
+            // tb_id
             // 
-            this.dg_fecha.HeaderText = "Fecha";
-            this.dg_fecha.Name = "dg_fecha";
-            // 
-            // dg_modificar
-            // 
-            this.dg_modificar.HeaderText = "Modificar";
-            this.dg_modificar.Name = "dg_modificar";
-            // 
-            // dg_eliminar
-            // 
-            this.dg_eliminar.HeaderText = "Eliminar";
-            this.dg_eliminar.Name = "dg_eliminar";
+            this.tb_id.Location = new System.Drawing.Point(526, 297);
+            this.tb_id.Name = "tb_id";
+            this.tb_id.Size = new System.Drawing.Size(100, 20);
+            this.tb_id.TabIndex = 25;
+            this.tb_id.Visible = false;
+            this.tb_id.TextChanged += new System.EventHandler(this.tb_id_TextChanged);
             // 
             // FormProDiariaPan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tb_id);
+            this.Controls.Add(this.bt_eliminar);
+            this.Controls.Add(this.bt_editar);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dg_reporte);
             this.Controls.Add(this.tb_produccion);
             this.Controls.Add(this.tb_unidadmedida);
@@ -164,7 +161,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.bt_guardar);
             this.Name = "FormProDiariaPan";
             this.Text = "FormProDiariaPan";
             this.Load += new System.EventHandler(this.FormProDiariaPan_Load);
@@ -175,8 +171,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button bt_guardar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -184,11 +178,9 @@
         private System.Windows.Forms.TextBox tb_unidadmedida;
         private System.Windows.Forms.TextBox tb_produccion;
         private System.Windows.Forms.DataGridView dg_reporte;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dg_producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dg_unimedida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dg_produccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dg_fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dg_modificar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dg_eliminar;
+        private System.Windows.Forms.Button bt_eliminar;
+        private System.Windows.Forms.Button bt_editar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tb_id;
     }
 }

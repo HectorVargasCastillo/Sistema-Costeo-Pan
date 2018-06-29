@@ -34,11 +34,6 @@
             this.tp_inicio = new System.Windows.Forms.DateTimePicker();
             this.tp_fin = new System.Windows.Forms.DateTimePicker();
             this.dg_reporte = new System.Windows.Forms.DataGridView();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio_costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentabilidad_porcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentabilidad_moneda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dg_reporte)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,12 +58,13 @@
             // 
             // bt_mostrar
             // 
+            this.bt_mostrar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.bt_mostrar.Location = new System.Drawing.Point(297, 154);
             this.bt_mostrar.Name = "bt_mostrar";
             this.bt_mostrar.Size = new System.Drawing.Size(100, 23);
             this.bt_mostrar.TabIndex = 4;
             this.bt_mostrar.Text = "Mostrar Reporte";
-            this.bt_mostrar.UseVisualStyleBackColor = true;
+            this.bt_mostrar.UseVisualStyleBackColor = false;
             this.bt_mostrar.Click += new System.EventHandler(this.bt_mostrar_Click);
             // 
             // tp_inicio
@@ -88,47 +84,17 @@
             // dg_reporte
             // 
             this.dg_reporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_reporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Fecha,
-            this.precio_costo,
-            this.precio_venta,
-            this.rentabilidad_porcentaje,
-            this.rentabilidad_moneda});
             this.dg_reporte.Location = new System.Drawing.Point(81, 214);
             this.dg_reporte.Name = "dg_reporte";
             this.dg_reporte.Size = new System.Drawing.Size(543, 150);
             this.dg_reporte.TabIndex = 7;
             this.dg_reporte.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            // 
-            // precio_costo
-            // 
-            this.precio_costo.HeaderText = "Precio costo";
-            this.precio_costo.Name = "precio_costo";
-            // 
-            // precio_venta
-            // 
-            this.precio_venta.HeaderText = "Precio venta";
-            this.precio_venta.Name = "precio_venta";
-            // 
-            // rentabilidad_porcentaje
-            // 
-            this.rentabilidad_porcentaje.HeaderText = "Rentabilidad %";
-            this.rentabilidad_porcentaje.Name = "rentabilidad_porcentaje";
-            // 
-            // rentabilidad_moneda
-            // 
-            this.rentabilidad_moneda.HeaderText = "Rentabilidad $";
-            this.rentabilidad_moneda.Name = "rentabilidad_moneda";
-            // 
             // FormReporteDiario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(707, 450);
             this.Controls.Add(this.dg_reporte);
             this.Controls.Add(this.tp_fin);
@@ -139,6 +105,7 @@
             this.Name = "FormReporteDiario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte Diario";
+            this.Load += new System.EventHandler(this.FormReporteDiario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_reporte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -152,10 +119,5 @@
         private System.Windows.Forms.DateTimePicker tp_inicio;
         private System.Windows.Forms.DateTimePicker tp_fin;
         private System.Windows.Forms.DataGridView dg_reporte;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio_costo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio_venta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rentabilidad_porcentaje;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rentabilidad_moneda;
     }
 }

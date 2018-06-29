@@ -60,32 +60,47 @@ namespace Sistema
         private void mostrar_datagridview()
         {
             costeoEntities db = new costeoEntities();
+            var id_receta = 0;
+            foreach (var dato in db.receta.ToList())
+            {
+                if (dato.eliminado_el == null)
+                {
+                    if (dato.producto_id == Convert.ToInt16(cm_producto.SelectedValue))
+                    { 
+                       id_receta = dato.id;
+                    }                 
+                }
+            }
+
             DataTable tabla = new DataTable();
             tabla.Columns.Add("Insumo");
             tabla.Columns.Add("U.M.");
             tabla.Columns.Add("Cantidad");
             tabla.Columns.Add("Id");
-            tabla.Columns.Add("Producto");
+            tabla.Columns.Add("IdReceta");
             foreach (var dato in db.detalle_receta.ToList())
             {
                 if (dato.eliminado_el == null)
                 {
-                    DataRow row = tabla.NewRow();
-                    var insumo = db.producto.FirstOrDefault(codigo => codigo.id == dato.producto_id);
-                    row["Insumo"] = insumo.nombre;
-                    row["U.M."] = "HOLI";// dato.unidad_medida.ToString();
-                    row["Cantidad"] = dato.cantidad.ToString();
-                    row["Id"] = Convert.ToString(dato.receta_id);
-                    var receta = db.receta.FirstOrDefault(codigo => codigo.id == dato.receta_id);
-                    row["Producto"] = Convert.ToInt16(receta.producto_id);
-                    tabla.Rows.Add(row);
+                    if (dato.receta_id == id_receta)
+                    {
+                        DataRow row = tabla.NewRow();
+                        var insumo = db.producto.FirstOrDefault(codigo => codigo.id == dato.producto_id);
+                        row["Insumo"] = insumo.nombre;
+                        row["U.M."] = "HOLI";// dato.unidad_medida.ToString();
+                        row["Cantidad"] = dato.cantidad.ToString();
+                        row["Id"] = Convert.ToInt16(dato.id);
+                        //var receta = db.receta.FirstOrDefault(codigo => codigo.id == dato.receta_id);
+                        row["IdReceta"] = Convert.ToInt16(dato.receta_id);
+                        tabla.Rows.Add(row);
+                    }
                 }
             }
             tabla.DefaultView.Sort = "[Insumo] DESC";
             dg_mostrar.DataSource = tabla;
             dg_mostrar.Columns["Insumo"].Width = 226;
             dg_mostrar.Columns["Id"].Visible = false;
-            dg_mostrar.Columns["Producto"].Visible = false;
+            dg_mostrar.Columns["IdReceta"].Visible = false;
             
             dg_mostrar.Columns["Insumo"].ReadOnly = true;
             dg_mostrar.Columns["U.M."].ReadOnly = true;
@@ -111,64 +126,117 @@ namespace Sistema
 
                 if (tb_id.Text == "")
                 {
+                    var id_receta = 0;
                     costeoEntities db = new costeoEntities();
-                    String fecval_ex = "N";
                     foreach (var dato in db.receta.ToList())
                     {
-                        if (dato.fecha == DateTime.Today)
+                        if (dato.producto_id == Convert.ToInt16(cm_producto.SelectedValue))
                         {
-                            fecval_ex = "S";
+                            id_receta = dato.id;
                         }
                     }
-                    foreach (var dato in db.detalle_receta.ToList())
+                    if (id_receta > 0)
                     {
-                        if (dato.cantidad == Convert.ToInt16(tb_cantidad.Text))
+                        String fecval_ex = "N";
+                        var codigo_ins = Convert.ToInt16(cm_insumo.SelectedValue);
+                        foreach (var dato in db.detalle_receta.ToList())
                         {
-                            fecval_ex = "S";
+                            if ((dato.cantidad == Convert.ToInt16(tb_cantidad.Text) && (dato.producto_id == codigo_ins)))
+                            {
+                                fecval_ex = "S";
+                            }
                         }
-                    }
+                        if (fecval_ex == "S")
+                        {
+                            MessageBox.Show("Registro Ya Existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            tb_cantidad.Text = "";
+                            tb_id.Text = "";
+                            tb_cantidad.Focus();
+                            mostrar_datagridview();
+                        }
+                        else
+                        {
+                           
+                            detalle_receta detalle = new detalle_receta();
+                            detalle.receta_id = id_receta;
+                            detalle.producto_id = codigo_ins;
+                            detalle.cantidad = Convert.ToInt16(tb_cantidad.Text);
+                            detalle.creado_el = DateTime.Today;
+                            detalle.modificado_el = null;
+                            detalle.eliminado_el = null;
+                            db.detalle_receta.Add(detalle);
+                            db.SaveChanges();
+                            MessageBox.Show("Registro Detalle Guardado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            tb_cantidad.Text = "";
+                            tb_id.Text = "";
+                            tb_cantidad.Focus();
+                            mostrar_datagridview();
+                        }
 
-                    if (fecval_ex == "S")
-                    {
-                        MessageBox.Show("Registro Ya Existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        tb_cantidad.Text = "";
-                        tb_id.Text = "";
-                        tb_cantidad.Focus();
-                        mostrar_datagridview();
                     }
                     else
                     {
                         var codigo_pro = Convert.ToInt16(cm_producto.SelectedValue);
                         var codigo_ins = Convert.ToInt16(cm_insumo.SelectedValue);
-                        var codigo_um = Convert.ToInt16(cm_unimed.SelectedValue);
-                        var unimed = db.unidad_medida.FirstOrDefault(codigol => codigol.id == codigo_um);
-                        //pro.unidad_medida = Convert.ToString(unimed.descripcion);
+                        //costeoEntities db = new costeoEntities();
+                        String fecval_ex = "N";
+                        /*foreach (var dato in db.receta.ToList())
+                        {
+                           if ((dato.fecha == DateTime.Today) && (dato.producto_id == codigo_pro))
+                           {
+                             fecval_ex = "S";
+                           }
+                        }*/
+                        foreach (var dato in db.detalle_receta.ToList())
+                        {
+                            if ((dato.cantidad == Convert.ToInt16(tb_cantidad.Text) && (dato.producto_id == codigo_ins)))
+                            {
+                                fecval_ex = "S";
+                            }
+                        }
+                        if (fecval_ex == "S")
+                        {
+                            MessageBox.Show("Registro Ya Existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            tb_cantidad.Text = "";
+                            tb_id.Text = "";
+                            tb_cantidad.Focus();
+                            mostrar_datagridview();
+                        }
+                        else
+                        {
+                            //var codigo_pro = Convert.ToInt16(cm_producto.SelectedValue);
+                            //var codigo_ins = Convert.ToInt16(cm_insumo.SelectedValue);
+                            var codigo_um = Convert.ToInt16(cm_unimed.SelectedValue);
+                            var unimed = db.unidad_medida.FirstOrDefault(codigol => codigol.id == codigo_um);
+                            //pro.unidad_medida = Convert.ToString(unimed.descripcion);
 
-                        receta encabezado = new receta();
-                        encabezado.producto_id = codigo_pro;
-                        encabezado.es_actual = 0;
-                        encabezado.fecha = DateTime.Today;
-                        encabezado.creado_el = DateTime.Today;
-                        encabezado.modificado_el = null;
-                        encabezado.eliminado_el = null;
-                        db.receta.Add(encabezado);
-                        db.SaveChanges();
-                        MessageBox.Show("Registro Encabezado Guardado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            receta encabezado = new receta();
+                            encabezado.producto_id = codigo_pro;
+                            encabezado.es_actual = 0;
+                            encabezado.fecha = DateTime.Today;
+                            encabezado.creado_el = DateTime.Today;
+                            encabezado.modificado_el = null;
+                            encabezado.eliminado_el = null;
+                            db.receta.Add(encabezado);
+                            db.SaveChanges();
+                            MessageBox.Show("Registro Encabezado Guardado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
 
-                        detalle_receta detalle = new detalle_receta();
-                        detalle.producto_id = codigo_ins;
-                        detalle.cantidad = Convert.ToInt16(tb_cantidad.Text);
-                        detalle.creado_el = DateTime.Today;
-                        detalle.modificado_el = null;
-                        detalle.eliminado_el = null;
-                        db.detalle_receta.Add(detalle);
-                        db.SaveChanges();
-                        MessageBox.Show("Registro Detalle Guardado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        tb_cantidad.Text = "";
-                        tb_id.Text = "";
-                        tb_cantidad.Focus();
-                        mostrar_datagridview();
+                            detalle_receta detalle = new detalle_receta();
+                            detalle.receta_id = encabezado.id;
+                            detalle.producto_id = codigo_ins;
+                            detalle.cantidad = Convert.ToInt16(tb_cantidad.Text);
+                            detalle.creado_el = DateTime.Today;
+                            detalle.modificado_el = null;
+                            detalle.eliminado_el = null;
+                            db.detalle_receta.Add(detalle);
+                            db.SaveChanges();
+                            MessageBox.Show("Registro Detalle Guardado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            tb_cantidad.Text = "";
+                            tb_id.Text = "";
+                            tb_cantidad.Focus();
+                            mostrar_datagridview();
+                        }
                     }
                 }
                 else
@@ -179,14 +247,82 @@ namespace Sistema
                     tb_cantidad.Focus();
                     mostrar_datagridview();
                 }
+
             }
         }
 
         private void bt_editar_Click(object sender, EventArgs e)
         {
+            if (tb_cantidad.Text == "")
+            {
+                MessageBox.Show("Para Editar, Debe Pinchar Celda de Grilla", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                tb_cantidad.Focus();
+            }
+            else
+            {
+                if (tb_id.Text == "")
+                {
+                    MessageBox.Show("ERROR : No Permite Modificar Datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    tb_cantidad.Focus();
+                }
+                else
+                {
+                    costeoEntities db = new costeoEntities();
+                    receta encabezado = new receta();
+                    detalle_receta detalle = new detalle_receta();
+                    encabezado = db.receta.Find(Convert.ToInt16(tb_id_receta.Text));
+                    detalle = db.detalle_receta.Find(Convert.ToInt16(tb_id.Text));
 
+                    if ((encabezado == null) || (detalle == null))
+                    {
+                        MessageBox.Show("ERROR : No Permite Modificar Registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    else
+                    {
+
+                        var codigo_pro = Convert.ToInt16(cm_producto.SelectedValue);
+                        var codigo_ins = Convert.ToInt16(cm_insumo.SelectedValue);
+                        var codigo_um = Convert.ToInt16(cm_unimed.SelectedValue);
+                        var unimed = db.unidad_medida.FirstOrDefault(codigol => codigol.id == codigo_um);
+                        //pro.unidad_medida = Convert.ToString(unimed.descripcion);
+
+                        if ((encabezado.producto_id != Convert.ToInt16(codigo_pro)) ||
+                            (detalle.producto_id != Convert.ToInt16(codigo_ins)) ||
+                            //(detalle.unidad_medida != Convert.ToString(unimed.descripcion)
+                            (detalle.cantidad != Convert.ToInt16(tb_cantidad.Text))
+                            )
+                        {
+                            
+                            encabezado.producto_id = codigo_pro;
+                            encabezado.modificado_el = DateTime.Today;
+                            db.SaveChanges();
+
+                            detalle.producto_id = codigo_ins;
+                            detalle.cantidad = Convert.ToInt16(tb_cantidad.Text);
+                            detalle.modificado_el = DateTime.Today;
+                            
+
+                            MessageBox.Show("Registro Modificado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                            tb_cantidad.Text = "";
+                            tb_id.Text = "";
+                            tb_cantidad.Focus();
+                            mostrar_datagridview();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No Modificó Datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            tb_cantidad.Text = "";
+                            tb_id.Text = "";
+                            tb_cantidad.Focus();
+                            mostrar_datagridview();
+                        }
+                    }
+                }
+
+            }
         }
-
         private void bt_eliminar_Click(object sender, EventArgs e)
         {
             if (tb_cantidad.Text == "")
@@ -208,7 +344,7 @@ namespace Sistema
                     {
                         costeoEntities db = new costeoEntities();
                         receta encabezado = new receta();
-                        encabezado = db.receta.Find(Convert.ToInt16(tb_id.Text));
+                        encabezado = db.receta.Find(Convert.ToInt16(tb_id_receta.Text));
 
                         if (encabezado == null)
                         {
@@ -255,7 +391,8 @@ namespace Sistema
 
         private void cm_producto_SelectionChangedCommited(object sender, EventArgs e)
         {
-            cm_insumo.Focus();
+            //cm_insumo.Focus();
+            mostrar_datagridview();
         }
 
         private void cm_insumo_SelectedChangedCommited(object sender, EventArgs e)
@@ -298,6 +435,7 @@ namespace Sistema
         private void gd_mostrar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             tb_id.Text = dg_mostrar.CurrentRow.Cells["Id"].Value.ToString();
+            tb_id_receta.Text = dg_mostrar.CurrentRow.Cells["IdReceta"].Value.ToString();
             costeoEntities db = new costeoEntities();
 
             detalle_receta det = new detalle_receta();
@@ -325,18 +463,18 @@ namespace Sistema
             }
             cm_unimed.SelectedIndex = indexum;*/
 
-            var receta = db.receta.FirstOrDefault(codigo => codigo.id == det.receta_id);
+           /* var receta = db.receta.FirstOrDefault(codigo => codigo.id == det.receta_id);
             var producto = db.producto.FirstOrDefault(codigo => codigo.id == receta.producto_id);
 
             int indexpro = cm_producto.FindString(producto.nombre);
             var listapro = db.producto.ToList();
             if (listapro.Count > 0)
             {
-                cm_producto.DataSource = lista;
+                cm_producto.DataSource = listapro;
                 cm_producto.DisplayMember = "nombre";
                 cm_producto.ValueMember = "id";
             }
-            cm_producto.SelectedIndex = indexpro;
+            cm_producto.SelectedIndex = indexpro;*/
             
 
 

@@ -44,6 +44,7 @@
             this.cm_unimed = new System.Windows.Forms.ComboBox();
             this.tb_cantidad = new System.Windows.Forms.TextBox();
             this.tb_id = new System.Windows.Forms.TextBox();
+            this.tb_id_receta = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dg_mostrar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,6 +92,7 @@
             // 
             // cm_producto
             // 
+            this.cm_producto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cm_producto.FormattingEnabled = true;
             this.cm_producto.Location = new System.Drawing.Point(316, 61);
             this.cm_producto.Name = "cm_producto";
@@ -193,11 +195,20 @@
             this.tb_id.TabIndex = 15;
             this.tb_id.Visible = false;
             // 
+            // tb_id_receta
+            // 
+            this.tb_id_receta.Location = new System.Drawing.Point(373, 418);
+            this.tb_id_receta.Name = "tb_id_receta";
+            this.tb_id_receta.Size = new System.Drawing.Size(100, 20);
+            this.tb_id_receta.TabIndex = 16;
+            this.tb_id_receta.Visible = false;
+            // 
             // FormIngReceta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tb_id_receta);
             this.Controls.Add(this.tb_id);
             this.Controls.Add(this.tb_cantidad);
             this.Controls.Add(this.cm_unimed);
@@ -240,5 +251,6 @@
         private System.Windows.Forms.ComboBox cm_unimed;
         private System.Windows.Forms.TextBox tb_cantidad;
         private System.Windows.Forms.TextBox tb_id;
+        private System.Windows.Forms.TextBox tb_id_receta;
     }
 }

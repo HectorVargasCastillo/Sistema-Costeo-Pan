@@ -14,6 +14,7 @@ namespace Sistema
     
     public partial class detalle_receta
     {
+        public int id { get; set; }
         public int receta_id { get; set; }
         public int producto_id { get; set; }
         public double cantidad { get; set; }

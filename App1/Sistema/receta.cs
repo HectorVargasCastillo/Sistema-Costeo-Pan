@@ -14,6 +14,11 @@ namespace Sistema
     
     public partial class receta
     {
+        public receta()
+        {
+            this.detalle_receta = new HashSet<detalle_receta>();
+        }
+    
         public int id { get; set; }
         public int producto_id { get; set; }
         public int es_actual { get; set; }
@@ -22,7 +27,7 @@ namespace Sistema
         public Nullable<System.DateTime> modificado_el { get; set; }
         public Nullable<System.DateTime> eliminado_el { get; set; }
     
-        public virtual detalle_receta detalle_receta { get; set; }
+        public virtual ICollection<detalle_receta> detalle_receta { get; set; }
         public virtual producto producto { get; set; }
     }
 }

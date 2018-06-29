@@ -52,7 +52,7 @@
             // lb_prodfinal
             // 
             this.lb_prodfinal.AutoSize = true;
-            this.lb_prodfinal.Location = new System.Drawing.Point(64, 60);
+            this.lb_prodfinal.Location = new System.Drawing.Point(144, 53);
             this.lb_prodfinal.Name = "lb_prodfinal";
             this.lb_prodfinal.Size = new System.Drawing.Size(72, 13);
             this.lb_prodfinal.TabIndex = 0;
@@ -62,7 +62,7 @@
             // lb_estado
             // 
             this.lb_estado.AutoSize = true;
-            this.lb_estado.Location = new System.Drawing.Point(64, 113);
+            this.lb_estado.Location = new System.Drawing.Point(144, 106);
             this.lb_estado.Name = "lb_estado";
             this.lb_estado.Size = new System.Drawing.Size(40, 13);
             this.lb_estado.TabIndex = 1;
@@ -71,7 +71,7 @@
             // lb_inginsumos
             // 
             this.lb_inginsumos.AutoSize = true;
-            this.lb_inginsumos.Location = new System.Drawing.Point(64, 159);
+            this.lb_inginsumos.Location = new System.Drawing.Point(144, 152);
             this.lb_inginsumos.Name = "lb_inginsumos";
             this.lb_inginsumos.Size = new System.Drawing.Size(98, 13);
             this.lb_inginsumos.TabIndex = 2;
@@ -81,7 +81,7 @@
             // lb_unimedida
             // 
             this.lb_unimedida.AutoSize = true;
-            this.lb_unimedida.Location = new System.Drawing.Point(259, 159);
+            this.lb_unimedida.Location = new System.Drawing.Point(339, 152);
             this.lb_unimedida.Name = "lb_unimedida";
             this.lb_unimedida.Size = new System.Drawing.Size(93, 13);
             this.lb_unimedida.TabIndex = 3;
@@ -91,7 +91,7 @@
             // lb_cantidad
             // 
             this.lb_cantidad.AutoSize = true;
-            this.lb_cantidad.Location = new System.Drawing.Point(445, 159);
+            this.lb_cantidad.Location = new System.Drawing.Point(525, 152);
             this.lb_cantidad.Name = "lb_cantidad";
             this.lb_cantidad.Size = new System.Drawing.Size(49, 13);
             this.lb_cantidad.TabIndex = 4;
@@ -100,33 +100,33 @@
             // cm_prodfinal
             // 
             this.cm_prodfinal.FormattingEnabled = true;
-            this.cm_prodfinal.Location = new System.Drawing.Point(151, 51);
+            this.cm_prodfinal.Location = new System.Drawing.Point(231, 44);
             this.cm_prodfinal.Name = "cm_prodfinal";
-            this.cm_prodfinal.Size = new System.Drawing.Size(121, 21);
+            this.cm_prodfinal.Size = new System.Drawing.Size(116, 21);
             this.cm_prodfinal.TabIndex = 5;
             this.cm_prodfinal.SelectedIndexChanged += new System.EventHandler(this.cm_prodfinal_SelectedIndexChanged);
             // 
             // cm_inginsumos
             // 
             this.cm_inginsumos.FormattingEnabled = true;
-            this.cm_inginsumos.Location = new System.Drawing.Point(67, 186);
+            this.cm_inginsumos.Location = new System.Drawing.Point(147, 179);
             this.cm_inginsumos.Name = "cm_inginsumos";
-            this.cm_inginsumos.Size = new System.Drawing.Size(121, 21);
+            this.cm_inginsumos.Size = new System.Drawing.Size(116, 21);
             this.cm_inginsumos.TabIndex = 6;
             this.cm_inginsumos.SelectedIndexChanged += new System.EventHandler(this.cm_inginsumos_SelectedIndexChanged);
             // 
             // tb_estado
             // 
-            this.tb_estado.Location = new System.Drawing.Point(151, 113);
+            this.tb_estado.Location = new System.Drawing.Point(231, 106);
             this.tb_estado.Name = "tb_estado";
-            this.tb_estado.Size = new System.Drawing.Size(100, 20);
+            this.tb_estado.Size = new System.Drawing.Size(95, 20);
             this.tb_estado.TabIndex = 7;
             // 
             // tb_cantidad
             // 
-            this.tb_cantidad.Location = new System.Drawing.Point(430, 187);
+            this.tb_cantidad.Location = new System.Drawing.Point(510, 180);
             this.tb_cantidad.Name = "tb_cantidad";
-            this.tb_cantidad.Size = new System.Drawing.Size(100, 20);
+            this.tb_cantidad.Size = new System.Drawing.Size(95, 20);
             this.tb_cantidad.TabIndex = 8;
             // 
             // dg_reporte
@@ -136,7 +136,7 @@
             this.dg_insumos,
             this.dg_unidadmedida,
             this.dg_cantidad});
-            this.dg_reporte.Location = new System.Drawing.Point(67, 237);
+            this.dg_reporte.Location = new System.Drawing.Point(147, 235);
             this.dg_reporte.Name = "dg_reporte";
             this.dg_reporte.Size = new System.Drawing.Size(343, 59);
             this.dg_reporte.TabIndex = 10;
@@ -199,9 +199,9 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(243, 187);
+            this.comboBox1.Location = new System.Drawing.Point(323, 180);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(117, 21);
+            this.comboBox1.Size = new System.Drawing.Size(112, 21);
             this.comboBox1.TabIndex = 23;
             // 
             // FormRecetaDePan

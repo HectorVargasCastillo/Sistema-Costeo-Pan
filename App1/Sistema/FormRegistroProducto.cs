@@ -254,5 +254,110 @@ namespace Sistema
             tb_nombre.Text = dg_producto.CurrentRow.Cells["Nombre"].Value.ToString();
 
         }
+
+        private void bt_editar_Click(object sender, EventArgs e)
+        {
+            
+            {
+
+            if (tb_codigobarra.Text == "")
+            {
+                MessageBox.Show("Para Editar, Debe Pinchar Celda de Grilla", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                tb_codigobarra.Focus();
+            }
+            else
+            {
+                if (tb_id.Text == "")
+                {
+                    MessageBox.Show("ERROR : No Permite Modificar Datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    tb_codigobarra.Focus();
+                }
+                else
+                {
+                    costeoEntities db = new costeoEntities();
+                        producto prod = new producto();
+                        prod = db.producto.Find(Convert.ToInt16(tb_id.Text));
+
+                        {
+
+            if (tb_codigobarra.Text == "")
+                        {
+                            MessageBox.Show("Para Editar, Debe Pinchar Celda de Grilla", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                tb_codigobarra.Focus();
+                        }
+                        else
+                        {
+                            if (tb_id.Text == "")
+                            {
+                                MessageBox.Show("ERROR : No Permite Modificar Datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    tb_codigobarra.Focus();
+                            }
+                            else
+                            {
+                                costeoEntities dbcamila = new costeoEntities();
+                                producto pro = new producto();
+                                pro = db.producto.Find(Convert.ToInt16(tb_id.Text));
+
+                                if (pro == null)
+                                {
+                                    MessageBox.Show("ERROR : No Permite Modificar Registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    return;
+                                }
+                                else
+                                {
+                                    if (pro.codigo_barra != Convert.ToInt16(tb_codigobarra.Text))
+                                    {
+                                        pro.codigo_barra = Convert.ToInt16(tb_codigobarra.Text);
+                                        //pro.nombre = Convert.ToInt16(tb_nombre.Text);
+                                        //pro.marca = Convert.ToInt16(tb_marca.Text);
+                                        //pro.fomato = Convert.toInt16(tb_formato.Text);
+                                        
+
+                                        var codigo_fam = Convert.ToInt16(cm_familia.SelectedValue);
+                                        var familia = db.familia.FirstOrDefault(codigol => codigol.id == codigo_fam);
+                                        pro.familia = familia;
+                                            var codigo_udm = Convert.ToInt16(cm_unidadmedida.SelectedValue);
+                                            var unidad_medida = db.unidad_medida.FirstOrDefault(codigol => codigol.id == codigo_udm);
+                                            pro.unidad_medida = unidad_medida;
+                                            
+                                           pro.modificado_el = DateTime.Today;
+                                           db.SaveChanges();
+                                           MessageBox.Show("Registro Modificado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                           tb_codigobarra.Text = "";
+                                           tb_id.Text = "";
+                                           mostrar_datagridview();
+                                           tb_codigobarra.Focus();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("No Modificó Datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        tb_codigobarra.Text = "";
+                                        tb_id.Text = "";
+                                        mostrar_datagridview();
+                                        tb_codigobarra.Focus();
+                                    }
+                                }
+                            }
+
+                        }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void dg_producto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tb_marca_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }
+
+
+

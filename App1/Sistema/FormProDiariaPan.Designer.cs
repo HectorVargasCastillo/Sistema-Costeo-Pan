@@ -38,6 +38,7 @@
             this.bt_eliminar = new System.Windows.Forms.Button();
             this.bt_editar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.tb_id = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dg_reporte)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,11 +136,21 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // tb_id
+            // 
+            this.tb_id.Location = new System.Drawing.Point(526, 297);
+            this.tb_id.Name = "tb_id";
+            this.tb_id.Size = new System.Drawing.Size(100, 20);
+            this.tb_id.TabIndex = 25;
+            this.tb_id.Visible = false;
+            this.tb_id.TextChanged += new System.EventHandler(this.tb_id_TextChanged);
+            // 
             // FormProDiariaPan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tb_id);
             this.Controls.Add(this.bt_eliminar);
             this.Controls.Add(this.bt_editar);
             this.Controls.Add(this.button1);
@@ -170,5 +181,6 @@
         private System.Windows.Forms.Button bt_eliminar;
         private System.Windows.Forms.Button bt_editar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tb_id;
     }
 }

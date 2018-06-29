@@ -148,5 +148,10 @@ namespace Sistema
             tb_produccion.Text = pre.produccion.ToString();
             
         }
+
+        private void tb_id_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

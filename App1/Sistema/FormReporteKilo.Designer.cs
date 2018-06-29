@@ -41,12 +41,13 @@
             // 
             // bt_mostrar
             // 
+            this.bt_mostrar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.bt_mostrar.Location = new System.Drawing.Point(275, 222);
             this.bt_mostrar.Name = "bt_mostrar";
             this.bt_mostrar.Size = new System.Drawing.Size(97, 23);
             this.bt_mostrar.TabIndex = 0;
-            this.bt_mostrar.Text = "Mostar Reporte";
-            this.bt_mostrar.UseVisualStyleBackColor = true;
+            this.bt_mostrar.Text = "Mostrar Reporte";
+            this.bt_mostrar.UseVisualStyleBackColor = false;
             this.bt_mostrar.Click += new System.EventHandler(this.bt_mostrar_Click);
             // 
             // label1

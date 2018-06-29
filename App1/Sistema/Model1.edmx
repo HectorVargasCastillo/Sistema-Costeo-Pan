@@ -288,11 +288,8 @@
           <EntitySet Name="precio_venta" EntityType="costeoModel.precio_venta" />
           <EntitySet Name="produccion_diaria" EntityType="costeoModel.produccion_diaria" />
           <EntitySet Name="producto" EntityType="costeoModel.producto" />
-
-
           <EntitySet Name="receta" EntityType="costeoModel.receta" />
           <EntitySet Name="sysdiagrams" EntityType="costeoModel.sysdiagrams" />
-
           <EntitySet Name="unidad_medida" EntityType="costeoModel.unidad_medida" />
           <EntitySet Name="usuario" EntityType="costeoModel.usuario" />
           <AssociationSet Name="FK_costo_producto" Association="costeoModel.FK_costo_producto">
@@ -319,28 +316,15 @@
             <End Role="unidad_medida" EntitySet="unidad_medida" />
             <End Role="producto" EntitySet="producto" />
           </AssociationSet>
-          <EntitySet Name="sysdiagrams" EntityType="costeoModel.sysdiagrams" />
-          <EntitySet Name="detalle_receta" EntityType="costeoModel.detalle_receta" />
-          <EntitySet Name="receta" EntityType="costeoModel.receta" />
-          <AssociationSet Name="FK_detalle_receta_producto" Association="costeoModel.FK_detalle_receta_producto">
-            <End Role="producto" EntitySet="producto" />
-            <End Role="detalle_receta" EntitySet="detalle_receta" />
-          </AssociationSet>
-          <AssociationSet Name="FK_detalle_receta_receta" Association="costeoModel.FK_detalle_receta_receta">
-            <End Role="receta" EntitySet="receta" />
-            <End Role="detalle_receta" EntitySet="detalle_receta" />
-          </AssociationSet>
           <AssociationSet Name="FK_receta_producto" Association="costeoModel.FK_receta_producto">
             <End Role="producto" EntitySet="producto" />
             <End Role="receta" EntitySet="receta" />
           </AssociationSet>
-
           <EntitySet Name="detalle_receta" EntityType="costeoModel.detalle_receta" />
           <AssociationSet Name="FK_detalle_receta_receta" Association="costeoModel.FK_detalle_receta_receta">
             <End Role="receta" EntitySet="receta" />
             <End Role="detalle_receta" EntitySet="detalle_receta" />
           </AssociationSet>
-
         </EntityContainer>
         <EntityType Name="costo">
           <Key>
@@ -426,11 +410,8 @@
           <NavigationProperty Name="precio_venta" Relationship="costeoModel.FK_precio_venta_producto" FromRole="producto" ToRole="precio_venta" />
           <NavigationProperty Name="produccion_diaria" Relationship="costeoModel.FK_produccion_diaria_producto" FromRole="producto" ToRole="produccion_diaria" />
           <NavigationProperty Name="unidad_medida" Relationship="costeoModel.FK_producto_unidad_medida" FromRole="producto" ToRole="unidad_medida" />
-          <Property Name="codigo_barra" Type="Int64" Nullable="false" />
-
-          <NavigationProperty Name="detalle_receta" Relationship="costeoModel.FK_detalle_receta_producto" FromRole="producto" ToRole="detalle_receta" />
           <NavigationProperty Name="receta" Relationship="costeoModel.FK_receta_producto" FromRole="producto" ToRole="receta" />
-
+          <Property Name="codigo_barra" Type="Int64" Nullable="false" />
         </EntityType>
         <EntityType Name="receta">
           <Key>
@@ -455,7 +436,6 @@
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-
         </EntityType>
         <EntityType Name="unidad_medida">
           <Key>
@@ -552,68 +532,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="detalle_receta">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="receta_id" Type="Int32" Nullable="false" />
-          <Property Name="producto_id" Type="Int32" Nullable="false" />
-          <Property Name="cantidad" Type="Double" Nullable="false" />
-          <Property Name="creado_el" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="modificado_el" Type="DateTime" Precision="3" />
-          <Property Name="eliminado_el" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="producto" Relationship="costeoModel.FK_detalle_receta_producto" FromRole="detalle_receta" ToRole="producto" />
-          <NavigationProperty Name="receta" Relationship="costeoModel.FK_detalle_receta_receta" FromRole="detalle_receta" ToRole="receta" />
-        </EntityType>
-        <EntityType Name="receta">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="producto_id" Type="Int32" Nullable="false" />
-          <Property Name="es_actual" Type="Int32" Nullable="false" />
-          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="creado_el" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="modificado_el" Type="DateTime" Precision="3" />
-          <Property Name="eliminado_el" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="detalle_receta" Relationship="costeoModel.FK_detalle_receta_receta" FromRole="receta" ToRole="detalle_receta" />
-          <NavigationProperty Name="producto" Relationship="costeoModel.FK_receta_producto" FromRole="receta" ToRole="producto" />
-        </EntityType>
-        <Association Name="FK_detalle_receta_producto">
-          <End Type="costeoModel.producto" Role="producto" Multiplicity="1" />
-          <End Type="costeoModel.detalle_receta" Role="detalle_receta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="producto">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="detalle_receta">
-              <PropertyRef Name="producto_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_detalle_receta_receta">
-          <End Type="costeoModel.receta" Role="receta" Multiplicity="1" />
-          <End Type="costeoModel.detalle_receta" Role="detalle_receta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="receta">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="detalle_receta">
-              <PropertyRef Name="receta_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_receta_producto">
           <End Type="costeoModel.producto" Role="producto" Multiplicity="1" />
           <End Type="costeoModel.receta" Role="receta" Multiplicity="*" />
@@ -626,9 +544,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-
-      </Schema>
-
         <EntityType Name="detalle_receta">
           <Key>
             <PropertyRef Name="id" />
@@ -655,7 +570,6 @@
           </ReferentialConstraint>
         </Association>
         </Schema>
-
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -742,7 +656,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-
           <EntitySetMapping Name="receta">
             <EntityTypeMapping TypeName="costeoModel.receta">
               <MappingFragment StoreEntitySet="receta">
@@ -767,7 +680,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-
           <EntitySetMapping Name="unidad_medida">
             <EntityTypeMapping TypeName="costeoModel.unidad_medida">
               <MappingFragment StoreEntitySet="unidad_medida">
@@ -801,32 +713,6 @@
                 <ScalarProperty Name="cantidad" ColumnName="cantidad" />
                 <ScalarProperty Name="producto_id" ColumnName="producto_id" />
                 <ScalarProperty Name="receta_id" ColumnName="receta_id" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="detalle_receta">
-            <EntityTypeMapping TypeName="costeoModel.detalle_receta">
-              <MappingFragment StoreEntitySet="detalle_receta">
-                <ScalarProperty Name="eliminado_el" ColumnName="eliminado_el" />
-                <ScalarProperty Name="modificado_el" ColumnName="modificado_el" />
-                <ScalarProperty Name="creado_el" ColumnName="creado_el" />
-                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-                <ScalarProperty Name="producto_id" ColumnName="producto_id" />
-                <ScalarProperty Name="receta_id" ColumnName="receta_id" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="receta">
-            <EntityTypeMapping TypeName="costeoModel.receta">
-              <MappingFragment StoreEntitySet="receta">
-                <ScalarProperty Name="eliminado_el" ColumnName="eliminado_el" />
-                <ScalarProperty Name="modificado_el" ColumnName="modificado_el" />
-                <ScalarProperty Name="creado_el" ColumnName="creado_el" />
-                <ScalarProperty Name="fecha" ColumnName="fecha" />
-                <ScalarProperty Name="es_actual" ColumnName="es_actual" />
-                <ScalarProperty Name="producto_id" ColumnName="producto_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

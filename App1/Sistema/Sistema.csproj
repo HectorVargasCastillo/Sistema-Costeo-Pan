@@ -64,18 +64,6 @@
     <Compile Include="familia.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="FormIngReceta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormIngReceta.Designer.cs">
-      <DependentUpon>FormIngReceta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormProdPan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormProdPan.Designer.cs">
-      <DependentUpon>FormProdPan.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormFamilia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,12 +183,6 @@
     <Compile Include="usuario.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormIngReceta.resx">
-      <DependentUpon>FormIngReceta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormProdPan.resx">
-      <DependentUpon>FormProdPan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormFamilia.resx">
       <DependentUpon>FormFamilia.cs</DependentUpon>
     </EmbeddedResource>

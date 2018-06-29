@@ -12,11 +12,15 @@ namespace Sistema
 {
     public partial class MenuPrincipal : Form
     {
+
+        public static usuario usuario_logeado;
+
         private int childFormNumber = 0;
 
         public MenuPrincipal()
         {
             InitializeComponent();
+            toolStripStatusLabel.Text = usuario_logeado.nombre;
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -249,6 +253,7 @@ namespace Sistema
            
         }
 
+
         private void ingresoProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormRegistroProducto childForm = new FormRegistroProducto();
@@ -263,6 +268,7 @@ namespace Sistema
             childForm.MdiParent = this;
             childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
+
         }
     }
 }

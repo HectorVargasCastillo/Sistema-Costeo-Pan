@@ -269,6 +269,7 @@ namespace Sistema
             dg_mostrar.Columns["Id"].ReadOnly = true;
             dg_mostrar.Columns["Descripcion"].ReadOnly = true;
             dg_mostrar.Columns["Linea"].ReadOnly = true;
+            dg_mostrar.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dg_mostrar.Refresh();
         }
         private void cargar_columnas_datagridview()
@@ -284,6 +285,7 @@ namespace Sistema
             dg_mostrar.Columns["Id"].ReadOnly = true;
             dg_mostrar.Columns["Descripcion"].ReadOnly = true;
             dg_mostrar.Columns["Linea"].ReadOnly = true;
+            dg_mostrar.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dg_mostrar.Refresh();
         }
         private void dg_mostrar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

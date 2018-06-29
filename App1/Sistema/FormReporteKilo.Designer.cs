@@ -34,11 +34,6 @@
             this.tp_inicio = new System.Windows.Forms.DateTimePicker();
             this.tp_fin = new System.Windows.Forms.DateTimePicker();
             this.dg_reporte = new System.Windows.Forms.DataGridView();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio_costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rentabilidad_porcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentabilidad_moneda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.cb_tipopan = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dg_reporte)).BeginInit();
@@ -90,41 +85,11 @@
             // dg_reporte
             // 
             this.dg_reporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_reporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Fecha,
-            this.Precio_costo,
-            this.precio_venta,
-            this.Rentabilidad_porcentaje,
-            this.rentabilidad_moneda});
             this.dg_reporte.Location = new System.Drawing.Point(65, 290);
             this.dg_reporte.Name = "dg_reporte";
             this.dg_reporte.Size = new System.Drawing.Size(543, 150);
             this.dg_reporte.TabIndex = 5;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            // 
-            // Precio_costo
-            // 
-            this.Precio_costo.HeaderText = "Precio costo";
-            this.Precio_costo.Name = "Precio_costo";
-            // 
-            // precio_venta
-            // 
-            this.precio_venta.HeaderText = "Precio venta";
-            this.precio_venta.Name = "precio_venta";
-            // 
-            // Rentabilidad_porcentaje
-            // 
-            this.Rentabilidad_porcentaje.HeaderText = "Rebtabilidad %";
-            this.Rentabilidad_porcentaje.Name = "Rentabilidad_porcentaje";
-            // 
-            // rentabilidad_moneda
-            // 
-            this.rentabilidad_moneda.HeaderText = "Rentabilidad $";
-            this.rentabilidad_moneda.Name = "rentabilidad_moneda";
+            this.dg_reporte.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_reporte_CellContentClick);
             // 
             // label3
             // 
@@ -178,11 +143,6 @@
         private System.Windows.Forms.DateTimePicker tp_inicio;
         private System.Windows.Forms.DateTimePicker tp_fin;
         private System.Windows.Forms.DataGridView dg_reporte;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio_costo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio_venta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rentabilidad_porcentaje;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rentabilidad_moneda;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cb_tipopan;
     }

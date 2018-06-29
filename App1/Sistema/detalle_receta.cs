@@ -14,6 +14,7 @@ namespace Sistema
     
     public partial class detalle_receta
     {
+        public int id { get; set; }
         public int receta_id { get; set; }
         public int producto_id { get; set; }
         public double cantidad { get; set; }
@@ -21,7 +22,6 @@ namespace Sistema
         public Nullable<System.DateTime> modificado_el { get; set; }
         public Nullable<System.DateTime> eliminado_el { get; set; }
     
-        public virtual producto producto { get; set; }
         public virtual receta receta { get; set; }
     }
 }

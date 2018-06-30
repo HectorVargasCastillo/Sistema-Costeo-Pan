@@ -117,16 +117,15 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(318, 51);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 13);
+            this.label4.Size = new System.Drawing.Size(111, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Reporte por Kilo";
+            this.label4.Text = "Reporte por Kilo  (Kg.)";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // FormReporteKilo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(707, 508);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cb_tipopan);
@@ -137,11 +136,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bt_mostrar);
-            this.Enabled = false;
             this.Name = "FormReporteKilo";
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Reporte por kilo (Kg.)";
+            this.Text = "Reporte por kilo";
             this.Load += new System.EventHandler(this.FormReporteKilo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_reporte)).EndInit();
             this.ResumeLayout(false);

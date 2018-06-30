@@ -105,12 +105,13 @@
             // 
             // bt_guardar
             // 
+            this.bt_guardar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.bt_guardar.Location = new System.Drawing.Point(162, 394);
             this.bt_guardar.Name = "bt_guardar";
             this.bt_guardar.Size = new System.Drawing.Size(75, 23);
             this.bt_guardar.TabIndex = 7;
             this.bt_guardar.Text = "Guardar";
-            this.bt_guardar.UseVisualStyleBackColor = true;
+            this.bt_guardar.UseVisualStyleBackColor = false;
             this.bt_guardar.Click += new System.EventHandler(this.button1_Click);
             // 
             // cm_unidadmedida

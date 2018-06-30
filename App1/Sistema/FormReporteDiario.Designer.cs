@@ -41,7 +41,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(150, 78);
+            this.label1.Location = new System.Drawing.Point(150, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 2;
@@ -50,7 +50,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(149, 116);
+            this.label2.Location = new System.Drawing.Point(149, 138);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 3;
@@ -60,7 +60,7 @@
             // bt_mostrar
             // 
             this.bt_mostrar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.bt_mostrar.Location = new System.Drawing.Point(297, 170);
+            this.bt_mostrar.Location = new System.Drawing.Point(297, 192);
             this.bt_mostrar.Name = "bt_mostrar";
             this.bt_mostrar.Size = new System.Drawing.Size(100, 23);
             this.bt_mostrar.TabIndex = 4;
@@ -70,14 +70,14 @@
             // 
             // tp_inicio
             // 
-            this.tp_inicio.Location = new System.Drawing.Point(260, 70);
+            this.tp_inicio.Location = new System.Drawing.Point(260, 92);
             this.tp_inicio.Name = "tp_inicio";
             this.tp_inicio.Size = new System.Drawing.Size(200, 20);
             this.tp_inicio.TabIndex = 5;
             // 
             // tp_fin
             // 
-            this.tp_fin.Location = new System.Drawing.Point(260, 108);
+            this.tp_fin.Location = new System.Drawing.Point(260, 130);
             this.tp_fin.Name = "tp_fin";
             this.tp_fin.Size = new System.Drawing.Size(200, 20);
             this.tp_fin.TabIndex = 6;
@@ -85,7 +85,7 @@
             // dg_reporte
             // 
             this.dg_reporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_reporte.Location = new System.Drawing.Point(81, 230);
+            this.dg_reporte.Location = new System.Drawing.Point(73, 252);
             this.dg_reporte.Name = "dg_reporte";
             this.dg_reporte.Size = new System.Drawing.Size(543, 150);
             this.dg_reporte.TabIndex = 7;
@@ -94,7 +94,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(308, 26);
+            this.label3.Location = new System.Drawing.Point(308, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 8;

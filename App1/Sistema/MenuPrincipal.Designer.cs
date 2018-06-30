@@ -36,7 +36,6 @@
             this.familiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unidadMedidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresoCostosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ingresoProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresoPreciosVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +52,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.nuevaRecetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -72,7 +70,6 @@
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
-            //this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip_ItemClicked);
             // 
             // mantenedoresToolStripMenuItem
             // 
@@ -111,23 +108,13 @@
             // 
             // ingresoCostosToolStripMenuItem
             // 
-            this.ingresoCostosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ingresoProductoToolStripMenuItem});
             this.ingresoCostosToolStripMenuItem.Name = "ingresoCostosToolStripMenuItem";
             this.ingresoCostosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ingresoCostosToolStripMenuItem.Text = "Productos";
-            // 
-            // ingresoProductoToolStripMenuItem
-            // 
-            this.ingresoProductoToolStripMenuItem.Name = "ingresoProductoToolStripMenuItem";
-            this.ingresoProductoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ingresoProductoToolStripMenuItem.Text = "Ingreso Producto";
-            this.ingresoProductoToolStripMenuItem.Click += new System.EventHandler(this.ingresoProductoToolStripMenuItem_Click);
+            this.ingresoCostosToolStripMenuItem.Click += new System.EventHandler(this.ingresoCostosToolStripMenuItem_Click);
             // 
             // ingresoPreciosVentaToolStripMenuItem
             // 
-            this.ingresoPreciosVentaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevaRecetaToolStripMenuItem});
             this.ingresoPreciosVentaToolStripMenuItem.Name = "ingresoPreciosVentaToolStripMenuItem";
             this.ingresoPreciosVentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ingresoPreciosVentaToolStripMenuItem.Text = "Receta";
@@ -210,7 +197,6 @@
             this.toolStrip.Size = new System.Drawing.Size(632, 25);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
-           // this.toolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip_ItemClicked);
             // 
             // toolStripSeparator1
             // 
@@ -243,13 +229,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(67, 20);
             this.toolStripStatusLabel.Text = "Usuario";
-            // 
-            // nuevaRecetaToolStripMenuItem
-            // 
-            this.nuevaRecetaToolStripMenuItem.Name = "nuevaRecetaToolStripMenuItem";
-            this.nuevaRecetaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.nuevaRecetaToolStripMenuItem.Text = "nueva Receta";
-            this.nuevaRecetaToolStripMenuItem.Click += new System.EventHandler(this.nuevaRecetaToolStripMenuItem_Click);
             // 
             // MenuPrincipal
             // 
@@ -300,8 +279,6 @@
         private System.Windows.Forms.ToolStripMenuItem produccionDiariaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripMenuItem ingresoProductoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevaRecetaToolStripMenuItem;
     }
 }
 

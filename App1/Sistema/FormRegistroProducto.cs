@@ -69,11 +69,13 @@ namespace Sistema
                 MessageBox.Show("Debe Ingresar marca  ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 tb_marca.Focus();
             }
-            if (tb_formato.Text == "")
+            int n = 0;
+
+            if (tb_formato.Text == "" && !int.TryParse(tb_formato.Text,out n ))
             {
                 // MessageBox.Show("Debe Ingresar Descripcion Familia");
-                MessageBox.Show("Debe Ingresar marca  ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                tb_marca.Focus();
+                MessageBox.Show("Debe Ingresar formato  ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                tb_formato.Focus();
             }
             else
             {

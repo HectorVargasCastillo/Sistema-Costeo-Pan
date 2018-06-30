@@ -71,7 +71,7 @@ namespace Sistema
             }
             int n = 0;
 
-            if (tb_formato.Text == "" && !int.TryParse(tb_formato.Text,out n ))
+            if (tb_formato.Text == "" || !int.TryParse(tb_formato.Text,out n ))
             {
                 // MessageBox.Show("Debe Ingresar Descripcion Familia");
                 MessageBox.Show("Debe Ingresar formato  ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

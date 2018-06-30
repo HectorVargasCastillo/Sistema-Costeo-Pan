@@ -166,7 +166,7 @@
             this.dg_producto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_producto.Location = new System.Drawing.Point(138, 238);
             this.dg_producto.Name = "dg_producto";
-            this.dg_producto.Size = new System.Drawing.Size(360, 150);
+            this.dg_producto.Size = new System.Drawing.Size(523, 150);
             this.dg_producto.TabIndex = 15;
             this.dg_producto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_producto_CellContentClick);
             this.dg_producto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_producto_CellDoubleClick);

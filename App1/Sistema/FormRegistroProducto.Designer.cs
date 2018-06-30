@@ -51,7 +51,7 @@
             // lb_codigobarra
             // 
             this.lb_codigobarra.AutoSize = true;
-            this.lb_codigobarra.Location = new System.Drawing.Point(135, 12);
+            this.lb_codigobarra.Location = new System.Drawing.Point(135, 69);
             this.lb_codigobarra.Name = "lb_codigobarra";
             this.lb_codigobarra.Size = new System.Drawing.Size(86, 13);
             this.lb_codigobarra.TabIndex = 0;
@@ -60,7 +60,7 @@
             // lb_nombre
             // 
             this.lb_nombre.AutoSize = true;
-            this.lb_nombre.Location = new System.Drawing.Point(135, 49);
+            this.lb_nombre.Location = new System.Drawing.Point(135, 109);
             this.lb_nombre.Name = "lb_nombre";
             this.lb_nombre.Size = new System.Drawing.Size(44, 13);
             this.lb_nombre.TabIndex = 1;
@@ -69,7 +69,7 @@
             // lb_unidadmedida
             // 
             this.lb_unidadmedida.AutoSize = true;
-            this.lb_unidadmedida.Location = new System.Drawing.Point(136, 86);
+            this.lb_unidadmedida.Location = new System.Drawing.Point(136, 149);
             this.lb_unidadmedida.Name = "lb_unidadmedida";
             this.lb_unidadmedida.Size = new System.Drawing.Size(93, 13);
             this.lb_unidadmedida.TabIndex = 2;
@@ -78,7 +78,7 @@
             // lb_marca
             // 
             this.lb_marca.AutoSize = true;
-            this.lb_marca.Location = new System.Drawing.Point(135, 130);
+            this.lb_marca.Location = new System.Drawing.Point(423, 152);
             this.lb_marca.Name = "lb_marca";
             this.lb_marca.Size = new System.Drawing.Size(37, 13);
             this.lb_marca.TabIndex = 3;
@@ -87,7 +87,7 @@
             // lb_formato
             // 
             this.lb_formato.AutoSize = true;
-            this.lb_formato.Location = new System.Drawing.Point(135, 177);
+            this.lb_formato.Location = new System.Drawing.Point(136, 202);
             this.lb_formato.Name = "lb_formato";
             this.lb_formato.Size = new System.Drawing.Size(45, 13);
             this.lb_formato.TabIndex = 4;
@@ -96,7 +96,7 @@
             // lb_familia
             // 
             this.lb_familia.AutoSize = true;
-            this.lb_familia.Location = new System.Drawing.Point(136, 211);
+            this.lb_familia.Location = new System.Drawing.Point(423, 202);
             this.lb_familia.Name = "lb_familia";
             this.lb_familia.Size = new System.Drawing.Size(39, 13);
             this.lb_familia.TabIndex = 6;
@@ -115,7 +115,7 @@
             // cm_unidadmedida
             // 
             this.cm_unidadmedida.FormattingEnabled = true;
-            this.cm_unidadmedida.Location = new System.Drawing.Point(255, 86);
+            this.cm_unidadmedida.Location = new System.Drawing.Point(255, 146);
             this.cm_unidadmedida.Name = "cm_unidadmedida";
             this.cm_unidadmedida.Size = new System.Drawing.Size(100, 21);
             this.cm_unidadmedida.TabIndex = 8;
@@ -124,7 +124,7 @@
             // cm_familia
             // 
             this.cm_familia.FormattingEnabled = true;
-            this.cm_familia.Location = new System.Drawing.Point(253, 211);
+            this.cm_familia.Location = new System.Drawing.Point(483, 199);
             this.cm_familia.Name = "cm_familia";
             this.cm_familia.Size = new System.Drawing.Size(145, 21);
             this.cm_familia.TabIndex = 10;
@@ -132,14 +132,14 @@
             // 
             // tb_codigobarra
             // 
-            this.tb_codigobarra.Location = new System.Drawing.Point(255, 12);
+            this.tb_codigobarra.Location = new System.Drawing.Point(255, 66);
             this.tb_codigobarra.Name = "tb_codigobarra";
             this.tb_codigobarra.Size = new System.Drawing.Size(100, 20);
             this.tb_codigobarra.TabIndex = 11;
             // 
             // tb_nombre
             // 
-            this.tb_nombre.Location = new System.Drawing.Point(255, 49);
+            this.tb_nombre.Location = new System.Drawing.Point(255, 102);
             this.tb_nombre.Name = "tb_nombre";
             this.tb_nombre.Size = new System.Drawing.Size(243, 20);
             this.tb_nombre.TabIndex = 12;
@@ -147,7 +147,7 @@
             // 
             // tb_marca
             // 
-            this.tb_marca.Location = new System.Drawing.Point(255, 130);
+            this.tb_marca.Location = new System.Drawing.Point(483, 147);
             this.tb_marca.Name = "tb_marca";
             this.tb_marca.Size = new System.Drawing.Size(143, 20);
             this.tb_marca.TabIndex = 13;
@@ -155,7 +155,7 @@
             // 
             // tb_formato
             // 
-            this.tb_formato.Location = new System.Drawing.Point(255, 169);
+            this.tb_formato.Location = new System.Drawing.Point(255, 199);
             this.tb_formato.Name = "tb_formato";
             this.tb_formato.Size = new System.Drawing.Size(143, 20);
             this.tb_formato.TabIndex = 14;
@@ -224,7 +224,7 @@
             this.Controls.Add(this.lb_nombre);
             this.Controls.Add(this.lb_codigobarra);
             this.Name = "FormRegistroProducto";
-            this.Text = "FormRegistroArticulo";
+            this.Text = "Ingreso Producto";
             this.Load += new System.EventHandler(this.FormRegistroProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_producto)).EndInit();
             this.ResumeLayout(false);

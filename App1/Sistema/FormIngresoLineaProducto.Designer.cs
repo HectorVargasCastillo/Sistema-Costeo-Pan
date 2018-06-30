@@ -35,6 +35,7 @@
             this.bt_editar = new System.Windows.Forms.Button();
             this.bt_guardar = new System.Windows.Forms.Button();
             this.tb_id = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dg_mostrar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,11 +106,21 @@
             this.tb_id.Visible = false;
             this.tb_id.TextChanged += new System.EventHandler(this.tb_id_TextChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(218, 77);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Ingreso Linea de Producto";
+            // 
             // FormIngresoLineaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_id);
             this.Controls.Add(this.bt_eliminar);
             this.Controls.Add(this.bt_editar);
@@ -135,5 +146,6 @@
         private System.Windows.Forms.Button bt_editar;
         private System.Windows.Forms.Button bt_guardar;
         private System.Windows.Forms.TextBox tb_id;
+        private System.Windows.Forms.Label label1;
     }
 }

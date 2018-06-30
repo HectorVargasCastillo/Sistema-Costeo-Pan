@@ -272,5 +272,13 @@ namespace Sistema
             childForm.Show();
 
         }
+
+        private void ingresoCostosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRegistroProducto childForm = new FormRegistroProducto();
+            childForm.MdiParent = this;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
+            childForm.Show();
+        }
     }
 }

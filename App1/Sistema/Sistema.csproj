@@ -82,6 +82,12 @@
     <Compile Include="FormIngPrecio.Designer.cs">
       <DependentUpon>FormIngPrecio.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormIngReceta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIngReceta.Designer.cs">
+      <DependentUpon>FormIngReceta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormIngresoLineaProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,12 @@
     </Compile>
     <Compile Include="FormProDiariaPan.Designer.cs">
       <DependentUpon>FormProDiariaPan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProdPan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProdPan.Designer.cs">
+      <DependentUpon>FormProdPan.cs</DependentUpon>
     </Compile>
     <Compile Include="FormRegistroProducto.cs">
       <SubType>Form</SubType>
@@ -186,6 +198,9 @@
     <EmbeddedResource Include="FormIngPrecio.resx">
       <DependentUpon>FormIngPrecio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormIngReceta.resx">
+      <DependentUpon>FormIngReceta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormIngresoLineaProducto.resx">
       <DependentUpon>FormIngresoLineaProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProDiariaPan.resx">
       <DependentUpon>FormProDiariaPan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProdPan.resx">
+      <DependentUpon>FormProdPan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistroProducto.resx">
       <DependentUpon>FormRegistroProducto.cs</DependentUpon>

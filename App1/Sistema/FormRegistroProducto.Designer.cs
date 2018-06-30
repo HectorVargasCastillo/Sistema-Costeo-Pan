@@ -45,6 +45,7 @@
             this.tb_id = new System.Windows.Forms.TextBox();
             this.bt_eliminar = new System.Windows.Forms.Button();
             this.bt_editar = new System.Windows.Forms.Button();
+            this.lb_ingresopro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dg_producto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,11 +202,21 @@
             this.bt_editar.UseVisualStyleBackColor = false;
             this.bt_editar.Click += new System.EventHandler(this.bt_editar_Click);
             // 
+            // lb_ingresopro
+            // 
+            this.lb_ingresopro.AutoSize = true;
+            this.lb_ingresopro.Location = new System.Drawing.Point(255, 20);
+            this.lb_ingresopro.Name = "lb_ingresopro";
+            this.lb_ingresopro.Size = new System.Drawing.Size(93, 13);
+            this.lb_ingresopro.TabIndex = 23;
+            this.lb_ingresopro.Text = "Ingreso Productos";
+            // 
             // FormRegistroProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lb_ingresopro);
             this.Controls.Add(this.tb_id);
             this.Controls.Add(this.bt_eliminar);
             this.Controls.Add(this.bt_editar);
@@ -251,5 +262,6 @@
         private System.Windows.Forms.TextBox tb_id;
         private System.Windows.Forms.Button bt_eliminar;
         private System.Windows.Forms.Button bt_editar;
+        private System.Windows.Forms.Label lb_ingresopro;
     }
 }

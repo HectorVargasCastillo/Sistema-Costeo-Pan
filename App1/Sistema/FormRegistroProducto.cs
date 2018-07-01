@@ -83,14 +83,16 @@ namespace Sistema
                 producto pro = new producto();
 
 
-                
-               
+
+
                 //var linea = Convert.ToInt32(cm_linea.SelectedValue);
-               // var familiaa = Convert.ToInt32(cm_familia.SelectedValue);
+                // var familiaa = Convert.ToInt32(cm_familia.SelectedValue);
+                pro.codigo_barra = Convert.ToInt32(tb_codigobarra.Text);
                 pro.unidad_medida_id = Convert.ToInt32(cm_unidadmedida.SelectedValue);
                 pro.nombre = tb_nombre.Text;
                 pro.marca = tb_marca.Text;
                 
+
                 pro.fomato = Convert.ToInt32(tb_formato.Text); 
                 pro.familia_id = Convert.ToInt32(cm_familia.SelectedValue);
                 pro.creado_el = DateTime.Today;
@@ -100,6 +102,12 @@ namespace Sistema
                 db.SaveChanges();
                 MessageBox.Show("Registro Guardado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 tb_codigobarra.Focus();
+                mostrar_datagridview();
+                tb_nombre.Text = "";
+                tb_codigobarra.Text = "";
+                tb_marca.Text = "";
+                tb_formato.Text = "";
+
             }
         }
 
@@ -279,6 +287,15 @@ namespace Sistema
         {
             tb_id.Text = dg_producto.CurrentRow.Cells["Id"].Value.ToString();
             tb_nombre.Text = dg_producto.CurrentRow.Cells["Nombre"].Value.ToString();
+
+            costeoEntities db = new costeoEntities();
+            producto pro = new producto();
+            pro = db.producto.Find(Convert.ToInt16(tb_id.Text));
+            tb_codigobarra.Text = Convert.ToString(pro.codigo_barra);
+            tb_marca.Text = Convert.ToString(pro.marca);
+            tb_formato.Text = Convert.ToString(pro.fomato);
+            
+          
 
         }
 

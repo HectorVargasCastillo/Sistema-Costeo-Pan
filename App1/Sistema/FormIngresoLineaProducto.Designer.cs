@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIngresoLineaProducto));
             this.lb_descripcionlinea = new System.Windows.Forms.Label();
             this.tb_descripcionlinea = new System.Windows.Forms.TextBox();
             this.dg_mostrar = new System.Windows.Forms.DataGridView();
@@ -128,6 +129,7 @@
             this.Controls.Add(this.dg_mostrar);
             this.Controls.Add(this.tb_descripcionlinea);
             this.Controls.Add(this.lb_descripcionlinea);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormIngresoLineaProducto";
             this.Text = "FormIngresoLineaProducto";
             this.Click += new System.EventHandler(this.bt_editar_Click);

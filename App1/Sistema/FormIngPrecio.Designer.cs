@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIngPrecio));
             this.lb_codigo = new System.Windows.Forms.Label();
             this.lb_nombre = new System.Windows.Forms.Label();
             this.lb_unidad = new System.Windows.Forms.Label();
@@ -288,6 +289,7 @@
             this.Controls.Add(this.lb_unidad);
             this.Controls.Add(this.lb_nombre);
             this.Controls.Add(this.lb_codigo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormIngPrecio";
             this.Text = "Ingreso Precio Venta";
             ((System.ComponentModel.ISupportInitialize)(this.dg_mostrar)).EndInit();

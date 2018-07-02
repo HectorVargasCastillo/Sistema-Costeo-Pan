@@ -140,9 +140,10 @@ namespace Sistema
             }
             tabla.DefaultView.Sort = "[Id] DESC";
             dg_mostrar.DataSource = tabla;
-            dg_mostrar.Columns["Id"].ReadOnly = true;
+            //dg_.Columns["Id"].ReadOnly = true;
+            dg_mostrar.Columns["Id"].Visible = false;
             dg_mostrar.Columns["Descripcion"].ReadOnly = true;
-            
+            dg_mostrar.Columns["Descripcion"].Width = 200;
             dg_mostrar.Refresh();
         }
         private void cargar_columnas_datagridview()
@@ -155,7 +156,8 @@ namespace Sistema
             
 
             dg_mostrar.DataSource = tabla;
-            dg_mostrar.Columns["Id"].ReadOnly = true;
+            //dg_mostrar.Columns["Id"].ReadOnly = true;
+            dg_mostrar.Columns["Id"].Visible = false;
             dg_mostrar.Columns["Descripcion"].ReadOnly = true;
             
             dg_mostrar.Refresh();
@@ -430,6 +432,11 @@ namespace Sistema
 
                 }
             
+
+        }
+
+        private void dg_mostrar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

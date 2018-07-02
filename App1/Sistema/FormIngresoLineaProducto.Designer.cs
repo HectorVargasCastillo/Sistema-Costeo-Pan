@@ -62,6 +62,7 @@
             this.dg_mostrar.Name = "dg_mostrar";
             this.dg_mostrar.Size = new System.Drawing.Size(243, 150);
             this.dg_mostrar.TabIndex = 15;
+            this.dg_mostrar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_mostrar_CellContentClick);
             this.dg_mostrar.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_mostrar_CellDoubleClick);
             // 
             // bt_eliminar

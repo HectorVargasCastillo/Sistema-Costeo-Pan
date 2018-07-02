@@ -149,7 +149,8 @@ namespace Sistema
             }
             tabla.DefaultView.Sort = "[Id] DESC";
             dg_producto.DataSource = tabla;
-            dg_producto.Columns["Id"].ReadOnly = true;
+            //dg_producto.Columns["Id"].ReadOnly = true;
+            dg_producto.Columns["Id"].Visible = false;
             dg_producto.Columns["Nombre"].ReadOnly = true;
             dg_producto.Columns["Marca"].ReadOnly = true;
             dg_producto.Columns["Formato"].ReadOnly = true;
@@ -171,7 +172,7 @@ namespace Sistema
             tabla.Columns.Add("Unidad de medida");
 
             dg_producto.DataSource = tabla;
-            dg_producto.Columns["Id"].ReadOnly = true;
+            dg_producto.Columns["Id"].Visible = false;
             dg_producto.Columns["Nombre"].ReadOnly = true; ;
             dg_producto.Columns["Marca"].ReadOnly = true; ;
             dg_producto.Columns["Formato"].ReadOnly = true; ;

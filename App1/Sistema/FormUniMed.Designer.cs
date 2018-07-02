@@ -98,9 +98,9 @@
             // dg_mostrar
             // 
             this.dg_mostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_mostrar.Location = new System.Drawing.Point(215, 200);
+            this.dg_mostrar.Location = new System.Drawing.Point(269, 201);
             this.dg_mostrar.Name = "dg_mostrar";
-            this.dg_mostrar.Size = new System.Drawing.Size(360, 150);
+            this.dg_mostrar.Size = new System.Drawing.Size(260, 150);
             this.dg_mostrar.TabIndex = 6;
             this.dg_mostrar.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_mostrar_CellDoubleClick);
             // 

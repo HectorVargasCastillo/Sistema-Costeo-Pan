@@ -63,7 +63,7 @@
             // 
             this.cm_linea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cm_linea.FormattingEnabled = true;
-            this.cm_linea.Location = new System.Drawing.Point(363, 108);
+            this.cm_linea.Location = new System.Drawing.Point(345, 108);
             this.cm_linea.Name = "cm_linea";
             this.cm_linea.Size = new System.Drawing.Size(121, 21);
             this.cm_linea.TabIndex = 4;
@@ -80,9 +80,9 @@
             // 
             // tb_descripcion
             // 
-            this.tb_descripcion.Location = new System.Drawing.Point(363, 156);
+            this.tb_descripcion.Location = new System.Drawing.Point(339, 156);
             this.tb_descripcion.Name = "tb_descripcion";
-            this.tb_descripcion.Size = new System.Drawing.Size(221, 20);
+            this.tb_descripcion.Size = new System.Drawing.Size(215, 20);
             this.tb_descripcion.TabIndex = 7;
             this.tb_descripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_descripcion_KeyPress);
             // 
@@ -100,10 +100,11 @@
             // dg_mostrar
             // 
             this.dg_mostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_mostrar.Location = new System.Drawing.Point(241, 200);
+            this.dg_mostrar.Location = new System.Drawing.Point(290, 197);
             this.dg_mostrar.Name = "dg_mostrar";
-            this.dg_mostrar.Size = new System.Drawing.Size(343, 150);
+            this.dg_mostrar.Size = new System.Drawing.Size(264, 150);
             this.dg_mostrar.TabIndex = 9;
+            this.dg_mostrar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_mostrar_CellContentClick);
             this.dg_mostrar.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_mostrar_CellDoubleClick);
             // 
             // bt_editar

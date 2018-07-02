@@ -46,7 +46,7 @@
             this.bt_ingresar.Location = new System.Drawing.Point(170, 293);
             this.bt_ingresar.Name = "bt_ingresar";
             this.bt_ingresar.Size = new System.Drawing.Size(93, 23);
-            this.bt_ingresar.TabIndex = 0;
+            this.bt_ingresar.TabIndex = 2;
             this.bt_ingresar.Text = "Ingresar";
             this.bt_ingresar.UseVisualStyleBackColor = false;
             this.bt_ingresar.Click += new System.EventHandler(this.bt_ingresar_Click);
@@ -74,14 +74,14 @@
             this.tb_usuario.Location = new System.Drawing.Point(129, 204);
             this.tb_usuario.Name = "tb_usuario";
             this.tb_usuario.Size = new System.Drawing.Size(116, 20);
-            this.tb_usuario.TabIndex = 3;
+            this.tb_usuario.TabIndex = 0;
             // 
             // tb_pass
             // 
             this.tb_pass.Location = new System.Drawing.Point(129, 245);
             this.tb_pass.Name = "tb_pass";
             this.tb_pass.Size = new System.Drawing.Size(116, 20);
-            this.tb_pass.TabIndex = 4;
+            this.tb_pass.TabIndex = 1;
             this.tb_pass.UseSystemPasswordChar = true;
             // 
             // pictureBox1
@@ -115,6 +115,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bt_ingresar);
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login - Costeo Pan";
             this.Load += new System.EventHandler(this.FormLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

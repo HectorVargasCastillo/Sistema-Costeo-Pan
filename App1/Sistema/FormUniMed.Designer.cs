@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUniMed));
             this.lb_abreviacion = new System.Windows.Forms.Label();
             this.lb_nombre = new System.Windows.Forms.Label();
             this.tb_abreviacion = new System.Windows.Forms.TextBox();
@@ -148,6 +149,7 @@
             this.Controls.Add(this.tb_abreviacion);
             this.Controls.Add(this.lb_nombre);
             this.Controls.Add(this.lb_abreviacion);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormUniMed";
             this.Text = "Ingreso Unidad de Medida";
             ((System.ComponentModel.ISupportInitialize)(this.dg_mostrar)).EndInit();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProDiariaPan));
             this.tb_id = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -165,6 +166,7 @@
             this.Controls.Add(this.bt_eliminar);
             this.Controls.Add(this.bt_editar);
             this.Controls.Add(this.bt_guardar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormProDiariaPan";
             this.Text = "Produccion Diaria de Pan";
             ((System.ComponentModel.ISupportInitialize)(this.dg_mostrar)).EndInit();

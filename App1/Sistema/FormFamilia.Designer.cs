@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFamilia));
             this.lb_codigo = new System.Windows.Forms.Label();
             this.lb_descripcion = new System.Windows.Forms.Label();
             this.cm_linea = new System.Windows.Forms.ComboBox();
@@ -152,6 +153,7 @@
             this.Controls.Add(this.cm_linea);
             this.Controls.Add(this.lb_descripcion);
             this.Controls.Add(this.lb_codigo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormFamilia";
             this.Text = "Ingreso Familia Productos";
             ((System.ComponentModel.ISupportInitialize)(this.dg_mostrar)).EndInit();

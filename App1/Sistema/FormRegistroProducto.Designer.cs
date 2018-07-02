@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistroProducto));
             this.lb_codigobarra = new System.Windows.Forms.Label();
             this.lb_nombre = new System.Windows.Forms.Label();
             this.lb_unidadmedida = new System.Windows.Forms.Label();
@@ -235,6 +236,7 @@
             this.Controls.Add(this.lb_unidadmedida);
             this.Controls.Add(this.lb_nombre);
             this.Controls.Add(this.lb_codigobarra);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRegistroProducto";
             this.Text = "Ingreso Producto";
             this.Load += new System.EventHandler(this.FormRegistroProducto_Load);

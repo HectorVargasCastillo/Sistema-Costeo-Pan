@@ -46,7 +46,7 @@
             this.bt_mostrar.Location = new System.Drawing.Point(304, 256);
             this.bt_mostrar.Name = "bt_mostrar";
             this.bt_mostrar.Size = new System.Drawing.Size(97, 23);
-            this.bt_mostrar.TabIndex = 0;
+            this.bt_mostrar.TabIndex = 3;
             this.bt_mostrar.Text = "Mostrar Reporte";
             this.bt_mostrar.UseVisualStyleBackColor = false;
             this.bt_mostrar.Click += new System.EventHandler(this.bt_mostrar_Click);
@@ -74,14 +74,14 @@
             this.tp_inicio.Location = new System.Drawing.Point(264, 105);
             this.tp_inicio.Name = "tp_inicio";
             this.tp_inicio.Size = new System.Drawing.Size(200, 20);
-            this.tp_inicio.TabIndex = 3;
+            this.tp_inicio.TabIndex = 0;
             // 
             // tp_fin
             // 
             this.tp_fin.Location = new System.Drawing.Point(264, 152);
             this.tp_fin.Name = "tp_fin";
             this.tp_fin.Size = new System.Drawing.Size(200, 20);
-            this.tp_fin.TabIndex = 4;
+            this.tp_fin.TabIndex = 1;
             // 
             // dg_reporte
             // 
@@ -109,7 +109,7 @@
             this.cb_tipopan.Location = new System.Drawing.Point(264, 194);
             this.cb_tipopan.Name = "cb_tipopan";
             this.cb_tipopan.Size = new System.Drawing.Size(200, 21);
-            this.cb_tipopan.TabIndex = 7;
+            this.cb_tipopan.TabIndex = 2;
             this.cb_tipopan.SelectedIndexChanged += new System.EventHandler(this.cb_tipopan_SelectedIndexChanged);
             // 
             // label4

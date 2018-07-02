@@ -42,7 +42,7 @@
             // lb_descripcionlinea
             // 
             this.lb_descripcionlinea.AutoSize = true;
-            this.lb_descripcionlinea.Location = new System.Drawing.Point(90, 121);
+            this.lb_descripcionlinea.Location = new System.Drawing.Point(135, 121);
             this.lb_descripcionlinea.Name = "lb_descripcionlinea";
             this.lb_descripcionlinea.Size = new System.Drawing.Size(92, 13);
             this.lb_descripcionlinea.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             // tb_descripcionlinea
             // 
-            this.tb_descripcionlinea.Location = new System.Drawing.Point(204, 118);
+            this.tb_descripcionlinea.Location = new System.Drawing.Point(249, 118);
             this.tb_descripcionlinea.Name = "tb_descripcionlinea";
             this.tb_descripcionlinea.Size = new System.Drawing.Size(243, 20);
             this.tb_descripcionlinea.TabIndex = 13;
@@ -58,9 +58,9 @@
             // dg_mostrar
             // 
             this.dg_mostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_mostrar.Location = new System.Drawing.Point(204, 176);
+            this.dg_mostrar.Location = new System.Drawing.Point(249, 176);
             this.dg_mostrar.Name = "dg_mostrar";
-            this.dg_mostrar.Size = new System.Drawing.Size(343, 150);
+            this.dg_mostrar.Size = new System.Drawing.Size(243, 150);
             this.dg_mostrar.TabIndex = 15;
             this.dg_mostrar.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_mostrar_CellDoubleClick);
             // 
@@ -109,7 +109,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(201, 61);
+            this.label1.Location = new System.Drawing.Point(246, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 13);
             this.label1.TabIndex = 20;

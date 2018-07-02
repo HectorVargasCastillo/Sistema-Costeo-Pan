@@ -198,6 +198,7 @@ namespace Sistema
             dg_mostrar.DataSource = tabla;
             //dg_mostrar.Columns["Descripcion"].Width = 226;
             dg_mostrar.Columns["Id"].ReadOnly= true;
+            dg_mostrar.Columns["Id"].Visible = false;
             dg_mostrar.Columns["Descripcion"].ReadOnly = true;
             dg_mostrar.Columns["Codigo"].ReadOnly = true;
             dg_mostrar.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;

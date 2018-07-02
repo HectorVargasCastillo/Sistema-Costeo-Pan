@@ -106,7 +106,7 @@
             // bt_guardar
             // 
             this.bt_guardar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.bt_guardar.Location = new System.Drawing.Point(162, 394);
+            this.bt_guardar.Location = new System.Drawing.Point(228, 394);
             this.bt_guardar.Name = "bt_guardar";
             this.bt_guardar.Size = new System.Drawing.Size(75, 23);
             this.bt_guardar.TabIndex = 7;
@@ -166,9 +166,9 @@
             // dg_producto
             // 
             this.dg_producto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_producto.Location = new System.Drawing.Point(138, 238);
+            this.dg_producto.Location = new System.Drawing.Point(50, 238);
             this.dg_producto.Name = "dg_producto";
-            this.dg_producto.Size = new System.Drawing.Size(523, 150);
+            this.dg_producto.Size = new System.Drawing.Size(643, 150);
             this.dg_producto.TabIndex = 15;
             this.dg_producto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_producto_CellContentClick);
             this.dg_producto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_producto_CellDoubleClick);
@@ -184,7 +184,7 @@
             // bt_eliminar
             // 
             this.bt_eliminar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.bt_eliminar.Location = new System.Drawing.Point(374, 394);
+            this.bt_eliminar.Location = new System.Drawing.Point(440, 394);
             this.bt_eliminar.Name = "bt_eliminar";
             this.bt_eliminar.Size = new System.Drawing.Size(75, 23);
             this.bt_eliminar.TabIndex = 21;
@@ -195,7 +195,7 @@
             // bt_editar
             // 
             this.bt_editar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.bt_editar.Location = new System.Drawing.Point(266, 394);
+            this.bt_editar.Location = new System.Drawing.Point(332, 394);
             this.bt_editar.Name = "bt_editar";
             this.bt_editar.Size = new System.Drawing.Size(75, 23);
             this.bt_editar.TabIndex = 20;
